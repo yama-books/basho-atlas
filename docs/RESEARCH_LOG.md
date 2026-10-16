@@ -45,6 +45,16 @@
 - ただし **リポジトリ内で再実行できるJSON Schema / CIテストはまだない**。次フェーズで追加する。
 - GitHubのコミットを読み戻し、最新の文書・JSONが正しく保存されたか再確認する。
 
+### GitHub読み戻し・整合性テスト
+
+2026-10-17: README, CONCEPT, DATA_MODEL, DATA_SOURCES, ROADMAP, RESEARCH_LOG, 武隈の松JSONの **7ファイル** がGitHub上に存在することを読み戻して確認。
+- JSON構文解析に成功。
+- 2地点（中心1・比較用文脈1）、現代史跡1件、作品6件、旅程イベント2件、文学関連4件、教材問い2件、出典6件。
+- 全 `source_ids` と地点・現代史跡・作品参照先の存在、ID重複なし、READMEの文書リンクの実在を確認。
+- 全てのデータレコードの公開ゲートは `pending_human` かつ `draft_only`。
+- **検証中の修正**: 能因→『おくのほそ道』の関係は原文未照合のため、`explicit_allusion` から `scholarly_interpretation` に変更した（commit `bf05b39fd27cadb68bb7d186f8ece18b24a8aa9e`）。
+- リポジトリで再実行可能な自動テストやCIは**まだ未作成**（その場の検証スクリプトで参照整合を検査した段階）。
+
 ### 引継ぎ位置
 
 **P0記録後、Cycle Aの「JSON Schemaと参照整合テスト」または、並行可能なCycle BのUI設計から再開。** 文学・位置の人手承認がまだないため、製品版の確定教材には昇格しない。
