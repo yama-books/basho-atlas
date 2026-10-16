@@ -269,10 +269,10 @@
     },
     {
       "id": "rel-noin-basho",
-      "type": "explicit_allusion",
+      "type": "scholarly_interpretation",
       "from_work_id": "work-noin-takekuma",
       "to_work_id": "work-oku-no-hosomichi",
-      "assertion": "武隈の松の段に能因の歌・伝承が本文で言及される。原文照合は未実施。",
+      "assertion": "自治体・美術館の解説は『おくのほそ道』の武隈の松の段が能因の歌・伝承を参照すると説明する。原文は未照合のため明示的な参照関係としては未確定。",
       "source_ids": [
         "src-itsuo-scroll",
         "src-iwanuma-okuno-guide"
