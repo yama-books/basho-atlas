@@ -1,0 +1,383 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "basho-atlas-example",
+  "example_only": true,
+  "created_on": "2026-10-17",
+  "warning": "PUBLIC REPOSITORY DRAFT: Source checks by AI are not human scholarly approval. Do not ship as verified teaching material.",
+  "places": [
+    {
+      "id": "place-takekuma-matsu",
+      "name": "武隈の松",
+      "name_variants": [
+        "二木の松",
+        "たけくまの松"
+      ],
+      "place_type": "utamakura",
+      "modern_site_ids": [
+        "site-futaki-park"
+      ],
+      "notes": "同一の松が千年間生存したという意味ではない。松の植え継ぎ、姿の変化を資料ごとに区別。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide",
+        "src-iwanuma-landscape"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "place-kasashima",
+      "name": "笠島",
+      "name_variants": [
+        "かさしま"
+      ],
+      "place_type": "literary_place",
+      "modern_site_ids": [],
+      "notes": "叙述順と旅程順の比較に必要な文脈地点。座標・比定地は今回未監査。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    }
+  ],
+  "modern_sites": [
+    {
+      "id": "site-futaki-park",
+      "name": "二木の松史跡公園",
+      "address": "宮城県岩沼市二木二丁目29番8及び85番1",
+      "historical_place_id": "place-takekuma-matsu",
+      "relation_to_historic": "commemorative_site",
+      "geometry": null,
+      "geometry_status": "not_geocoded",
+      "notes": "現代の史跡公園の所在地。芭蕉の歩行路や古代の樹木の正確な位置を示す座標ではない。国指定名勝の指定地住所は二木二丁目85-1ほか4筆。",
+      "source_ids": [
+        "src-iwanuma-park",
+        "src-iwanuma-landscape"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    }
+  ],
+  "works": [
+    {
+      "id": "work-fujiwara-motoyoshi-takekuma",
+      "kind": "waka",
+      "title": "武隈の松を詠んだ藤原元善の歌",
+      "author": "藤原元善",
+      "collection": "後撰和歌集",
+      "text": null,
+      "text_status": "not_transcribed",
+      "notes": "古歌本文・歌番号・異同は原資料で未照合。文学史上の初出として岩沼市資料に説明あり。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide",
+        "src-kotobank-takekuma"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "work-tachibana-suemichi-takekuma",
+      "kind": "waka",
+      "title": "橘季通の武隈の松の歌",
+      "author": "橘季通",
+      "collection": "後拾遺和歌集",
+      "text": null,
+      "text_status": "not_transcribed",
+      "notes": "二木と「みき」の掛詞が後代に与えた影響を市が解説。本文の表記と歌番号は未監査。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide",
+        "src-kotobank-takekuma"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "work-noin-takekuma",
+      "kind": "waka",
+      "title": "能因の武隈の松の歌",
+      "author": "能因法師",
+      "collection": null,
+      "text": null,
+      "text_status": "not_transcribed",
+      "notes": "消失した松を詠む歌。採録歌集・本文・異同は要確認。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide",
+        "src-itsuo-scroll"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "work-basho-takekuma-haiku",
+      "kind": "haiku",
+      "title": "桜より松は二木を三月越し",
+      "author": "松尾芭蕉",
+      "collection": "おくのほそ道",
+      "text": "桜より松は二木を三月越し",
+      "text_status": "draft_transcription",
+      "notes": "歴史的本文の底本・表記異同は未照合。町の紹介文・県の案内で句の存在を照合。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide",
+        "src-miyagi-cultural"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "work-oku-no-hosomichi",
+      "kind": "travelogue",
+      "title": "おくのほそ道",
+      "author": "松尾芭蕉",
+      "collection": null,
+      "text": null,
+      "text_status": "not_transcribed",
+      "notes": "文学上の叙述順は実際の時系列と一致するとは限らない。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "work-sora-diary",
+      "kind": "diary",
+      "title": "曾良随行日記",
+      "author": "河合曾良",
+      "collection": null,
+      "text": null,
+      "text_status": "not_transcribed",
+      "notes": "現時点の事実確認は原本翻刻ではなく岩沼市の記述による。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    }
+  ],
+  "travel_events": [
+    {
+      "id": "event-takekuma-visit",
+      "place_id": "place-takekuma-matsu",
+      "event_type": "visited",
+      "evidence_kind": "municipal_research",
+      "event_date": [
+        {
+          "value": "1689-05-04",
+          "calendar": "Japanese_lunisolar",
+          "source_ids": [
+            "src-iwanuma-okuno-guide"
+          ]
+        },
+        {
+          "value": "1689-06-20",
+          "calendar": "Gregorian",
+          "source_ids": [
+            "src-iwanuma-okuno-guide"
+          ]
+        }
+      ],
+      "actual_order": 1,
+      "narrative_order": 2,
+      "notes": "岩沼市は曾良の日記に基づくと説明。旅日記原典は本データ作成時点で未校合。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "event-kasashima-context",
+      "place_id": "place-kasashima",
+      "event_type": "passed",
+      "evidence_kind": "municipal_research",
+      "event_date": null,
+      "actual_order": 2,
+      "narrative_order": 1,
+      "notes": "笠島の実方墓には到達できなかったとする自治体解説。笠島への実際の訪問とは登録しない。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    }
+  ],
+  "literary_relations": [
+    {
+      "id": "rel-takekuma-motoyoshi",
+      "type": "located_at",
+      "from_work_id": "work-fujiwara-motoyoshi-takekuma",
+      "to_place_id": "place-takekuma-matsu",
+      "assertion": "藤原元善が武隈の松を詠んだことが文学的な初出とされる。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "rel-takekuma-noin",
+      "type": "mentioned_in",
+      "from_work_id": "work-noin-takekuma",
+      "to_place_id": "place-takekuma-matsu",
+      "assertion": "能因の歌と松の消失の逸話が芭蕉本文で参照される。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide",
+        "src-itsuo-scroll"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "rel-tachibana-basho",
+      "type": "scholarly_interpretation",
+      "from_work_id": "work-tachibana-suemichi-takekuma",
+      "to_work_id": "work-basho-takekuma-haiku",
+      "assertion": "「二木」「みき」の語遊びが芭蕉句にも受け継がれたと岩沼市は説明する。直接依拠の確定判定ではない。",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "rel-noin-basho",
+      "type": "explicit_allusion",
+      "from_work_id": "work-noin-takekuma",
+      "to_work_id": "work-oku-no-hosomichi",
+      "assertion": "武隈の松の段に能因の歌・伝承が本文で言及される。原文照合は未実施。",
+      "source_ids": [
+        "src-itsuo-scroll",
+        "src-iwanuma-okuno-guide"
+      ],
+      "evidence_status": "source_checked",
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    }
+  ],
+  "learning_prompts": [
+    {
+      "id": "prompt-takekuma-01",
+      "place_id": "place-takekuma-matsu",
+      "question": "『おくのほそ道』と曾良の記録について、武隈の松と笠島の順序を比べよう。芭蕉はなぜ順序を変えて描いたと考えられるだろうか。",
+      "answer_status": "question_only",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "prompt-takekuma-02",
+      "place_id": "place-takekuma-matsu",
+      "question": "藤原元善・橘季通・能因に関する解説と芭蕉句を読み、松が「植え継がれること」の文学的な意味を考えよう。",
+      "answer_status": "question_only",
+      "source_ids": [
+        "src-iwanuma-okuno-guide"
+      ],
+      "review_status": "pending_human",
+      "proposed_by": "ai",
+      "public_use": "draft_only"
+    }
+  ],
+  "modern_poi_policy": {
+    "provider": "OpenPOI API",
+    "mode": "fetch_at_view_time",
+    "snapshot": null,
+    "live_query_tested": false,
+    "query_center": null,
+    "query_radius_m": 500,
+    "note": "座標未監査のためOpenPOIを未呼出し。現況・営業状態を保証しない。"
+  },
+  "sources": [
+    {
+      "id": "src-iwanuma-okuno-guide",
+      "title": "『おくのほそ道』と岩沼",
+      "publisher": "岩沼市",
+      "source_kind": "municipal_research",
+      "url": "https://www.city.iwanuma.miyagi.jp/kanko/rekishi/nyumon/okunohosomichi.html",
+      "accessed_on": "2026-10-17",
+      "license_status": "quotation_only_until_review",
+      "usage_note": "市の解説文は転載せず、事実関係の検証と短い要約に利用。"
+    },
+    {
+      "id": "src-iwanuma-park",
+      "title": "二木の松史跡公園",
+      "publisher": "岩沼市",
+      "source_kind": "official_site_description",
+      "url": "https://www.city.iwanuma.miyagi.jp/kurashi/infrastructure/toshi-keikaku/hutakinomatushisekikouen.html",
+      "accessed_on": "2026-10-17",
+      "license_status": "quotation_only_until_review",
+      "usage_note": "住所・現在の施設概要の確認。"
+    },
+    {
+      "id": "src-iwanuma-landscape",
+      "title": "武隈の松の国名勝指定",
+      "publisher": "岩沼市",
+      "source_kind": "official_heritage_record",
+      "url": "https://www.city.iwanuma.miyagi.jp/kanko/bunkazai/takekumanomatsu.html",
+      "accessed_on": "2026-10-17",
+      "license_status": "quotation_only_until_review",
+      "usage_note": "2014年指定・指定地住所。"
+    },
+    {
+      "id": "src-miyagi-cultural",
+      "title": "指定文化財〈名勝〉おくのほそ道の風景地",
+      "publisher": "宮城県",
+      "source_kind": "official_heritage_record",
+      "url": "https://www.pref.miyagi.jp/soshiki/bunkazai/okunohosomichinofukeichi.html",
+      "accessed_on": "2026-10-17",
+      "license_status": "quotation_only_until_review",
+      "usage_note": "芭蕉句と史跡の関連を照合。"
+    },
+    {
+      "id": "src-kotobank-takekuma",
+      "title": "武隈の松（精選版 日本国語大辞典）",
+      "publisher": "コトバンク",
+      "source_kind": "dictionary",
+      "url": "https://kotobank.jp/word/%E6%AD%A6%E9%9A%88%E3%81%AE%E6%9D%BE-319610",
+      "accessed_on": "2026-10-17",
+      "license_status": "quotation_only_until_review",
+      "usage_note": "初出・歌人・歌集の補助照合。"
+    },
+    {
+      "id": "src-itsuo-scroll",
+      "title": "奥の細道画巻 第一巻",
+      "publisher": "逸翁美術館",
+      "source_kind": "museum_description",
+      "url": "https://archives.hankyu-bunka.or.jp/digi-emaki/okunohosomichi1.html",
+      "accessed_on": "2026-10-17",
+      "license_status": "quotation_only_until_review",
+      "usage_note": "能因への言及・旅程の補助確認。"
+    }
+  ]
+}
