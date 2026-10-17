@@ -11,6 +11,7 @@ on:
       - 'app.js'
       - 'index.html'
       - 'package.json'
+      - 'docs/HISTORICAL_GIS_*.md'
       - '.github/workflows/historical-gis-contracts.yml'
 
 permissions:
