@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="芭蕉が訪ねた歌枕を、古歌・芭蕉の旅・現代の風景と旧国名で重ねて読む地図。">
+  <title>芭蕉時層地図 | Basho Atlas — プロトタイプ</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">BASHO ATLAS / FIELD STUDY 01</p>
+        <h1>芭蕉時層地図 <span>歌枕から、いまの風景へ。</span></h1>
+      </div>
+      <a class="header-link" href="./docs/CONCEPT.md" target="_blank" rel="noopener noreferrer">構想と出典 ↗</a>
+    </header>
+    <div class="disclaimer" role="note">
+      <strong>開発中の試作</strong>　ピンは現代の参照地点です。芭蕉の歩行位置・歴史的国境を示すものではありません。教材としての解釈は人による監査前です。
+    </div>
+    <main class="main-grid">
+      <section class="map-panel" aria-labelledby="map-heading">
+        <div class="panel-top">
+          <div><p class="eyebrow">01 / MAP</p><h2 id="map-heading">旅と歌枕の現在地</h2></div>
+          <span class="map-count" id="map-count">3 地点</span>
+        </div>
+        <div class="province-filter" role="group" aria-label="旧国名で絞り込む">
+          <button type="button" data-province="all" aria-pressed="true">すべて</button>
+          <button type="button" data-province="武蔵国" aria-pressed="false">武蔵国</button>
+          <button type="button" data-province="陸奥国" aria-pressed="false">陸奥国</button>
+        </div>
+        <div class="map-wrap">
+          <div id="map" aria-label="現在の参照地点を示す操作可能な地図"></div>
+          <p id="map-fallback" class="map-fallback" hidden>地図の読み込みに失敗しました。地点一覧・文学カードは引き続き利用できます。</p>
+        </div>
+        <div class="map-footer">
+          <p><span class="legend-point" aria-hidden="true"></span> 現代の参照地点（史実の歩行路ではありません）</p>
+          <p class="map-border-note">旧国境は未表示：利用条件と年代の監査後に追加予定</p>
+        </div>
+        <div class="place-index" id="place-index" aria-label="地点一覧"></div>
+      </section>
+      <section class="detail-panel" aria-labelledby="detail-heading">
+        <div class="panel-top">
+          <div><p class="eyebrow">02 / READ THE PLACE</p><h2 id="detail-heading">時代を重ねて読む</h2></div>
+        </div>
+        <p class="selection-note">地図のピン、または地点一覧から選択してください。</p>
+        <div class="place-heading">
+          <div>
+            <div class="place-badges"><span id="province-badge" class="province-badge">旧国名</span><span class="muted-badge">1689年を基準</span></div>
+            <h3 id="place-name">読み込み中</h3>
+            <p id="place-context" class="place-context"></p>
+          </div>
+        </div>
+        <div class="era-tabs" role="tablist" aria-label="比較する時代">
+          <button type="button" role="tab" id="tab-before" data-era="before" aria-selected="false" aria-controls="era-content">芭蕉以前</button>
+          <button type="button" role="tab" id="tab-basho" data-era="basho" aria-selected="true" aria-controls="era-content">芭蕉の旅</button>
+          <button type="button" role="tab" id="tab-today" data-era="today" aria-selected="false" aria-controls="era-content">現代</button>
+        </div>
+        <article id="era-content" role="tabpanel" aria-labelledby="tab-basho" class="era-content" aria-live="polite"></article>
+        <div class="study-question"><p class="eyebrow">QUESTION / 探究の問い</p><p id="learning-question"></p></div>
+        <div class="evidence-links">
+          <a id="place-source" href="#" target="_blank" rel="noopener noreferrer">この地点の出典 ↗</a>
+          <a id="province-source" href="#" target="_blank" rel="noopener noreferrer">旧国名の根拠 ↗</a>
+        </div>
+        <div class="poi-panel">
+          <div class="poi-header">
+            <div><p class="eyebrow">03 / PRESENT DAY</p><h3>いま周りに何がある？</h3></div>
+            <button type="button" id="poi-load">周辺を調べる</button>
+          </div>
+          <p class="hint">OpenPOI APIで選択地点から半径300m・最大12件を取得します。結果は「営業中」の保証ではありません。</p>
+          <p id="poi-status" class="poi-status" role="status" aria-live="polite">検索はボタンを押すまで行いません。</p>
+          <div id="poi-results" class="poi-results"></div>
+          <p class="poi-credit">施設データ：<a href="https://openpoiapi.com/attribution.html" target="_blank" rel="noopener noreferrer">OpenPOI API・各提供元の出典</a>。取得結果の出典は項目ごとに表示します。</p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span>歴史の場所を、現代の道路と同一視しない。</span>
+      <span><a href="./docs/OLD_PROVINCES.md">旧国名の取り扱い</a> ／ <a href="https://github.com/yama-books/basho-atlas" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    </footer>
+  </div>
+</body>
+</html>
