@@ -19,7 +19,7 @@ function feature({ id, name, reading=null, geometry=null, layer='modern_referenc
     valid_time:year === null?unknownTime():timeAt(year),
     attested_time:unknownTime(),source_created_time:unknownTime(),geometry_observed_time:unknownTime(),
     position_quality:position,evidence_kind:evidence,source_ids:sourceIds,
-    source_feature_refs:refs,review_status:'pending_human',public_use:'draft_only',proposed_by:'import',
+    source_feature_refs:refs,...(sourceIds.length ? {} : {evidence_gap:'no_source_reference'}),review_status:'pending_human',public_use:'draft_only',proposed_by:'import',
     rights:rights(),historical_warning:warning,claim_id:id+':claim',origin_metadata:metadata
   }};
 }
@@ -27,13 +27,13 @@ function collection(features,sources,sourceName) {
   return { type:'FeatureCollection',schema_version:'0.1.0',dataset_status:'draft_not_for_verified_teaching',
     generated_from:sourceName,sources,features };
 }
-function sourceRecorder() {
+function sourceRecorder(namespace) {
   const sourceByUrl = new Map();
   return {
     ref(url) {
       if (typeof url !== 'string' || !/^https:\/\//.test(url)) return null;
       if (!sourceByUrl.has(url)) {
-        const sourceId = 'src:'+(sourceByUrl.size+1);
+        const sourceId = 'src:'+namespace+':'+(sourceByUrl.size+1);
         sourceByUrl.set(url,makeSource(url,url,sourceId));
       }
       return sourceByUrl.get(url).source_id;
@@ -44,7 +44,7 @@ function sourceRecorder() {
 /** Adapt only contemporary heritage location references; never mint a medieval event coordinate. */
 export function adaptGenpeiYashimaRegistry(registry) {
   if (!Array.isArray(registry?.sites)) throw new TypeError('Yashima sites required');
-  const s = sourceRecorder(), features=[], used = new Set();
+  const s = sourceRecorder('genpei'), features=[], used = new Set();
   for (const site of registry.sites) {
     if (typeof site.site_id !== 'string' || !site.site_id || used.has(site.site_id)) throw new Error('invalid/duplicate site_id');
     used.add(site.site_id);
@@ -63,7 +63,7 @@ export function adaptGenpeiYashimaRegistry(registry) {
 /** Adapt legacy Basho reference points and old-province label claims separately. */
 export function adaptBashoPrototype(registry) {
   if (!Array.isArray(registry?.places)) throw new TypeError('Basho places required');
-  const s=sourceRecorder(),features=[],used=new Set();
+  const s=sourceRecorder('basho'),features=[],used=new Set();
   for (const place of registry.places) {
     if (typeof place.id !== 'string' || !place.id || used.has(place.id)) throw new Error('invalid/duplicate place id');
     used.add(place.id);
