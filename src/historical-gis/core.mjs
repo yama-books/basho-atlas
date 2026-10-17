@@ -79,12 +79,12 @@ export function searchNames(catalog, { text, year, mode = 'public', includeTimeU
 }
 
 /** Only explicit old-province membership claims may participate; never polygon inferred. */
-export function resolveProvince(catalog, { sourceRecordId, year, mode = 'public' } = {}) {
+export function resolveProvince(catalog, { sourceRecordId, sourceRepository = null, year, mode = 'public' } = {}) {
   if (typeof sourceRecordId !== 'string' || !sourceRecordId.trim()) throw new TypeError('sourceRecordId required');
   const candidates = queryFeatures(catalog, { year, mode, layer: 'historical_toponym' })
     .filter(({ feature }) => feature.properties.feature_type === 'province_membership' &&
       feature.properties.administrative_type === 'province' &&
-      feature.properties.source_feature_refs?.some(r => r.record_id === sourceRecordId));
+      feature.properties.source_feature_refs?.some(r => r.record_id === sourceRecordId && (sourceRepository === null || r.repository === sourceRepository)));
   if (!candidates.length) return { status:'unknown', candidates:[], reason:'no_matching_approved_claim_or_no_evidence' };
   const unique = new Set(candidates.map(c => c.feature.properties.province_name));
   if (unique.size > 1 || candidates.length > 1) return { status:'ambiguous', candidates, reason:'multiple_membership_claims' };
