@@ -1,0 +1,351 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/yama-books/basho-atlas/blob/main/data/historical-gis/historical-feature.schema.json",
+  "title": "Historical GIS draft GeoJSON contract",
+  "type": "object",
+  "required": [
+    "type",
+    "schema_version",
+    "dataset_status",
+    "sources",
+    "features"
+  ],
+  "properties": {
+    "type": {
+      "const": "FeatureCollection"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^0\\.1\\."
+    },
+    "dataset_status": {
+      "type": "string"
+    },
+    "data_version": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/feature"
+      }
+    }
+  },
+  "$defs": {
+    "time": {
+      "type": "object",
+      "required": [
+        "start_year",
+        "end_year",
+        "precision"
+      ],
+      "properties": {
+        "start_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "end_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "precision": {
+          "enum": [
+            "unknown",
+            "year_approximate",
+            "year_exact",
+            "day_exact"
+          ]
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "required": [
+        "license_status",
+        "license_expression",
+        "attribution",
+        "redistribution_allowed"
+      ],
+      "properties": {
+        "license_status": {
+          "enum": [
+            "unverified",
+            "cleared",
+            "restricted"
+          ]
+        },
+        "license_expression": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attribution": {
+          "type": "string"
+        },
+        "redistribution_allowed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "title",
+        "url",
+        "source_kind",
+        "license_status",
+        "license_expression",
+        "accessed_on"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source_kind": {
+          "type": "string"
+        },
+        "license_status": {
+          "enum": [
+            "unverified",
+            "cleared",
+            "restricted"
+          ]
+        },
+        "license_expression": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accessed_on": {
+          "type": "string"
+        }
+      }
+    },
+    "feature": {
+      "type": "object",
+      "required": [
+        "type",
+        "geometry",
+        "properties"
+      ],
+      "properties": {
+        "type": {
+          "const": "Feature"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "geometry": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "Point",
+                    "LineString",
+                    "Polygon",
+                    "MultiPoint",
+                    "MultiLineString",
+                    "MultiPolygon"
+                  ]
+                },
+                "coordinates": {
+                  "type": "array"
+                }
+              }
+            }
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "required": [
+            "feature_id",
+            "layer",
+            "feature_type",
+            "name",
+            "reading",
+            "aliases",
+            "valid_time",
+            "attested_time",
+            "source_created_time",
+            "geometry_observed_time",
+            "position_quality",
+            "evidence_kind",
+            "source_ids",
+            "source_feature_refs",
+            "review_status",
+            "public_use",
+            "proposed_by",
+            "rights",
+            "historical_warning",
+            "claim_id"
+          ],
+          "properties": {
+            "feature_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "layer": {
+              "enum": [
+                "historical_map_image",
+                "reconstructed_geography",
+                "historical_toponym",
+                "historical_activity",
+                "modern_reference",
+                "transport"
+              ]
+            },
+            "feature_type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reading": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "aliases": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "valid_time": {
+              "$ref": "#/$defs/time"
+            },
+            "attested_time": {
+              "$ref": "#/$defs/time"
+            },
+            "source_created_time": {
+              "$ref": "#/$defs/time"
+            },
+            "geometry_observed_time": {
+              "$ref": "#/$defs/time"
+            },
+            "position_quality": {
+              "enum": [
+                "verified_modern_site",
+                "representative_approximate",
+                "inferred_point",
+                "inferred_area",
+                "locality_only",
+                "unknown"
+              ]
+            },
+            "evidence_kind": {
+              "enum": [
+                "contemporary_document",
+                "later_document",
+                "gunki",
+                "oral_tradition",
+                "scholarly_reconstruction",
+                "municipal_description",
+                "modern_registry",
+                "synthetic_contract_fixture"
+              ]
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_feature_refs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "repository",
+                  "record_id",
+                  "relation"
+                ],
+                "properties": {
+                  "repository": {
+                    "type": "string"
+                  },
+                  "record_id": {
+                    "type": "string"
+                  },
+                  "relation": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "review_status": {
+              "enum": [
+                "pending_human",
+                "human_approved",
+                "rejected"
+              ]
+            },
+            "public_use": {
+              "enum": [
+                "draft_only",
+                "approved_for_app"
+              ]
+            },
+            "proposed_by": {
+              "enum": [
+                "ai",
+                "human",
+                "import"
+              ]
+            },
+            "rights": {
+              "$ref": "#/$defs/rights"
+            },
+            "historical_warning": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "claim_id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
