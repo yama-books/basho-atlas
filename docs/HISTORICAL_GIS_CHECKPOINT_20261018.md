@@ -13,6 +13,8 @@
 - `src/historical-gis/adapters.mjs`: 既存2アプリの独立IDを保持した読取変換。source IDsは `src:basho:*` / `src:genpei:*`。
 - `tests/historical-gis-core.test.mjs`: 30件のユニットテスト。
 - `tests/historical-gis-basho-readonly.test.mjs`: 現行 `data/prototype-locations.json` を読む追加3件。
+- `tests/contracts.test.mjs`: POIキャンセル検査の既存アサーションの誤期待文字列を修正（アプリコードの変更なし）。
+- `.github/workflows/historical-gis-contracts.yml`: Pull Request向けのNode22標準テストを導入。公開repoの標準runnerを使用。
 - `data/historical-gis/historical-feature.schema.json`: 不明な参照日の `null` を許容（未知のものを取得済日に偽装しない）。
 - `docs/HISTORICAL_GIS_CORE_MVP_20261018.md`: 呼出仕様と対応範囲。
 
@@ -22,11 +24,11 @@
 3. 同じく genpei-sandbox の **本物の** 8史跡台帳を読み取り、8Featureを生成。1件のみ現代代表座標、7件はgeometry=null。歴史的イベントの座標を生成しない。
 4. 両台帳のsource IDsは衝突しない。実際に保存されたGeoJSON sampleおよび変換後の2カタログ（計3件）をJSON Schema主要構造・型の独立検査で照合、問題0件。**公式JSON Schema完全検証器による網羅的検証ではない**。
 5. GitHubブランチ上の6変更ファイルを読み戻し、コード実行可能・実データ変換・ID名前空間・公開ゲート・テスト存在を11項目で照合、全件PASS。
-6. **未実行**: リポジトリ実体の `npm test`。内訳は既存7 + 先行GIS9 + Core30 + 読取橋渡し3 = **49件**。元の環境からGitHub cloneがDNS解決不能のため、実際のリポジトリ全体テストの成功を主張しない。Node20+のcheckout上で実行する必要あり。
+6. **CI実行完了**: 2026-10-18 GitHub Actions [run 39077836169](https://github.com/yama-books/basho-atlas/actions/runs/39077836169) で Node22 の `npm run check` 成功。既存7 + 先行GIS9 + Core30 + 読取橋渡し3 = **49 PASS / 0 FAIL**。先行run 39077768572は48/49だったが、元の `tests/contracts.test.mjs` が実装にはない `controller.abort()` という文字列を期待したことが原因。既存 `app.js` が使う `state.poiAbort.abort()` とAbortController生成を検査するよう **テストのみ修正** し、再実行して全件成功。元のブラウザ動作を保証する実機テストではない。
 7. **未実施**: Leaflet表示層/MapLibre表示層の実装、ブラウザQA、国境/海岸線史料監査、ライセンスの人手決裁。
 
 ## 今後の優先順
-- **P0**: PRでNode20+の `npm test` を実際に実行。全49件の成否を記録。失敗時は原因に対する小さな修正。
+- **P0（達成）**: Draft [PR #1](https://github.com/yama-books/basho-atlas/pull/1) のNode22 GitHub Actionsで全49件成功。今後コード変更時はPRのチェック結果を再確認。
 - **P1**: API・出典・監査ゲートを維持したまま、`adaptGenpeiYashimaRegistry` を原データへの非破壊な読み込みで受入れ。原台帳を書き換えない。
 - **P2**: 屋島で史料の確認できる少数地点から、現代参考点と1185候補地の関係を人が評価。海岸線は根拠のある資料と利用条件が確認できるまでnull。
 - **P3**: 独立した歴史GIS表示のLeafletアダプターを別PRで検証し、その後MapLibreアダプター。既存 `app.js` の即時置換はしない。
