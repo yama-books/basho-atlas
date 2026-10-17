@@ -65,6 +65,8 @@ function choosePlace(place, moveMap = true) {
   byId("learning-question").textContent = place.learning_question;
   byId("place-source").href = place.source_url;
   byId("province-source").href = place.old_province.source_url;
+  byId("coordinate-source").href = place.coordinate_sources[0];
+  byId("coordinate-credit").textContent = "座標データ出典： " + (place.coordinate_attribution || "確認中");
   updateEraPanel();
   drawIndex();
   drawMarkers();
