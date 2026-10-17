@@ -1,0 +1,102 @@
+{
+  "schema_version": "0.1.0",
+  "status": "prototype_reference_points_not_historical_route",
+  "as_of": "2026-10-17",
+  "coordinate_reference": "WGS84; longitude,latitude",
+  "notes": "すべて現代の参照地点。芭蕉が正確にこの点に立ったことを示すものではありません。古典作品・旅行日記の未承認解釈は確定教材に使用しない。",
+  "places": [
+    {
+      "id": "fukagawa",
+      "name": "深川・芭蕉記念館",
+      "context": "『おくのほそ道』旅立ちの地・深川の現代の資料館",
+      "municipality": "東京都江東区",
+      "old_province": {
+        "name": "武蔵国",
+        "reading": "むさしのくに",
+        "basis_year": 1689,
+        "source_url": "https://www.city.katsushika.lg.jp/history/child/2-6-1-42.html"
+      },
+      "reference_site": "江東区芭蕉記念館（現代施設）",
+      "coordinates": [
+        139.7941013,
+        35.6861339
+      ],
+      "coordinate_accuracy": "modern_building_rooftop",
+      "historical_route_confirmed": false,
+      "coordinate_sources": [
+        "https://www.city.koto.lg.jp/103020/shisetsuannai/kokyo/kinenkan/16761.html",
+        "https://opd.opendata-japan.com/facility_and_place_v5s?facility_id=GV-7MNU-5E3L-9SAT"
+      ],
+      "source_url": "https://www.kcf.or.jp/basho/josetsu/",
+      "periods": {
+        "before": "深川は歌枕の古歌を比較する地点ではなく、芭蕉の旅の起点として扱います。",
+        "basho": "『おくのほそ道』は深川からの旅立ちを描きます。ここに置いたピンは現代の記念館であり、当時の旅立ち地点そのものではありません。",
+        "today": "隅田川近くの江東区芭蕉記念館。近隣に芭蕉ゆかりの史跡があり、現代の街路・施設との比較に適します。"
+      },
+      "learning_question": "1689年の出発地と現在の芭蕉記念館は、同じ種類の地点と言えるでしょうか。",
+      "literature_review_status": "draft_not_for_verified_teaching"
+    },
+    {
+      "id": "takekuma",
+      "name": "武隈の松",
+      "context": "歌枕の伝統と芭蕉の旅を比べる中心地点",
+      "municipality": "宮城県岩沼市",
+      "old_province": {
+        "name": "陸奥国",
+        "reading": "むつのくに",
+        "basis_year": 1689,
+        "source_url": "https://sitereports.nabunken.go.jp/files/attach/44/44738/115394_1_%E5%8E%9F%E9%81%BA%E8%B7%A1%E7%AC%AC%EF%BC%91%E6%AC%A1%E8%AA%BF%E6%9F%BB%E3%81%BB%E3%81%8B.pdf"
+      },
+      "reference_site": "武隈の松・現代の指定名勝付近",
+      "coordinates": [
+        140.862483,
+        38.106731
+      ],
+      "coordinate_accuracy": "published_site_reference_approximate",
+      "historical_route_confirmed": false,
+      "coordinate_sources": [
+        "https://bosaikanko.jp/my13_iwanuma/%E5%9B%BD%E5%90%8D%E5%8B%9D-%E3%81%8A%E3%81%8F%E3%81%AE%E3%81%BB%E3%81%9D%E9%81%93%E3%81%AE%E9%A2%A8%E6%99%AF%E5%9C%B0-%E6%AD%A6%E9%9A%88%E3%81%AE%E6%9D%BE/",
+        "https://www.city.iwanuma.miyagi.jp/kanko/bunkazai/takekumanomatsu.html"
+      ],
+      "source_url": "https://www.city.iwanuma.miyagi.jp/kanko/bunkazai/takekumanomatsu.html",
+      "periods": {
+        "before": "藤原元善・橘季通・能因などの歌や伝承が重なる歌枕です。個々の和歌本文と影響関係は人の監査待ちです。",
+        "basho": "芭蕉は松を訪ね、その姿に感銘を受けたことが記されています。『おくのほそ道』の叙述順と曾良の記録に基づく順序には相違があります。",
+        "today": "現在は岩沼市の国指定名勝「武隈の松」。松は植え継がれており、江戸期と同一の樹木だとは言えません。"
+      },
+      "learning_question": "松が代々植え継がれることは、歌枕の継承とどのような関係にあるでしょうか。",
+      "literature_review_status": "draft_not_for_verified_teaching"
+    },
+    {
+      "id": "matsushima",
+      "name": "松島・五大堂",
+      "context": "景勝地「松島」を示す現在の参照地点",
+      "municipality": "宮城県松島町",
+      "old_province": {
+        "name": "陸奥国",
+        "reading": "むつのくに",
+        "basis_year": 1689,
+        "source_url": "https://www.town.miyagi-matsushima.lg.jp/page/1319.html"
+      },
+      "reference_site": "瑞巌寺五大堂（現在の建造物）",
+      "coordinates": [
+        141.064207,
+        38.369718
+      ],
+      "coordinate_accuracy": "modern_site_reference",
+      "historical_route_confirmed": false,
+      "coordinate_sources": [
+        "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/04/040000072200.html",
+        "https://heritagemap.nabunken.go.jp/statistic/98001044-%E7%91%9E%E5%B7%96%E5%AF%BA%E4%BA%94%E5%A4%A7%E5%A0%82.html"
+      ],
+      "source_url": "https://www.town.miyagi-matsushima.lg.jp/page/1319.html",
+      "periods": {
+        "before": "松島には多くの文学的・文化的な蓄積があります。先行作品の比較対象は別途監査して収録します。",
+        "basho": "芭蕉にとって松島は旅の重要な目的地の一つです。五大堂の現在の座標は、芭蕉の滞在位置を確定する証拠ではありません。",
+        "today": "現在の五大堂を参照地点として表示します。周辺の観光施設・交通と現代の海岸景観を比較できます。"
+      },
+      "learning_question": "松島を一つのピンで示すことと、文学上の景観全体を表すことはどう違うでしょうか。",
+      "literature_review_status": "draft_not_for_verified_teaching"
+    }
+  ]
+}
