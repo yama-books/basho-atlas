@@ -53,7 +53,7 @@ const publicClaims = queryFeatures(catalog, { year: 1689 });
 ## 4. 確認済み・未確認
 - 2026-10-18 隔離Node環境 `v22.16.0` で新Coreユニットテスト **30件PASS**。GitHubへアップロードしたコードも実データから直接変換し、Basho 3→6要素、Genpei 8→8要素、現代座標を除く歴史形状nullを照合。
 - GitHub上の実際のGeoJSONサンプル／芭蕉変換／源平変換の**3種類がJSON Schemaの主要構造・型・参照規則に整合**することを独立検査で確認。これは仕様の一部の構造チェックであって、公式JSON Schema検証器による全キーワードの検証を代替しない。
-- **未実行**: GitHubリポジトリ全体をcloneしての `npm test`（既存7件＋既存GIS契約9件＋Core30件＋Basho橋渡し3件の計49件）、ブラウザ/実機QA、別アプリへの実装接続、研究史料と権利の人手承認。
+- **実行済み（2026-10-18）**: GitHub Actions run [39077836169](https://github.com/yama-books/basho-atlas/actions/runs/39077836169) で `npm run check` を実行し、**既存7件 + 先行GIS9件 + Core30件 + Basho橋渡し3件 = 49件PASS / 0 FAIL**。最初の48/49件の失敗は、既存 `tests/contracts.test.mjs` が `controller.abort()` を文字列検査していたため。実装が使用している `state.poiAbort.abort()` に合わせてテスト側の検査を修正した。既存 `app.js` は無変更。
 - 省略機能: 1185海岸線実図形、ジオリファレンスされた古地図ラスタ、全国旧国境、時代別街道グラフの実データ、検索の曖昧語マッチ、港/航路の推定、ゲームの移動速度。
 - 既存 basho-atlas `app.js`、`index.html`、`styles.css`、`data/prototype-locations.json` は変更なし。genpei-sandboxへ書込みなし。
 
