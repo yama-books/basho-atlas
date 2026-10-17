@@ -1,0 +1,283 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "0.1.0",
+  "data_version": "0.1.0-draft",
+  "dataset_status": "draft_not_for_verified_teaching",
+  "title": "Historical GIS proof of contract: Yashima 1185 and Fukagawa 1689",
+  "crs_note": "GeoJSON lon,lat (WGS84); historical geometry omitted unless independently justified",
+  "sources": [
+    {
+      "source_id": "source-genpei-registry",
+      "title": "genpei-sandbox 屋島史跡台帳",
+      "url": "https://github.com/yama-books/genpei-sandbox/blob/main/data/places/YASHIMA_SITE_REGISTRY.json",
+      "source_kind": "project_registry",
+      "license_status": "unverified",
+      "license_expression": null,
+      "accessed_on": "2026-10-17"
+    },
+    {
+      "source_id": "source-takamatsu-yashima",
+      "title": "高松市 屋島史跡",
+      "url": "https://www.city.takamatsu.kagawa.jp/kurashi/kosodate/bunka/bunkazai/shiteibunkazai/shiseki/yashima.html",
+      "source_kind": "municipal_description",
+      "license_status": "unverified",
+      "license_expression": null,
+      "accessed_on": "2026-10-17"
+    },
+    {
+      "source_id": "source-yashima-tourism",
+      "title": "屋島公式観光 源平合戦古戦場",
+      "url": "https://www.yashima-navi.jp/jp/history/entry-154.html",
+      "source_kind": "local_tradition_description",
+      "license_status": "unverified",
+      "license_expression": null,
+      "accessed_on": "2026-10-17"
+    },
+    {
+      "source_id": "source-basho-prototype",
+      "title": "basho-atlas 3現代参照地点",
+      "url": "https://github.com/yama-books/basho-atlas/blob/main/data/prototype-locations.json",
+      "source_kind": "project_registry",
+      "license_status": "unverified",
+      "license_expression": null,
+      "accessed_on": "2026-10-17"
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "hgis:genpei:ys001-modern",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.1012,
+          34.3566
+        ]
+      },
+      "properties": {
+        "feature_id": "hgis:genpei:ys001-modern",
+        "layer": "modern_reference",
+        "feature_type": "site",
+        "name": "屋島（現代の史跡代表点）",
+        "reading": null,
+        "aliases": [],
+        "valid_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "attested_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "source_created_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "geometry_observed_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "position_quality": "representative_approximate",
+        "evidence_kind": "modern_registry",
+        "source_ids": [
+          "source-genpei-registry",
+          "source-takamatsu-yashima"
+        ],
+        "source_feature_refs": [
+          {
+            "repository": "yama-books/genpei-sandbox",
+            "record_id": "YS001",
+            "relation": "modern_heritage_reference"
+          }
+        ],
+        "review_status": "pending_human",
+        "public_use": "draft_only",
+        "proposed_by": "ai",
+        "rights": {
+          "license_status": "unverified",
+          "license_expression": null,
+          "attribution": "See source_ids. Original historical map or geometry is not redistributed.",
+          "redistribution_allowed": null
+        },
+        "historical_warning": "この座標は現代の屋島の広域代表点であり1185年の合戦地点を示さない。",
+        "claim_id": "hgis:genpei:ys001-modern-claim-01",
+        "modern_site_coordinate_source": "https://heritagemap.nabunken.go.jp/statistic/36339-%E5%B1%8B%E5%B3%B6.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hgis:genpei:yashima-1185",
+      "geometry": null,
+      "properties": {
+        "feature_id": "hgis:genpei:yashima-1185",
+        "layer": "historical_activity",
+        "feature_type": "region",
+        "name": "屋島合戦に関わる地域（1185年）",
+        "reading": null,
+        "aliases": [],
+        "valid_time": {
+          "start_year": 1185,
+          "end_year": 1185,
+          "precision": "year_approximate"
+        },
+        "attested_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "source_created_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "geometry_observed_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "position_quality": "unknown",
+        "evidence_kind": "municipal_description",
+        "source_ids": [
+          "source-takamatsu-yashima",
+          "source-yashima-tourism"
+        ],
+        "source_feature_refs": [
+          {
+            "repository": "yama-books/genpei-sandbox",
+            "record_id": "YS001",
+            "relation": "historical_association_not_coordinate_identity"
+          }
+        ],
+        "review_status": "pending_human",
+        "public_use": "draft_only",
+        "proposed_by": "ai",
+        "rights": {
+          "license_status": "unverified",
+          "license_expression": null,
+          "attribution": "See source_ids. Original historical map or geometry is not redistributed.",
+          "redistribution_allowed": null
+        },
+        "historical_warning": "1185年の合戦区域・海岸線・港の形状は未復元。",
+        "claim_id": "hgis:genpei:yashima-1185-claim-01"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hgis:genpei:ys003-tradition",
+      "geometry": null,
+      "properties": {
+        "feature_id": "hgis:genpei:ys003-tradition",
+        "layer": "historical_activity",
+        "feature_type": "site",
+        "name": "駒立岩と扇の的の伝承",
+        "reading": null,
+        "aliases": [],
+        "valid_time": {
+          "start_year": 1185,
+          "end_year": 1185,
+          "precision": "year_approximate"
+        },
+        "attested_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "source_created_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "geometry_observed_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "position_quality": "locality_only",
+        "evidence_kind": "oral_tradition",
+        "source_ids": [
+          "source-genpei-registry"
+        ],
+        "source_feature_refs": [
+          {
+            "repository": "yama-books/genpei-sandbox",
+            "record_id": "YS003",
+            "relation": "tradition_not_proven_event_location"
+          }
+        ],
+        "review_status": "pending_human",
+        "public_use": "draft_only",
+        "proposed_by": "ai",
+        "rights": {
+          "license_status": "unverified",
+          "license_expression": null,
+          "attribution": "See source_ids. Original historical map or geometry is not redistributed.",
+          "redistribution_allowed": null
+        },
+        "historical_warning": "現存する伝承地の位置と1185年の出来事の発生位置は同一と断定できない。",
+        "claim_id": "hgis:genpei:ys003-tradition-claim-01"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hgis:basho:fukagawa-province-1689",
+      "geometry": null,
+      "properties": {
+        "feature_id": "hgis:basho:fukagawa-province-1689",
+        "layer": "historical_toponym",
+        "feature_type": "province_membership",
+        "name": "深川（武蔵国という所属候補）",
+        "reading": null,
+        "aliases": [],
+        "valid_time": {
+          "start_year": 1689,
+          "end_year": 1689,
+          "precision": "year_approximate"
+        },
+        "attested_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "source_created_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "geometry_observed_time": {
+          "start_year": null,
+          "end_year": null,
+          "precision": "unknown"
+        },
+        "position_quality": "unknown",
+        "evidence_kind": "municipal_description",
+        "source_ids": [
+          "source-basho-prototype"
+        ],
+        "source_feature_refs": [
+          {
+            "repository": "yama-books/basho-atlas",
+            "record_id": "fukagawa",
+            "relation": "old_province_claim_not_spatial_polygon"
+          }
+        ],
+        "review_status": "pending_human",
+        "public_use": "draft_only",
+        "proposed_by": "ai",
+        "rights": {
+          "license_status": "unverified",
+          "license_expression": null,
+          "attribution": "See source_ids. Original historical map or geometry is not redistributed.",
+          "redistribution_allowed": null
+        },
+        "historical_warning": "1690年前後の旧国名説明であり幕末期の境界や現代の芭蕉記念館座標とは別。",
+        "claim_id": "hgis:basho:fukagawa-province-1689-claim-01",
+        "administrative_type": "province",
+        "province_name": "武蔵国"
+      }
+    }
+  ]
+}
