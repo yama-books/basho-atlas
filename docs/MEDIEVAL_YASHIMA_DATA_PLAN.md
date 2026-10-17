@@ -2,7 +2,7 @@
 更新: 2026-10-17 / 状態: 文書化した調査・検証計画。地形再現の学術確定ではない。
 
 ## 1. 既存の正本を活かす
-源平異聞録 \`data/places/YASHIMA_SITE_REGISTRY.json\` は**既存8地点の正本**。ここに新たな歴史形状を上書きしない。外部キー \`modern_site_ref: {app:"genpei-sandbox",site_id:"YS001"}\` などで接続する。現代代表座標があるのはYS001のみ（lat34.3566/lng134.1012、奈良文化財研究所の**広域屋島**代表点）。YS002〜YS008はnull。現在の祈り岩等の所在地と1185事件座標を同一視しない。
+源平異聞録 `data/places/YASHIMA_SITE_REGISTRY.json` は**既存8地点の正本**。ここに新たな歴史形状を上書きしない。外部キー `modern_site_ref: {app:"genpei-sandbox",site_id:"YS001"}` などで接続する。現代代表座標があるのはYS001のみ（lat34.3566/lng134.1012、奈良文化財研究所の**広域屋島**代表点）。YS002〜YS008はnull。現在の祈り岩等の所在地と1185事件座標を同一視しない。
 
 ## 2. 研究対象と優先順位
 | 優先 | 対象 | 最初に登録するもの | 判断・停止条件 |
@@ -18,17 +18,17 @@
 
 ## 3. 当面の資料
 - 高松市屋島史跡: https://www.city.takamatsu.kagawa.jp/kurashi/kosodate/bunka/bunkazai/shiteibunkazai/shiseki/yashima.html
-- 高松市登録史跡（祈り岩、駒立岩、射落畠、墓、六萬寺）: genpei-sandbox \`docs/YASHIMA_SITE_POI_PILOT.md\` の個別URLを再利用。
+- 高松市登録史跡（祈り岩、駒立岩、射落畠、墓、六萬寺）: genpei-sandbox `docs/YASHIMA_SITE_POI_PILOT.md` の個別URLを再利用。
 - 屋島公式観光資料: https://www.yashima-navi.jp/jp/history/entry-154.html 。「当時島だった」「船隠し」等の地域解説は*仮説探索の入口*であり、その位置や海底地形の精密な復元データにはならない。
 - 全国遺跡報告総覧: https://sitereports.nabunken.go.jp/ 。遺跡地点、発掘報告の作成年・位置図・権利を個別精査。
 - 国土地理院資料: https://service.gsi.go.jp/kochizu/app/help 、地質・DEMなどは研究者の地形解釈を介して使う。現海抜=1185年の陸水分布ではない。
-- 『吾妻鏡』『玉葉』『平家物語』は種類・成立年代が異なる。史料的な出来事、軍記描写、地域伝承の各主張を別claimとして照合。既存の genpei \`data/research/chronologies/YOSHITSUNE_MUNEMORI_1185_PILOT.md\` 等を先に読む。
+- 『吾妻鏡』『玉葉』『平家物語』は種類・成立年代が異なる。史料的な出来事、軍記描写、地域伝承の各主張を別claimとして照合。既存の genpei `data/research/chronologies/YOSHITSUNE_MUNEMORI_1185_PILOT.md` 等を先に読む。
 
 ## 4. 不確実性と復元方針
-\`map_source_time\` を後世地図の年代、\`target_time\` を1185、\`attested_time\` を資料に基づく存在証拠の期間として持つ。海岸線候補は(1)推定領域、(2)根拠地質・ボーリング等、(3)複数解釈の並存、(4)精度mで出せない場合はundeterminedを原則とする。仮説が具体的な面形状を持っても、別途監査までは人手承認・公開表示不可。MVPでは「屋島の当時の海との関係は推定を含む」というテキストと現代参照点で十分。
+`map_source_time` を後世地図の年代、`target_time` を1185、`attested_time` を資料に基づく存在証拠の期間として持つ。海岸線候補は(1)推定領域、(2)根拠地質・ボーリング等、(3)複数解釈の並存、(4)精度mで出せない場合はundeterminedを原則とする。仮説が具体的な面形状を持っても、別途監査までは人手承認・公開表示不可。MVPでは「屋島の当時の海との関係は推定を含む」というテキストと現代参照点で十分。
 
 ## 5. 交通モデルの最小仕様
-交通はノード/エッジの**グラフ**。エッジの \`mode=walk|inferred_old_road|sea|ferry|port_transfer|pass\`、\`valid_time\`、\`geometry=null\`可、\`historical_passability=attested|inferred|uncertain|unknown\`、\`source_ids\`、\`connects=[nodeA,nodeB]\` を持つ。史料不足ならネットワークにつながない。ゲーム側の推定距離・移動速度・乱数は \`simulation_cost_model\` として別モジュールで管理し、史料由来の属性へ書き戻さない。
+交通はノード/エッジの**グラフ**。エッジの `mode=walk|inferred_old_road|sea|ferry|port_transfer|pass`、`valid_time`、`geometry=null`可、`historical_passability=attested|inferred|uncertain|unknown`、`source_ids`、`connects=[nodeA,nodeB]` を持つ。史料不足ならネットワークにつながない。ゲーム側の推定距離・移動速度・乱数は `simulation_cost_model` として別モジュールで管理し、史料由来の属性へ書き戻さない。
 
 ## 6. 最短の実証工程（5件を深く、残りはID接続）
 1. 屋島の**現代**広域代表点（YS001）と1185の「屋島周辺」名称レコードを別IDで作る。
@@ -38,7 +38,7 @@
 5. 歴史情報を確認済みにするための条件: 典拠ページ/図の特定、歴史対象と現代対象の切断、推定の説明、公開利用条件、人間の判定を記録。
 
 ## 7. 受入条件（歴史の真偽をコードの緑で置換しない）
-- 既存8地点と \`site_id\` が維持される。既存原本は変更しない。
+- 既存8地点と `site_id` が維持される。既存原本は変更しない。
 - 7件のnull位置に座標を自動補完しない。YS001代表点を1185年のピンと誤表示しない。
 - 1645年の移転に関わる墓の現代所在地から1185年の戦死位置を逆算しない。
 - 時代選択1185/1689で出せるデータが非対称でも画面は壊れない。
