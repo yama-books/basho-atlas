@@ -34,7 +34,8 @@
         "today": "隅田川近くの江東区芭蕉記念館。近隣に芭蕉ゆかりの史跡があり、現代の街路・施設との比較に適します。"
       },
       "learning_question": "1689年の出発地と現在の芭蕉記念館は、同じ種類の地点と言えるでしょうか。",
-      "literature_review_status": "draft_not_for_verified_teaching"
+      "literature_review_status": "draft_not_for_verified_teaching",
+      "coordinate_attribution": "芭蕉記念館：OpenData Japan／江東区（現代施設の位置、座標源を参照）"
     },
     {
       "id": "takekuma",
@@ -65,7 +66,8 @@
         "today": "現在は岩沼市の国指定名勝「武隈の松」。松は植え継がれており、江戸期と同一の樹木だとは言えません。"
       },
       "learning_question": "松が代々植え継がれることは、歌枕の継承とどのような関係にあるでしょうか。",
-      "literature_review_status": "draft_not_for_verified_teaching"
+      "literature_review_status": "draft_not_for_verified_teaching",
+      "coordinate_attribution": "国名勝 武隈の松：みやぎデジタルフォトライブラリー（現代の参照位置）"
     },
     {
       "id": "matsushima",
@@ -96,7 +98,8 @@
         "today": "現在の五大堂を参照地点として表示します。周辺の観光施設・交通と現代の海岸景観を比較できます。"
       },
       "learning_question": "松島を一つのピンで示すことと、文学上の景観全体を表すことはどう違うでしょうか。",
-      "literature_review_status": "draft_not_for_verified_teaching"
+      "literature_review_status": "draft_not_for_verified_teaching",
+      "coordinate_attribution": "『日本歴史地名大系』施設・地点項目データセット（CODH作成） doi:10.20676/00000456 ／ CC BY 4.0"
     }
   ]
 }
