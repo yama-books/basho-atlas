@@ -23,6 +23,7 @@ test("prototype location IDs and coordinates are valid and nonduplicated", () =>
     assert.notEqual(p.coordinate_accuracy, "");
     assert.equal(p.historical_route_confirmed, false);
     assert(p.coordinate_sources.length >= 1);
+    assert(p.coordinate_attribution, "Coordinate attribution required: " + p.id);
   }
 });
 
