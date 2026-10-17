@@ -62,3 +62,19 @@
 - [ ] 写真・古地図・タイル提供者の権利・表示条件を確認
 - [ ] 生成AI案を人の承認なしに模範解答・教材正本として出さない
 - [ ] 他の非公開リポジトリの内部資料や履歴を混入させない
+
+## 6. 2026-10-17 追加ソース（旧国名・現代参照地点）
+
+| 資料 | 用途・利用条件 |
+| --- | --- |
+| [CODH旧国・旧郡境界データセット](https://geoshape.ex.nii.ac.jp/kg/) | **幕末期の国・郡境界**。CC BY-NC。現時点で国境線を複製・配布しない |
+| [福島県立図書館のレファレンス](https://crd.ndl.go.jp/reference/entry/index.php?id=1000038375&page=ref_view) | 1868年の陸奥国分割の時期 |
+| [松島町の歴史](https://www.town.miyagi-matsushima.lg.jp/page/1319.html) | 松島が陸奥国の地域であったこと |
+| [江東区芭蕉記念館](https://www.city.koto.lg.jp/103020/shisetsuannai/kokyo/kinenkan/16761.html) | 現代の参照地点の所在地 |
+| [OpenData Japan 芭蕉記念館](https://opd.opendata-japan.com/facility_and_place_v5s?facility_id=GV-7MNU-5E3L-9SAT) | 現代施設の座標。利用条件の再監査を要する |
+| [みやぎフォトライブラリー 武隈の松](https://bosaikanko.jp/my13_iwanuma/%E5%9B%BD%E5%90%8D%E5%8B%9D-%E3%81%8A%E3%81%8F%E3%81%AE%E3%81%BB%E3%81%9D%E9%81%93%E3%81%AE%E9%A2%A8%E6%99%AF%E5%9C%B0-%E6%AD%A6%E9%9A%88%E3%81%AE%E6%9D%BE/) | 武隈の松付近の現代座標。写真そのものは無断転載しない |
+| [Geoshape『日本歴史地名大系』五大堂](https://geoshape.ex.nii.ac.jp/nrct-poi/resource/04/040000072200.html) | 現代参照地点・五大堂の位置。CC BY 4.0表示／帰属条件を確認 |
+| [OSMFタイル利用方針](https://operations.osmfoundation.org/policies/tiles/) | 地図タイルの表示・キャッシュ・帰属・禁止事項 |
+| [Leafletの安定版](https://leafletjs.com/download) | 地図UIライブラリ1.9.4 |
+
+詳しくは [OLD_PROVINCES.md](OLD_PROVINCES.md) と [UI_SPEC.md](UI_SPEC.md) を参照。
