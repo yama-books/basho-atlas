@@ -103,3 +103,12 @@ GeoJSON、アプリ表示JSON、学習問題、検索インデックスは原本
 - JSON Schemaと参照整合・緯度経度・公開ゲートの自動テスト
 - 3地点に広げたときの拡張性評価
 - 調査した資料の確認状況は [DATA_SOURCES.md](DATA_SOURCES.md) に記録
+
+## 8. 追補（2026-10-17）：旧国名とプロトタイプとの分離
+
+- 現代の参照座標と旧国名の初期試作データは `data/prototype-locations.json` に格納。
+- `old_province: {name, reading, basis_year:1689, source_url}` を保持する。
+- 将来は `old_provinces` を独立した時期付きマスターにし、所属関係を `place_province_assignments` として年代・根拠・確度付きで保持する。
+- 旧国は「歴史的所属」表示であり、現代の名勝・資料館の座標や当時の歩行位置と同一視しない。
+- **試作画面は公開可能なドラフト説明のみ**を扱い、武隈の松の学術監査待ちの古歌本文／模範解答は読み込まない。
+- 旧国境ポリゴンは幕末期データを1689年に偽装しない。詳細は [OLD_PROVINCES.md](OLD_PROVINCES.md)。
