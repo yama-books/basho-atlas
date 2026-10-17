@@ -148,3 +148,19 @@ test('duplicate external IDs are rejected',()=>{
   const dup=structuredClone(YASHIMA);dup.sites.push(structuredClone(dup.sites[0]));
   assert.throws(()=>adaptGenpeiYashimaRegistry(dup),/duplicate/);
 });
+
+
+test('source IDs are namespaced when separate app catalogs are combined',()=>{
+  const basho=adaptBashoPrototype({places:[{id:'fukagawa',name:'Fukagawa',coordinates:[139,35],coordinate_sources:['https://a.example/yashima'],source_url:'https://a.example/yashima',old_province:{name:'武蔵国',basis_year:1689,source_url:'https://a.example/yashima'}}]});
+  const genpei=adaptGenpeiYashimaRegistry(YASHIMA);
+  const a=new Set(basho.sources.map(s=>s.source_id));
+  assert.equal(genpei.sources.some(s=>a.has(s.source_id)),false);
+});
+test('province lookup optionally filters by source repository',()=>{
+  const a=approved(base('a','historical_toponym','province_membership'));
+  a.properties.administrative_type='province';a.properties.province_name='讃岐国';
+  const b=structuredClone(a);b.id='b';b.properties.feature_id='b';b.properties.province_name='武蔵国';
+  b.properties.source_feature_refs[0].repository='elsewhere';
+  assert.equal(resolveProvince(coll(a,b),{sourceRecordId:'YS001',year:1185}).status,'ambiguous');
+  assert.equal(resolveProvince(coll(a,b),{sourceRecordId:'YS001',sourceRepository:'genpei',year:1185}).status,'resolved');
+});
