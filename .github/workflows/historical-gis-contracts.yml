@@ -7,6 +7,10 @@ on:
       - 'tests/**'
       - 'data/historical-gis/**'
       - 'data/prototype-locations.json'
+      - 'data/examples/**'
+      - 'app.js'
+      - 'index.html'
+      - 'package.json'
       - '.github/workflows/historical-gis-contracts.yml'
 
 permissions:
