@@ -34,3 +34,10 @@ PR: [Draft PR #1](https://github.com/yama-books/basho-atlas/pull/1)
 2. 差分が既存Coreと衝突する場合は、既存APIと契約を正本とした移行・非採用根拠を追記。
 3. ZIP監査が済み、PR CIが緑なら旧国名統合フェーズの採否を確定。単一の `basho-atlas` 正本を維持。
 4. その後、2026-10-18の共通GIS計画に戻り、屋島史料・独立Leafletページの作業再開を検討。
+
+## 2026-10-19 同日追補：単体アトラス実装
+- 先行アプリとCODH/Geoshape資料の調査結果は [単体アトラス仕様](HISTORICAL_GIS_PROVINCE_ATLAS_20261019.md) を参照。
+- **最新HANDOFF**: [HISTORICAL_GIS_ATLAS_HANDOFF_20261019.md](HISTORICAL_GIS_ATLAS_HANDOFF_20261019.md)。以後はこちらを再開点とする。
+- CODH公式P系列88件（70＋18）を索引化し、年代ステータスを分離した `province-index.mjs` を追加。
+- `kyukoku/` に現代地図と国名検索の独立UIを実装。全国の旧国境は**未収録のまま**。
+- GitHub Actions [run #39197233312](https://github.com/yama-books/basho-atlas/actions/runs/39197233312) で従来61件＋新規30件＝**91件PASS**。ブラウザ実機・史料全件監査とは区別。
