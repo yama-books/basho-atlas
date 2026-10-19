@@ -53,3 +53,11 @@ PR: https://github.com/yama-books/basho-atlas/pull/1 （Draft/未マージを維
 残件（必須 / 非ブロッキング）:
 次回の再開位置:
 ```
+
+## 2026-10-19 夜 最新再開位置：UIの実用性改善を実装
+- **紙媒体の中古・中世地図史料調査を一時停止**。史料トラック資料は参照用に保持し、別セッションは今は起動しない。ユーザーの明示的な再開指示まで資料探索を優先させない。
+- `src/historical-gis/atlas-service.mjs`を新設し、`parseTargetYear`、`createProvinceAtlasService`によりCoreの薄い呼び出しを統一。
+- `kyukoku/app.mjs`で不正な西暦入力をフェイルクローズにし、検索結果選択時のフォーカスを維持。Leafletのタイル取得失敗には警告・手動再読み込みを追加。`index.html`/`styles.css`で警告UIと狭幅検索優先を反映。
+- `tests/historical-gis-atlas-service.test.mjs`に13件の回帰テスト。`kyukoku/QA.md`に現地/スマホ実機スモーク12場面を固定。
+- [Actions run #39239772740](https://github.com/yama-books/basho-atlas/actions/runs/39239772740)：Nodeの検査 **117 PASS、0 FAIL**。これはテストの結果であって、実機ブラウザの操作保証ではない。
+- 続きは **W1ブラウザでの実機スモーク確認 → 発見されたユーザー影響の大きい問題のみ修正 → 必要十分なQAでv0.3を判定**。古地図収集や全88 IDの深掘りを割り込ませない。
