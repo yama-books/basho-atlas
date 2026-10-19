@@ -1,0 +1,122 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "external_dataset_crosswalk",
+  "title": "DLM文学名所とBasho Atlas対象の対応候補",
+  "created_on": "2026-10-19",
+  "public_use": "research_only",
+  "review_status": "pending_human",
+  "source": {
+    "name": "日本のデジタル文学地図 (Digital Literary Map of Japan)",
+    "dataset_url": "https://literarymaps.nijl.ac.jp/dataset/",
+    "listing_url": "https://literarymaps.nijl.ac.jp/spots/table/",
+    "license": "CC BY 4.0 (dataset)",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "日本のデジタル文学地図（Digital Literary Map of Japan）、CC BY 4.0。各元ページにリンクした調査用の一部抜粋・対応付けをBasho Atlasで追加。",
+    "whole_xlsx_imported": false,
+    "checked_via": "individual_official_spot_pages_and_official_101_item_listing",
+    "updated_at_note": "データセットの更新日表示に2026-03-23と2026-09-17の取得時点による食い違いがあるため、原XLSXの版照合まで確定しない。",
+    "external_images_and_modern_translations_not_mirrored": true
+  },
+  "records": [
+    {
+      "external_id": "567554d2f61afaaed2aaef63",
+      "external_url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef63/",
+      "external_name": "隅田川",
+      "old_province_display": "武蔵国",
+      "coordinates": [
+        139.790887,
+        35.681565
+      ],
+      "atlas_proto_id": "fukagawa",
+      "relation": "related_literary_geography_only",
+      "meaning": "隅田川という文学上の川と、深川の現代芭蕉記念館は同一地点ではない。",
+      "source_check": "official_spot_page",
+      "integration_status": "research_candidate",
+      "review_status": "pending_human"
+    },
+    {
+      "external_id": "567554d2f61afaaed2aaef70",
+      "external_url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef70/",
+      "external_name": "松島",
+      "old_province_display": "陸奥国",
+      "coordinates": [
+        141.070937,
+        38.39684
+      ],
+      "atlas_proto_id": "matsushima",
+      "relation": "broad_literary_landscape_to_modern_landmark",
+      "meaning": "DLMの歌枕『松島』は広域の文学的景観。Basho Atlasの五大堂ピンは現在の代表施設。位置を上書きしない。",
+      "source_check": "official_spot_page",
+      "integration_status": "research_candidate",
+      "review_status": "pending_human"
+    },
+    {
+      "external_id": "567554d2f61afaaed2aaef22",
+      "external_url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef22/",
+      "external_name": "白河の関",
+      "old_province_display": "陸奥国",
+      "coordinates": [
+        140.228417,
+        37.047115
+      ],
+      "atlas_proto_id": null,
+      "atlas_candidate_id": "place-shirakawa-seki",
+      "relation": "same_name_candidate_not_geometrically_reconciled",
+      "meaning": "DLMの『白河の関』は、同データセットの山城国『白川』と別項目。自動名寄せで統合しない。",
+      "source_check": "official_spot_page",
+      "integration_status": "research_candidate",
+      "review_status": "pending_human"
+    },
+    {
+      "external_id": "567554d2f61afaaed2aaef12",
+      "external_url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef12/",
+      "external_name": "末の松山",
+      "old_province_display": "陸奥国",
+      "coordinates": [
+        141.003416,
+        38.287775
+      ],
+      "atlas_proto_id": null,
+      "atlas_candidate_id": "place-sue-no-matsuyama",
+      "relation": "same_name_candidate_not_geometrically_reconciled",
+      "meaning": "歌枕を独立エンティティとして保持し、国指定名勝・現在の見学施設とは後日根拠付きで接続。",
+      "source_check": "official_spot_page",
+      "integration_status": "research_candidate",
+      "review_status": "pending_human"
+    },
+    {
+      "external_id": "567554d2f61afaaed2aaef58",
+      "external_url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef58/",
+      "external_name": "象潟",
+      "old_province_display": "出羽国",
+      "coordinates": [
+        139.913029,
+        39.211483
+      ],
+      "atlas_proto_id": null,
+      "atlas_candidate_id": "place-kisagata",
+      "relation": "historical_landscape_candidate",
+      "meaning": "歌枕の『象潟』と、文化庁の指定地名『象潟及び汐越』は範囲が違う可能性がある。象潟の地形変化も今後の対象。",
+      "source_check": "official_spot_page",
+      "integration_status": "research_candidate",
+      "review_status": "pending_human"
+    }
+  ],
+  "lookup_gaps": [
+    {
+      "atlas_place_id": "place-takekuma-matsu",
+      "queried_name": "武隈の松",
+      "observation": "101件の文学名所一覧には、この名称の独立項目を確認できない。",
+      "implication": "DLM未収録を理由に芭蕉の地点データを欠落させず、自治体・文化庁等の資料で独立整備する。",
+      "review_status": "pending_human"
+    }
+  ],
+  "import_rules": [
+    "DLMの座標は文学上の参照点であり、史実の訪問地点・観光施設の所在地を置換しない。",
+    "同音・異表記・範囲違いの地名を文字列一致のみで結合しない。",
+    "旧国名はDLMの表示値を根拠候補にするが、年代判定は独立の旧国名エンジンに委ねる。",
+    "各作品の底本・作者・本文異同を確認しない段階で文学的影響を断定しない。",
+    "外部の画像や現代語訳はライセンスと作者を個別に確認する。",
+    "アプリ本番側の既存3地点ピンは本データによって変更しない。"
+  ]
+}
