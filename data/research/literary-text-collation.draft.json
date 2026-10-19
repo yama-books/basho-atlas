@@ -311,7 +311,16 @@
     "next_step": "Obtain actual XLSX through authorized connected browser or user-provided file; inspect sheet names, columns, IDs and relationships, then cite dataset version.",
     "source_ids": [
       "s-dlm-dataset"
-    ]
+    ],
+    "remote_xlsx_parse_date": "2026-10-19",
+    "remote_converted_structure_verified": true,
+    "remote_converted_sheet_count": 8,
+    "remote_converted_rows_match_official_published": true,
+    "remote_audit_file": "data/research/dlm-xlsx-schema-audit.json",
+    "remote_poem_candidates_file": "data/research/dlm-poem-form-candidates.draft.json",
+    "original_binary_sha256_still_missing": true,
+    "original_binary_handoff": "docs/LOCAL_DLM_BINARY_HANDOFF.md",
+    "updated_note": "Direct binary download to local tool failed, but remote service parsed all 8 XLSX worksheets into tabular Markdown; native binary checksum and any format-loss verification remain outstanding. No approved literary data promoted."
   },
   "sources": [
     {
