@@ -1,7 +1,7 @@
 # HANDOFF：旧国名アトラス統合完成優先への方針転換（2026-10-19）
 **再開位置はこの文書と[MASTERPLAN](HISTORICAL_GIS_KYUKOKU_MASTERPLAN_20261019.md)。**
-正本: \`yama-books/basho-atlas\`
-ブランチ: \`feat/shared-hgis-core-20261018\`
+正本: `yama-books/basho-atlas`
+ブランチ: `feat/shared-hgis-core-20261018`
 PR: https://github.com/yama-books/basho-atlas/pull/1 （Draft/未マージを維持）
 ステータス: **計画と史料調査分担をGitHubへ記録。実装作業は今回行っていない。**
 
@@ -12,12 +12,12 @@ PR: https://github.com/yama-books/basho-atlas/pull/1 （Draft/未マージを維
 - ただし捏造した歴史国境、許諾のない画像の再配布、変更年内の一意判定、現代座標を中世地点と断定する誤用は引き続き**禁止/リリース阻止**。
 
 ## 2. 現在の実装状態（前回結果を継承）
-- \`kyukoku/\`：独立Leaflet UI、国名・ID検索、1689/1185/1868例、現代参照点4件、年代の未監査表示。iPhone実機QA/正式配信は未完了。
-- CODH P系列 \`P001–P070\`・\`P100–P117\` 88 IDを収録。\`province-index.mjs\`と\`codh-province-ids.mjs\`。IDと歴史境界は別。
+- `kyukoku/`：独立Leaflet UI、国名・ID検索、1689/1185/1868例、現代参照点4件、年代の未監査表示。iPhone実機QA/正式配信は未完了。
+- CODH P系列 `P001–P070`・`P100–P117` 88 IDを収録。`province-index.mjs`と`codh-province-ids.mjs`。IDと歴史境界は別。
 - 既存Core/adapters/契約スキーマを非破壊。GeoshapeのCC BY-NC幕末境界データは未同梱、国境線0件。
 - 前回最終Actions [run 39197655756](https://github.com/yama-books/basho-atlas/actions/runs/39197655756)＝93 PASS、0 FAIL。新しいコード検証結果とは混同しない。
-- 旧別セッション \`kyukoku-engine v0.1.0-dev\` ZIP/15テストは未入手。非重複差分の最終精査は**好機があれば行う補完作業**へ移し、最初の完成を止めない。
-- 現行Basho本体の\`app.js\`,\`index.html\`,\`styles.css\`,\`data/prototype-locations.json\`と\`genpei-sandbox\`は変更しない。
+- 旧別セッション `kyukoku-engine v0.1.0-dev` ZIP/15テストは未入手。非重複差分の最終精査は**好機があれば行う補完作業**へ移し、最初の完成を止めない。
+- 現行Basho本体の`app.js`,`index.html`,`styles.css`,`data/prototype-locations.json`と`genpei-sandbox`は変更しない。
 
 ## 3. 今回新たに文書化・確認した事項
 - [統合完成優先マスタープラン](HISTORICAL_GIS_KYUKOKU_MASTERPLAN_20261019.md)：W0–W10の開発順、v0.3/v0.5/v1.0の限定完成条件、運用型テスト、過剰検証を避ける停止規則。
@@ -34,14 +34,14 @@ PR: https://github.com/yama-books/basho-atlas/pull/1 （Draft/未マージを維
 5. 権利をクリアした史料候補が来た時のみ別レイヤー試作。未入手を理由に上の作業を止めない。
 
 ## 5. 役割分担・引継ぎ
-- Codex＝\`src/historical-gis/\`、\`data/historical-gis/\`、Core整合性とテスト。
-- Claude Code＝\`kyukoku/\`、モバイルUI、E2E・ブラウザQA。
-- 史料専門の別セッション＝\`docs/HISTORICAL_GIS_PREMODERN_*\`文書のみ。中古中世の地図・書物の選別、デジタル未公開図版の利用条件と有用性調査。
+- Codex＝`src/historical-gis/`、`data/historical-gis/`、Core整合性とテスト。
+- Claude Code＝`kyukoku/`、モバイルUI、E2E・ブラウザQA。
+- 史料専門の別セッション＝`docs/HISTORICAL_GIS_PREMODERN_*`文書のみ。中古中世の地図・書物の選別、デジタル未公開図版の利用条件と有用性調査。
 - ChatGPT監理＝出典との適合、統合優先の判断、重複回避、HANDOFF記録。人＝許諾・学術的承認・公開決定。
 - 同時作業はファイル単位に分離。リソース逼迫時の交替は直前のgit headとHANDOFFを読むこと。
 
 ## 6. 状態更新のテンプレート
-\`\`\`text
+```text
 基準コミット:
 担当 / 触るフォルダ:
 実装を増やした機能:
@@ -52,4 +52,4 @@ PR: https://github.com/yama-books/basho-atlas/pull/1 （Draft/未マージを維
 画像/境界再配布の権利:
 残件（必須 / 非ブロッキング）:
 次回の再開位置:
-\`\`\`
+```
