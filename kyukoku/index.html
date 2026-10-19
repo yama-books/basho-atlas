@@ -54,6 +54,7 @@
       <section class="map-panel" aria-labelledby="map-heading">
         <div class="panel-heading map-title">
           <div><p class="eyebrow">02 / MODERN MAP</p><h2 id="map-heading">地図で参照点を確認</h2></div>
+          <button id="reset-map" type="button" class="map-reset">全国へ戻る</button>
           <label class="layer-toggle"><input id="toggle-modern" type="checkbox" checked><span>現代参照点</span></label>
         </div>
         <div class="map-holder">
@@ -94,6 +95,7 @@
             <div id="related-ids" class="related">名称を選択してください。</div>
           </div>
           <div class="reference-card" id="selected-reference" hidden></div>
+          <button id="focus-reference" class="focus-reference" type="button" hidden>関連する現代参照点を見る</button>
           <div class="sources">
             <a href="https://codh.rois.ac.jp/province/" target="_blank" rel="noopener noreferrer">CODH 国・地域ID一覧 ↗</a>
             <a href="https://geoshape.ex.nii.ac.jp/kg/" target="_blank" rel="noopener noreferrer">Geoshape 幕末期の国境（外部・CC BY-NC） ↗</a>
