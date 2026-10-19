@@ -20,15 +20,16 @@ ChatGPTセッションで `https://literarymaps.nijl.ac.jp/downloads/dlm-dataset
 3. リポジトリのフォルダから、PowerShellで次を実行する。
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\dlm-dataset.xlsx
-python .\scripts\audit_dlm_binary.py .\dlm-dataset.xlsx --baseline .\data\research\dlm-xlsx-schema-audit.json --out .\dlm-binary-audit.json
+$xlsx = Join-Path $env:USERPROFILE 'Downloads\dlm-dataset.xlsx'
+Get-FileHash -Algorithm SHA256 $xlsx
+python .\scripts\audit_dlm_binary.py $xlsx --baseline .\data\research\dlm-xlsx-schema-audit.json --out (Join-Path $env:TEMP 'dlm-binary-audit.json')
 ```
 
-保存先が異なる場合は、`dlm-dataset.xlsx` の部分を絶対パスに置き換える。
+保存先が異なる場合は、`$xlsx` に設定するファイルパスを変更する。
 `python`が使えない場合は`py`等、環境に合う起動方法を選ぶ。
 
 4. 出力の`difference_count`が0なら、8シートとID欠損がリモート解析と一致したと記録する。差があれば **原本を正として**、差分だけを記録し、人に照合を求める。
-5. `dlm-binary-audit.json` のSHA-256、ファイルサイズ、入手日、差分結果を `docs/DLM_XLSX_BINARY_VERIFICATION.md` に保存（元XLSX本文・翻訳文・画像はGitHubへコピーしない）。
+5. `$env:TEMP\dlm-binary-audit.json` のSHA-256、ファイルサイズ、入手日、差分結果を `docs/DLM_XLSX_BINARY_VERIFICATION.md` に保存（元XLSX本文・翻訳文・画像はGitHubへコピーしない）。
 6. 可能なら修正・追加をPRとして提出する。既存データの監査状態を`human_approved`へ変更しない。
 7. 作業結果をこの担当へ知らせる。原本に差異がある場合、和歌の対応表や書誌IDを**自動で置き換えず**比較結果を先に示す。
 
