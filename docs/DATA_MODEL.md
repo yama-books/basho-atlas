@@ -121,3 +121,13 @@ GeoJSON、アプリ表示JSON、学習問題、検索インデックスは原本
 - **自動名寄せ禁止**：白河の関／白川（山城）、松島／五大堂、隅田川／深川のように、名称・地理的近接が同一性の証拠にならない例を明示する。
 - DLMの調査候補を `data/research/dlm-place-crosswalk.draft.json` に、文化財地名を `data/research/official-scenic-places.draft.json` に保存。どちらも`pending_human`であり、アプリの配信用データからは除外する。
 - 作品成立・芭蕉の1689年の旅・1779年蕪村の受容作品・現代資料を分けられるよう、データモデルを単純な固定3時代から将来拡張可能な形とする。
+
+## 10. 2026-10-19：文学本文のソース別照合モデル
+
+[文学本文監査](LITERARY_TEXT_AUDIT_2026-10-19.md) と [照合JSON](../data/research/literary-text-collation.draft.json) を追加。
+
+- `works` の和歌には `anthology`, `number`, `transcription_status`, `source_ids` を別々に保持する。番号が取れないものは `null`。オンライン翻刻確認と原本画像・校訂版の人手照合を区別する。
+- `claims` に「出典中に明示される作者・歌」「校注で示された文学的関連」「教材上の問い」を異なる `claim_type` として記録する。
+- 松島では、**『おくのほそ道』での曾良という署名**と、実作者をめぐる別資料の異説を区別する。芭蕉の本文外の句は初期段階で未校合。
+- 武隈の松既存ドラフトに `poem_number` と `poem_number_status` を追記。数値1041などは外部翻刻照合済みであり、`review_status: pending_human` と `public_use: draft_only` は維持。
+- DLMのXLSXファイル本体を得られない場合、サイト表示の8シート構成・件数を**ファイルの解析結果として記録しない**。
