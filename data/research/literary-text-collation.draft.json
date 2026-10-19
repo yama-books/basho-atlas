@@ -1,0 +1,400 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "literary_text_collation_research",
+  "created_on": "2026-10-19",
+  "intended_use": "source_audit_not_app_payload",
+  "warning": "Source lookup and online transcription checks do not constitute human verification against manuscripts or critical editions. No production publishing.",
+  "literature_sites": [
+    {
+      "id": "place-takekuma-matsu",
+      "title": "武隈の松",
+      "map_status": "modern_reference_separate",
+      "key_issue": "歌集本文と芭蕉の本文が、松の植え継ぎ・欠落・二木という伝統を通じて接続する。",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "place-shirakawa-seki",
+      "title": "白河の関",
+      "map_status": "dlm_literary_coordinates_only",
+      "key_issue": "白河の関に残る秋風・紅葉の文学的記憶と、芭蕉の旅の青葉・卯の花とのずれ。",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "place-matsushima",
+      "title": "松島",
+      "map_status": "broad_literary_area_not_godaido_pin",
+      "key_issue": "『おくのほそ道』松島段に曾良名で掲げられた句と、別に伝わる芭蕉の松島詠を区別。",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    }
+  ],
+  "works": [
+    {
+      "id": "w-gosen-1241",
+      "place_id": "place-takekuma-matsu",
+      "kind": "waka",
+      "author": "藤原元善（藤原もとよし）",
+      "anthology": "後撰和歌集",
+      "number": 1241,
+      "transcription": "栽ゑし時契りやしけんたけくまの松をふたたひあひみつるかな",
+      "transcription_status": "online_transcription_only",
+      "editorial_note": "「植ゑし時」など表記異同が見られる。作者名・作品番号・詞書はオンライン翻刻と辞書項目の両方で照合。",
+      "source_ids": [
+        "s-gosen-17",
+        "s-kotobank-takekuma"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-goshuui-1041",
+      "place_id": "place-takekuma-matsu",
+      "kind": "waka",
+      "author": "橘季通",
+      "anthology": "後拾遺和歌集",
+      "number": 1041,
+      "transcription": "武隈の松は二木を都人いかがと問はば三木と答へむ",
+      "transcription_status": "online_transcription_only",
+      "editorial_note": "二木（ふたき）と三木（みき）の掛詞・語戯。三木という字面の扱いは底本で再点検。",
+      "source_ids": [
+        "s-goshuui-18"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-goshuui-1042",
+      "place_id": "place-takekuma-matsu",
+      "kind": "waka",
+      "author": "能因法師",
+      "anthology": "後拾遺和歌集",
+      "number": 1042,
+      "transcription": "武隈の松は此度跡も無し千歲を經てや我は來つらむ",
+      "transcription_status": "online_transcription_only",
+      "editorial_note": "芭蕉の本文には能因を名指しする表現がある。句の漢字遣い・仮名遣いは底本を確認。",
+      "source_ids": [
+        "s-goshuui-18",
+        "s-aozora-basho"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-basho-takekuma",
+      "place_id": "place-takekuma-matsu",
+      "kind": "haiku",
+      "author": "松尾芭蕉",
+      "anthology": "おくのほそ道（武隈段）",
+      "number": null,
+      "transcription": "桜より松は二木を三月越し",
+      "transcription_status": "edited_transcription_only",
+      "editorial_note": "複数表記あり。実際の旅と文学上の叙述の順序を分離。",
+      "source_ids": [
+        "s-aozora-basho",
+        "s-iwanuma"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-noin-shirakawa",
+      "place_id": "place-shirakawa-seki",
+      "kind": "waka",
+      "author": "能因法師",
+      "anthology": "後拾遺和歌集（校注の帰属）",
+      "number": null,
+      "transcription": "都をば霞と共に立ちしかど秋風ぞ吹く白河の関",
+      "transcription_status": "quoted_in_editorial_note_only",
+      "editorial_note": "注釈による出典確認。該当歌集の歌番号と底本の逐語照合は未完了。",
+      "source_ids": [
+        "s-aozora-basho",
+        "s-shirakawa-notes"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-basho-shirakawa-text",
+      "place_id": "place-shirakawa-seki",
+      "kind": "travelogue_passage",
+      "author": "松尾芭蕉",
+      "anthology": "おくのほそ道（白河段）",
+      "number": null,
+      "excerpt": "秋風を耳に残し、紅葉を俤にして",
+      "transcription_status": "edited_transcription_only",
+      "editorial_note": "能因の秋風・頼政の紅葉と結び付ける校注があるが、作者が名指ししていない点を区別。",
+      "source_ids": [
+        "s-aozora-basho",
+        "s-shirakawa-notes"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-sora-shirakawa",
+      "place_id": "place-shirakawa-seki",
+      "kind": "haiku",
+      "author": "曾良（『おくのほそ道』中の署名）",
+      "anthology": "おくのほそ道（白河段）",
+      "number": null,
+      "transcription": "卯の花をかざしに関の晴着かな",
+      "transcription_status": "edited_transcription_only",
+      "editorial_note": "当該段は曾良の句として掲載。",
+      "source_ids": [
+        "s-aozora-basho"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-sora-matsushima",
+      "place_id": "place-matsushima",
+      "kind": "haiku",
+      "author": "曾良（『おくのほそ道』中の署名）",
+      "anthology": "おくのほそ道（松島段）",
+      "number": null,
+      "transcription": "松嶋や鶴に身をかれほとゝぎす",
+      "transcription_status": "edited_transcription_only",
+      "editorial_note": "本文における作者表示は曾良。実作者をめぐる異説は論争があり、作品の署名と著作者帰属を分離。",
+      "source_ids": [
+        "s-aozora-basho",
+        "s-kigi-magazine"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "w-basho-matsushima-external",
+      "place_id": "place-matsushima",
+      "kind": "haiku",
+      "author": "松尾芭蕉（本文外の伝承・研究紹介）",
+      "anthology": null,
+      "number": null,
+      "transcription": null,
+      "transcription_status": "not_collated",
+      "editorial_note": "「嶋々や千々にくだきて夏の海」は松島の句とされるが、『おくのほそ道』松島段には載らない。現段階では外部紹介のみ、採録資料・異同・成立を未監査。",
+      "source_ids": [
+        "s-kigi-magazine"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c-takekuma-songs",
+      "subject_id": "place-takekuma-matsu",
+      "claim_type": "bibliographic_verified_online",
+      "statement": "武隈の松の歌は『後撰』1241・『後拾遺』1041／1042の該当箇所に確認できる。",
+      "related_work_ids": [
+        "w-gosen-1241",
+        "w-goshuui-1041",
+        "w-goshuui-1042"
+      ],
+      "source_ids": [
+        "s-gosen-17",
+        "s-goshuui-18",
+        "s-kotobank-takekuma"
+      ],
+      "interpretation_level": "bibliographic",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "c-takekuma-explicit-noin",
+      "subject_id": "place-takekuma-matsu",
+      "claim_type": "explicit_reference_in_edited_text",
+      "statement": "『おくのほそ道』武隈段の校訂本文は能因法師を名指しする。原版本の画像では未照合。",
+      "related_work_ids": [
+        "w-goshuui-1042",
+        "w-basho-takekuma"
+      ],
+      "source_ids": [
+        "s-aozora-basho"
+      ],
+      "interpretation_level": "textual_observation_not_human_approved",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "c-takekuma-visit-order",
+      "subject_id": "place-takekuma-matsu",
+      "claim_type": "narrative_vs_historical",
+      "statement": "岩沼市の説明は、曾良の移動記録では武隈の松が笠島の前、『おくのほそ道』の叙述では笠島の後とする。",
+      "related_work_ids": [
+        "w-basho-takekuma"
+      ],
+      "source_ids": [
+        "s-iwanuma",
+        "s-aozora-basho"
+      ],
+      "interpretation_level": "municipal_explanation_diary_direct_audit_pending",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "c-shirakawa-allusion",
+      "subject_id": "place-shirakawa-seki",
+      "claim_type": "commentary_intertextual",
+      "statement": "芭蕉の『秋風』は能因、『紅葉』は頼政の古歌を背景とするという校注がある。原和歌の全文・番号の照合は能因のみ未完。",
+      "related_work_ids": [
+        "w-noin-shirakawa",
+        "w-basho-shirakawa-text"
+      ],
+      "source_ids": [
+        "s-aozora-basho",
+        "s-shirakawa-notes"
+      ],
+      "interpretation_level": "source_attributed_commentary",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "c-shirakawa-time-layers",
+      "subject_id": "place-shirakawa-seki",
+      "claim_type": "learning_hypothesis",
+      "statement": "芭蕉の旅の青葉・卯の花と古歌の秋風・紅葉を比較する授業仮説。文学的意味は学習者に根拠を示して考えさせる。",
+      "related_work_ids": [
+        "w-basho-shirakawa-text",
+        "w-sora-shirakawa"
+      ],
+      "source_ids": [
+        "s-aozora-basho"
+      ],
+      "interpretation_level": "didactic_inference",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "c-matsushima-sora-byline",
+      "subject_id": "place-matsushima",
+      "claim_type": "explicit_attribution_in_edited_text",
+      "statement": "『おくのほそ道』の松島段には『松嶋や鶴に身をかれほとゝぎす』が曾良の句として置かれている。",
+      "related_work_ids": [
+        "w-sora-matsushima"
+      ],
+      "source_ids": [
+        "s-aozora-basho"
+      ],
+      "interpretation_level": "textual_observation_not_definitive_historical_authorship",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "c-matsushima-basho-outside",
+      "subject_id": "place-matsushima",
+      "claim_type": "external_poem_not_in_passage",
+      "statement": "芭蕉の松島詠とされる『嶋々や千々にくだきて夏の海』は同段には収められていない。正式な出典確認待ち。",
+      "related_work_ids": [
+        "w-basho-matsushima-external"
+      ],
+      "source_ids": [
+        "s-kigi-magazine",
+        "s-aozora-basho"
+      ],
+      "interpretation_level": "secondary_discussion",
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    }
+  ],
+  "dataset_download": {
+    "provider": "DLM",
+    "landing_page": "https://literarymaps.nijl.ac.jp/dataset/",
+    "download_url": "https://literarymaps.nijl.ac.jp/downloads/dlm-dataset.xlsx",
+    "official_advertised_sheets": 8,
+    "actual_file_retrieved": false,
+    "actual_sheet_structure_verified": false,
+    "failure": "Web click could not fetch binary (400 OK); container download failed (network resolution).",
+    "version_date_conflict": "Search snippet displays 2026-09-17 while web-open cached HTML displays 2026-03-23. Exact XLSX version not established.",
+    "next_step": "Obtain actual XLSX through authorized connected browser or user-provided file; inspect sheet names, columns, IDs and relationships, then cite dataset version.",
+    "source_ids": [
+      "s-dlm-dataset"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s-gosen-17",
+      "url": "https://ja.wikisource.org/wiki/後撰和歌集/巻第十七",
+      "title": "『後撰和歌集』巻第十七（オンライン翻刻）",
+      "source_type": "community_transcription",
+      "transcription_basis": "online_transcription",
+      "check_state": "online_transcription_checked",
+      "rights_note": "古歌本文の翻刻。版本・影印との異同は未照合。"
+    },
+    {
+      "id": "s-goshuui-18",
+      "url": "https://miko.org/~uraki/kuon/furu/text/waka/gosyuui/gosyuui18.htm",
+      "title": "『後拾遺和歌集』巻十八 雑四（オンライン翻刻）",
+      "source_type": "community_transcription",
+      "transcription_basis": "online_transcription",
+      "check_state": "online_transcription_checked",
+      "rights_note": "現代の注記・翻訳をそのまま複製しない。"
+    },
+    {
+      "id": "s-kotobank-takekuma",
+      "url": "https://kotobank.jp/word/武隈の松-319610",
+      "title": "「武隈の松」精選版日本国語大辞典",
+      "source_type": "dictionary",
+      "check_state": "secondary_checked"
+    },
+    {
+      "id": "s-aozora-basho",
+      "url": "https://www.aozora.gr.jp/cards/002240/files/61619_78128.html",
+      "title": "杉浦正一郎校註『おくのほそ道』（素龍清書本などに基づく校訂翻刻）",
+      "source_type": "edited_text_with_notes",
+      "check_state": "edited_transcription_checked",
+      "rights_note": "原稿画像の直接照合ではない。校注・現代の注記の転載には注意。"
+    },
+    {
+      "id": "s-iwanuma",
+      "url": "https://www.city.iwanuma.miyagi.jp/kanko/rekishi/nyumon/okunohosomichi.html",
+      "title": "岩沼市『おくのほそ道』と岩沼",
+      "source_type": "municipal_explanation",
+      "check_state": "secondary_checked"
+    },
+    {
+      "id": "s-shirakawa-notes",
+      "url": "https://www2.yamanashi-ken.ac.jp/~itoyo/basho/okunohosomichi/okuno08.htm",
+      "title": "『おくのほそ道』白河の関 注釈ページ",
+      "source_type": "secondary_commentary",
+      "check_state": "secondary_checked"
+    },
+    {
+      "id": "s-dlm-shirakawa",
+      "url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef22/",
+      "title": "DLM 白河の関",
+      "source_type": "structured_literary_geography",
+      "check_state": "official_page_checked"
+    },
+    {
+      "id": "s-dlm-matsushima",
+      "url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef70/",
+      "title": "DLM 松島",
+      "source_type": "structured_literary_geography",
+      "check_state": "official_page_checked"
+    },
+    {
+      "id": "s-dlm-dataset",
+      "url": "https://literarymaps.nijl.ac.jp/dataset/",
+      "title": "DLM データセット配布案内",
+      "source_type": "dataset_metadata_only",
+      "check_state": "metadata_checked_xlsx_unavailable"
+    },
+    {
+      "id": "s-basho-association",
+      "url": "https://www.basho-bp.jp/?page_id=28",
+      "title": "芭蕉翁顕彰会 旅と句：おくのほそ道（50句）",
+      "source_type": "specialist_organization",
+      "check_state": "secondary_checked"
+    },
+    {
+      "id": "s-kigi-magazine",
+      "url": "https://note.com/honno_hitotoki/n/n71642b9da993",
+      "title": "『嶋々や千々にくだきて夏の海』ほんのひととき",
+      "source_type": "literary_commentary",
+      "check_state": "secondary_checked"
+    }
+  ]
+}
