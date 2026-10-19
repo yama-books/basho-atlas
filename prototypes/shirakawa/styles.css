@@ -1,0 +1,82 @@
+:root{--ink:#283830;--muted:#6f7d73;--stroke:#dce3d8;--paper:#f8f9f5;--white:#fff;--dark:#344f40;--green:#e9f0e6;--ochre:#8c7448;--cream:#f6f2e8;--shadow:0 12px 35px rgba(28,51,39,.055);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);background:var(--paper);font-size:15px}
+*{box-sizing:border-box}
+body{margin:0;line-height:1.8}
+button{font:inherit;cursor:pointer}
+a{color:#326a50;text-underline-offset:3px}
+button:focus-visible,a:focus-visible{outline:3px solid #53a281;outline-offset:3px}
+.page{margin:auto;max-width:1240px;padding:clamp(16px,3.7vw,44px)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px}
+.brand{font-weight:800;letter-spacing:.17em;text-decoration:none;color:#34483d;font-size:1rem}
+.brand span{font-weight:420}
+.top-link{font-size:.79rem;text-decoration:none}
+.notice{border:1px solid #e4d9bb;background:#f9f5e9;color:#65573c;display:flex;gap:9px 17px;flex-wrap:wrap;padding:10px 15px;font-size:.79rem;border-radius:10px;margin-bottom:30px}
+.eyebrow{font-size:.67rem;font-weight:750;color:#74897a;letter-spacing:.13em;margin:0 0 7px}
+.intro{padding:0 3px 24px}
+.intro-heading{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+h1{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(2.5rem,5.7vw,4.5rem);line-height:1.35;letter-spacing:.13em;margin:3px 0 5px;font-weight:580}
+.subtitle{margin:0;color:#708276;font-size:.9rem;letter-spacing:.04em}
+.place-tags{display:flex;gap:8px;flex-wrap:wrap}
+.province,.municipality{padding:6px 13px;border-radius:24px;font-size:.77rem}
+.province{background:#e4ede4;color:#3a604b;font-weight:700}
+.municipality{border:1px solid var(--stroke);color:var(--muted)}
+.introduction{color:#56695a;max-width:730px;margin:18px 0 0;font-size:.87rem}
+.view-toolbar{display:flex;align-items:end;justify-content:space-between;gap:12px 28px;flex-wrap:wrap;margin:16px 0}
+.view-toolbar h2{margin:0;font-size:1rem}
+.view-buttons{display:flex;gap:5px;padding:5px;background:#e9eee6;border-radius:14px}
+.view-buttons button{padding:7px 13px;border:0;border-radius:10px;background:transparent;color:#52685b;font-size:.82rem;white-space:nowrap}
+.view-buttons button[aria-pressed=true]{background:#fff;color:#2a563b;box-shadow:0 1px 5px #213e2e1a;font-weight:750}
+.layer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;align-items:stretch}
+.layer{background:#fff;border-radius:18px;border:1px solid var(--stroke);box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.layer[hidden]{display:none}
+.layer-heading{display:flex;align-items:center;gap:14px;padding:23px 21px 18px;border-bottom:1px solid #edf0e9}
+.layer-no{display:grid;place-items:center;background:#eef3eb;color:#52705c;font-size:.72rem;letter-spacing:.04em;font-weight:800;border-radius:50%;width:35px;height:35px;flex:none}
+.layer-heading h2{font-size:1.13rem;font-weight:650;margin:0}
+.layer-inner{padding:19px 20px 22px}
+.poem-item+.poem-item{border-top:1px dashed #d7ded3;margin-top:22px;padding-top:22px}
+.poet{font-size:.73rem;color:#64786a;margin:0 0 7px}
+.poem-text{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.06rem;line-height:2.07;margin:0 0 10px;letter-spacing:.055em;white-space:pre-line;overflow-wrap:anywhere}
+.reference{font-size:.71rem;color:#66796c;margin:0}
+.poem-note,.text-note,.modern-note{font-size:.82rem;color:#536458;margin:11px 0 0;line-height:1.8}
+.passsage{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.3rem;line-height:2.05;letter-spacing:.04em}
+mark{background:#ffe9bc;color:#473a25;border-radius:3px;padding:0 2px}
+.quote-label{font-size:.71rem;color:#607564;margin:0 0 8px}
+.sora-card{border-top:1px dashed #d3ddcf;margin-top:26px;padding-top:18px}
+.sora-poem{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.1rem;letter-spacing:.05em;line-height:1.95;margin:6px 0 8px}
+.sora-byline{color:#65776b;font-size:.72rem;margin:0}
+.modern-title{font-size:1.02rem;margin:0 0 9px}
+.modern-note{margin:0 0 12px}
+.fact-list{display:grid;gap:6px;padding:0;margin:0;list-style:none;font-size:.78rem;color:#586d61}
+.fact-list li{border-left:2px solid #bdd3be;padding-left:10px}
+.layer-alone{grid-column:1/-1;max-width:850px;margin:0 auto;width:100%}
+.layer-alone .poem-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.layer-alone .poem-item+.poem-item{padding:0;margin:0;border-top:0;border-left:1px solid #e0e5de;padding-left:22px}
+.map-surround{margin:0 16px 18px}
+#map{height:190px;background:#eef2ea;border:1px solid #e2e8dd;border-radius:11px}
+.map-caption{margin:7px 0 0;font-size:.66rem;line-height:1.7;color:#67766a}
+.pin-symbol{display:inline-block;width:9px;height:9px;border-radius:50%;background:#6b8f6f;margin-right:5px}
+.map-fallback{font-size:.76rem;color:#67766a}
+.map-fallback[hidden]{display:none}
+.insight-panel,.question-panel,.sources-panel{background:#fff;border:1px solid var(--stroke);border-radius:17px;padding:22px clamp(18px,2.7vw,29px);margin-top:18px}
+.insight-panel h2,.question-panel h2,.sources-panel h2{font-size:1.13rem;margin:0 0 9px}
+.insight-guide{margin:0 0 13px;font-size:.83rem;color:#667568}
+.word-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.word-buttons button{background:white;color:#526f5a;border:1px solid #bed0c0;padding:6px 17px;border-radius:25px;font-size:.85rem}
+.word-buttons button[aria-pressed=true]{color:#fff;background:var(--dark);border-color:var(--dark)}
+.word-explanation{margin:14px 0 0;background:#f5f7f1;border-radius:10px;padding:14px 17px;font-size:.88rem;min-height:60px;line-height:1.85}
+.question-panel{background:#f4f1e8;border-color:#ece6d6}
+.question-panel .eyebrow{color:#917c56}
+.question-panel h2{margin-bottom:10px}
+#learning-question{font-size:1.05rem;font-weight:650;margin:0 0 12px}
+.learning-prompts{color:#7a7161;font-size:.79rem}
+.learning-prompts p{margin:0 0 3px}
+.sources-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
+.sources-list a{font-size:.78rem;display:block;overflow-wrap:anywhere}
+.credit,.source-warning{font-size:.7rem;color:#6d7a70;line-height:1.8}
+.credit{padding-top:12px;margin:12px 0 0;border-top:1px solid var(--stroke)}
+.source-warning{margin:10px 0 0}
+footer{padding:25px 3px 2px;display:flex;justify-content:space-between;gap:10px;font-size:.73rem;letter-spacing:.04em;color:#879388}
+footer a{color:inherit}
+@media(min-width:920px){.layer-grid:not(.single-layer) #layer-basho{background:#fcfdfb}}
+@media(max-width:940px){.layer-grid{grid-template-columns:1fr 1fr}.layer[data-layer=today]{grid-column:1/-1}.layer-alone{max-width:none}}
+@media(max-width:670px){.page{padding:17px 12px}.intro{padding-bottom:18px}.notice{margin-bottom:22px}.layer-grid{grid-template-columns:1fr}.layer[data-layer=today]{grid-column:auto}.layer-heading{padding:16px 18px}.layer-inner{padding:16px 18px 20px}.layer-alone .poem-items{display:block}.layer-alone .poem-item+.poem-item{border-top:1px dashed #d7ded3;border-left:none;margin-top:22px;padding:22px 0 0}.view-toolbar{align-items:start}.view-buttons{width:100%;justify-content:space-between}.view-buttons button{flex:1;padding:8px 2px;font-size:.79rem}.sources-list{grid-template-columns:1fr}.insight-panel,.question-panel,.sources-panel{padding:19px 17px}.layer-no{width:30px;height:30px}#map{height:220px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:0s!important;animation-duration:0s!important}}
