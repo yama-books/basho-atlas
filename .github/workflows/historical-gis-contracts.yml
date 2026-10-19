@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'src/historical-gis/**'
+      - 'kyukoku/**'
       - 'tests/**'
       - 'data/historical-gis/**'
       - 'data/prototype-locations.json'
@@ -28,4 +29,4 @@ jobs:
           node-version: '22'
           package-manager-cache: false
       - name: Check syntax and test the whole repository
-        run: npm run check
+        run: node --check kyukoku/app.mjs && node --check src/historical-gis/province-index.mjs && npm run check
