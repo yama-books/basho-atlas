@@ -45,6 +45,9 @@ h2{font-size:18px;letter-spacing:.04em;line-height:1.5;margin:0}
 #map{height:100%;width:100%}
 .map-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:28px;background:#edf0ea;color:#4b5a50}
 .map-fallback[hidden]{display:none}
+.tile-warning{margin:9px 19px 0;border:1px solid #d9bda0;border-radius:9px;background:#fff8eb;color:#654e39;padding:9px 12px;font-size:12px}
+.tile-warning[hidden]{display:none}
+.tile-warning button{margin-left:8px;border:1px solid #b79e83;color:#664931;background:#fff;border-radius:6px;padding:4px 7px}
 .legend{display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px;padding:11px 23px 14px;border-bottom:1px solid #ebefea;color:#647369;font-size:11px}
 .legend-dot{display:inline-block;width:9px;height:9px;margin-right:5px;background:#386956;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #386956}
 .legend-note{color:#728177}
