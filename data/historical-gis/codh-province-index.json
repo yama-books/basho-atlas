@@ -1,0 +1,684 @@
+{
+  "schema_version": "0.1.0",
+  "catalog_version": "0.1.0-research",
+  "title": "CODH 国・地域ID：識別子索引（図形ではない）",
+  "source": {
+    "title": "国・地域IDデータセット",
+    "organization": "ROIS-DS人文学オープンデータ共同利用センター (CODH)",
+    "url": "https://codh.rois.ac.jp/province/",
+    "announced": "2025-09-19",
+    "checked_on": "2026-10-19",
+    "page_policy": "https://codh.rois.ac.jp/policy/"
+  },
+  "rights": {
+    "review_status": "source_specific_terms_pending_human",
+    "redistribution_of_boundary_geometry": false,
+    "contains_boundary_geometry": false,
+    "contains_image_assets": false,
+    "note": "名前・IDおよび公式関連IDの限定転記。元の境界/村領域データは含めない。利用条件と帰属は公式データセット・利用規約を要確認。"
+  },
+  "scope": {
+    "id_system": "CODH:province",
+    "geographic_membership_attested": false,
+    "historical_validity_asserted": false,
+    "time_precision": "none",
+    "title_warning": "「国・地域」の識別子台帳。いずれも国境ポリゴンや指定年の実在保証ではない。"
+  },
+  "entries": [
+    {
+      "id": "P001",
+      "name": "蝦夷地",
+      "category": "regional_designation",
+      "registry_group": "edo_inherited",
+      "linked_to": [
+        "P100",
+        "P101",
+        "P102",
+        "P103",
+        "P104",
+        "P105",
+        "P106",
+        "P107",
+        "P108",
+        "P109",
+        "P110"
+      ]
+    },
+    {
+      "id": "P002",
+      "name": "陸奥",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": [
+        "P111",
+        "P112",
+        "P113",
+        "P114",
+        "P115"
+      ]
+    },
+    {
+      "id": "P003",
+      "name": "出羽",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": [
+        "P116",
+        "P117"
+      ]
+    },
+    {
+      "id": "P004",
+      "name": "下野",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P005",
+      "name": "上野",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P006",
+      "name": "安房",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P007",
+      "name": "上総",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P008",
+      "name": "下総",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P009",
+      "name": "常陸",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P010",
+      "name": "武蔵",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P011",
+      "name": "相模",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P012",
+      "name": "駿河",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P013",
+      "name": "伊豆",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P014",
+      "name": "遠江",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P015",
+      "name": "尾張",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P016",
+      "name": "三河",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P017",
+      "name": "美濃",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P018",
+      "name": "飛騨",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P019",
+      "name": "信濃",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P020",
+      "name": "甲斐",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P021",
+      "name": "越後",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P022",
+      "name": "佐渡",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P023",
+      "name": "越中",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P024",
+      "name": "加賀",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P025",
+      "name": "能登",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P026",
+      "name": "越前",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P027",
+      "name": "若狭",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P028",
+      "name": "近江",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P029",
+      "name": "山城",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P030",
+      "name": "丹後",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P031",
+      "name": "丹波",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P032",
+      "name": "但馬",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P033",
+      "name": "播磨",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P034",
+      "name": "淡路",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P035",
+      "name": "摂津",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P036",
+      "name": "和泉",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P037",
+      "name": "河内",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P038",
+      "name": "大和",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P039",
+      "name": "紀伊",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P040",
+      "name": "伊勢",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P041",
+      "name": "伊賀",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P042",
+      "name": "志摩",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P043",
+      "name": "阿波",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P044",
+      "name": "讃岐",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P045",
+      "name": "土佐",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P046",
+      "name": "伊予",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P047",
+      "name": "備前",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P048",
+      "name": "美作",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P049",
+      "name": "備中",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P050",
+      "name": "備後",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P051",
+      "name": "安芸",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P052",
+      "name": "出雲",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P053",
+      "name": "石見",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P054",
+      "name": "隠岐",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P055",
+      "name": "因幡",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P056",
+      "name": "伯耆",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P057",
+      "name": "周防",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P058",
+      "name": "長門",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P059",
+      "name": "筑前",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P060",
+      "name": "筑後",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P061",
+      "name": "豊前",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P062",
+      "name": "肥前",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P063",
+      "name": "壱岐",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P064",
+      "name": "対馬",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P065",
+      "name": "豊後",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P066",
+      "name": "日向",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P067",
+      "name": "肥後",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P068",
+      "name": "薩摩",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P069",
+      "name": "大隅",
+      "category": "province_index",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P070",
+      "name": "琉球",
+      "category": "historical_polity_label",
+      "registry_group": "edo_inherited",
+      "linked_to": []
+    },
+    {
+      "id": "P100",
+      "name": "石狩",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P101",
+      "name": "膽振",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P102",
+      "name": "後志",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P103",
+      "name": "渡島",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P104",
+      "name": "天塩",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P105",
+      "name": "北見",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P106",
+      "name": "日高",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P107",
+      "name": "十勝",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P108",
+      "name": "釧路",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P109",
+      "name": "根室",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P110",
+      "name": "千島",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P001",
+      "linked_to": []
+    },
+    {
+      "id": "P111",
+      "name": "磐城",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P002",
+      "linked_to": []
+    },
+    {
+      "id": "P112",
+      "name": "岩代",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P002",
+      "linked_to": []
+    },
+    {
+      "id": "P113",
+      "name": "陸前",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P002",
+      "linked_to": []
+    },
+    {
+      "id": "P114",
+      "name": "陸中",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P002",
+      "linked_to": []
+    },
+    {
+      "id": "P115",
+      "name": "陸奥",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P002",
+      "linked_to": []
+    },
+    {
+      "id": "P116",
+      "name": "羽前",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P003",
+      "linked_to": []
+    },
+    {
+      "id": "P117",
+      "name": "羽後",
+      "category": "post_reorganization_province_index",
+      "registry_group": "meiji_split",
+      "parent_id": "P003",
+      "linked_to": []
+    }
+  ]
+}
