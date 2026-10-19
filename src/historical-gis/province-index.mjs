@@ -4,7 +4,7 @@ import { lookupCodhProvinceId } from './codh-province-ids.mjs';
 
 const aliasById = Object.freeze({
   P002:['むつ','むつのくに'], P010:['むさし','むさしのくに'],
-  P043:['あわ','あわのくに'], P044:['さぬき','さぬきのくに']
+  P043:['あわ','あわのくに'], P044:['さぬき','さぬきのくに'], P101:['胆振']
 });
 const normal = value => String(value ?? '').normalize('NFKC').trim().toLocaleLowerCase('ja');
 const P_ID = /^P(?:0[0-6][0-9]|070|1(?:0[0-9]|1[0-7]))$/;
@@ -22,6 +22,8 @@ export function validateProvinceIndex(catalog) {
     if (entry.registry_group === 'meiji_split' && Number(entry.id.slice(1)) < 100) throw new TypeError('wrong split ID series');
     byId.set(entry.id,entry);
   }
+  for(let i=1;i<=70;i++)if(!byId.has('P'+String(i).padStart(3,'0')))throw new TypeError('missing inherited index P'+i);
+  for(let i=100;i<=117;i++)if(!byId.has('P'+String(i).padStart(3,'0')))throw new TypeError('missing split index P'+i);
   for(const entry of catalog.entries) {
     if(entry.parent_id && !byId.has(entry.parent_id)) throw new TypeError('missing parent '+entry.parent_id);
     for(const link of entry.linked_to || []) if(!byId.has(link))throw new TypeError('missing child '+link);
