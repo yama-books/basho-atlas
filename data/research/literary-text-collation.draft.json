@@ -103,17 +103,19 @@
       "place_id": "place-shirakawa-seki",
       "kind": "waka",
       "author": "能因法師",
-      "anthology": "後拾遺和歌集（校注の帰属）",
-      "number": null,
-      "transcription": "都をば霞と共に立ちしかど秋風ぞ吹く白河の関",
-      "transcription_status": "quoted_in_editorial_note_only",
-      "editorial_note": "注釈による出典確認。該当歌集の歌番号と底本の逐語照合は未完了。",
+      "anthology": "後拾遺和歌集",
+      "number": 518,
+      "transcription": "宮こをは / 霞とともに / 立しかと / 秋風そふく / しら川の関",
+      "transcription_status": "remote_xlsx_transcription_not_human_collated",
+      "editorial_note": "DLMのPoemsシート『後拾遺(518)』との対応候補を追加。底本原画像と異同の人手校合は未完了。",
       "source_ids": [
         "s-aozora-basho",
-        "s-shirakawa-notes"
+        "s-shirakawa-notes",
+        "s-dlm-xlsx-20261019"
       ],
       "review_status": "pending_human",
-      "public_use": "draft_only"
+      "public_use": "draft_only",
+      "external_dlm_poem_id": "5bfc17e8a7372ae5b22442e3"
     },
     {
       "id": "w-basho-shirakawa-text",
@@ -180,6 +182,25 @@
       ],
       "review_status": "pending_human",
       "public_use": "draft_only"
+    },
+    {
+      "id": "w-yorimasa-shirakawa",
+      "place_id": "place-shirakawa-seki",
+      "kind": "waka",
+      "author": "源頼政",
+      "anthology": "千載和歌集",
+      "number": 365,
+      "external_dlm_poem_id": "5bfc17e8a7372ae5b22442e7",
+      "transcription": "都には / また青葉にて / 見しかとも / 紅葉ちりしく / 白川の関",
+      "transcription_status": "remote_xlsx_transcription_not_human_collated",
+      "editorial_note": "DLMのPoemsシート『千載(365)』で確認した関連候補。『おくのほそ道』の『紅葉を俤にして』との関係は校注で確認。原本底本校合は未完了。",
+      "source_ids": [
+        "s-dlm-xlsx-20261019",
+        "s-aozora-basho",
+        "s-shirakawa-notes"
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
     }
   ],
   "claims": [
@@ -238,16 +259,18 @@
       "id": "c-shirakawa-allusion",
       "subject_id": "place-shirakawa-seki",
       "claim_type": "commentary_intertextual",
-      "statement": "芭蕉の『秋風』は能因、『紅葉』は頼政の古歌を背景とするという校注がある。原和歌の全文・番号の照合は能因のみ未完。",
+      "statement": "『おくのほそ道』の『秋風』は能因、『紅葉』は源頼政の古歌と関係するという校注がある。DLMでは能因＝『後拾遺』518、頼政＝『千載』365の番号付きレコードを確認。個々の写本・底本での人手校合は未完了。",
       "related_work_ids": [
         "w-noin-shirakawa",
-        "w-basho-shirakawa-text"
+        "w-basho-shirakawa-text",
+        "w-yorimasa-shirakawa"
       ],
       "source_ids": [
         "s-aozora-basho",
-        "s-shirakawa-notes"
+        "s-shirakawa-notes",
+        "s-dlm-xlsx-20261019"
       ],
-      "interpretation_level": "source_attributed_commentary",
+      "interpretation_level": "commentary_attributed_and_dlm_catalogued_pending_human",
       "review_status": "pending_human",
       "public_use": "draft_only"
     },
@@ -404,6 +427,16 @@
       "title": "『嶋々や千々にくだきて夏の海』ほんのひととき",
       "source_type": "literary_commentary",
       "check_state": "secondary_checked"
+    },
+    {
+      "id": "s-dlm-xlsx-20261019",
+      "url": "https://literarymaps.nijl.ac.jp/downloads/dlm-dataset.xlsx",
+      "title": "DLM公式XLSX・Poemsシート（2026-10-19リモート構造解析）",
+      "source_type": "structured_original_dataset_remotely_converted",
+      "check_state": "xlsx_remote_conversion_checked_binary_sha_missing",
+      "license": "CC BY 4.0 (official dataset page)",
+      "citation": "日本のデジタル文学地図、CC BY 4.0",
+      "notes": "8シートの解析済み。ただしローカルに原本バイナリを保存しておらずSHA-256未取得。"
     }
   ]
 }
