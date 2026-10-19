@@ -1,0 +1,262 @@
+{
+  "schema_version": "0.1.0",
+  "audit_date": "2026-10-19",
+  "source_url": "https://literarymaps.nijl.ac.jp/downloads/dlm-dataset.xlsx",
+  "source_landing_page": "https://literarymaps.nijl.ac.jp/dataset/",
+  "source_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "derived_from": "remote_XLSX_to_markdown_parser",
+  "original_xlsx_saved": false,
+  "original_xlsx_sha256": null,
+  "dataset_page_last_updated_as_seen_live": "2026-09-17",
+  "license_label": "CC BY 4.0 (official download page)",
+  "status": "schema_extracted_from_remote_conversion_not_original_binary_verified",
+  "sheets": [
+    {
+      "sheet_name": "Spots (文学名所)",
+      "row_count": 101,
+      "field_count": 22,
+      "fields": [
+        "NID",
+        "ID",
+        "番号",
+        "地名",
+        "地名（ふりがな）",
+        "地名（ローマ字）",
+        "旧国名",
+        "都道府県",
+        "緯度",
+        "経度",
+        "歌枕",
+        "名所",
+        "歌枕としての意味",
+        "歌枕としての特徴",
+        "歌枕としての連想",
+        "地勢",
+        "地勢（日本語）",
+        "地勢（英語）",
+        "沿革（日本語）",
+        "沿革（英語）",
+        "備考",
+        "No examples"
+      ],
+      "id_filled": 101,
+      "id_unique": 101,
+      "id_duplicate_count": 0,
+      "id_missing": 0,
+      "missing_id_examples": []
+    },
+    {
+      "sheet_name": "Documents (資料)",
+      "row_count": 336,
+      "field_count": 17,
+      "fields": [
+        "NID",
+        "ID",
+        "番号",
+        "題名",
+        "題名（ふりがな）",
+        "題名（ローマ字）",
+        "著者",
+        "著者（ふりがな）",
+        "著者（ローマ字）",
+        "ジャンル",
+        "年",
+        "依拠本文",
+        "参照テキスト",
+        "出版社",
+        "出版地",
+        "出版場所",
+        "リンク"
+      ],
+      "id_filled": 336,
+      "id_unique": 336,
+      "id_duplicate_count": 0,
+      "id_missing": 0,
+      "missing_id_examples": []
+    },
+    {
+      "sheet_name": "Poems (和歌)",
+      "row_count": 1951,
+      "field_count": 13,
+      "fields": [
+        "NID",
+        "ID",
+        "資料番号",
+        "詞書",
+        "詞書（長）",
+        "テクスト",
+        "テクスト（ローマ字）",
+        "テクスト（ローマ字・長）",
+        "巻・部立",
+        "著者",
+        "著者（ローマ字）",
+        "地名の形",
+        "リンク"
+      ],
+      "id_filled": 1951,
+      "id_unique": 1951,
+      "id_duplicate_count": 0,
+      "id_missing": 0,
+      "missing_id_examples": []
+    },
+    {
+      "sheet_name": "Poems Translations (和歌翻訳)",
+      "row_count": 565,
+      "field_count": 5,
+      "fields": [
+        "NID",
+        "ID",
+        "題名",
+        "テクスト",
+        "出典"
+      ],
+      "id_filled": 565,
+      "id_unique": 565,
+      "id_duplicate_count": 0,
+      "id_missing": 0,
+      "missing_id_examples": []
+    },
+    {
+      "sheet_name": "Sanbuns (物語・説話)",
+      "row_count": 437,
+      "field_count": 9,
+      "fields": [
+        "NID",
+        "ID",
+        "題名",
+        "章段",
+        "テクスト",
+        "活字本頁",
+        "地名の形",
+        "見出し（内部）",
+        "リンク"
+      ],
+      "id_filled": 437,
+      "id_unique": 437,
+      "id_duplicate_count": 0,
+      "id_missing": 0,
+      "missing_id_examples": []
+    },
+    {
+      "sheet_name": "Sanbuns Translations (物語翻訳)",
+      "row_count": 374,
+      "field_count": 5,
+      "fields": [
+        "NID",
+        "ID",
+        "題名",
+        "テクスト",
+        "出典"
+      ],
+      "id_filled": 374,
+      "id_unique": 374,
+      "id_duplicate_count": 0,
+      "id_missing": 0,
+      "missing_id_examples": []
+    },
+    {
+      "sheet_name": "Yokyokus (謡曲)",
+      "row_count": 444,
+      "field_count": 14,
+      "fields": [
+        "NID",
+        "ID",
+        "資料番号",
+        "題名",
+        "テクスト",
+        "コンテクスト",
+        "場面説明",
+        "場面説明（英語）",
+        "考察",
+        "考察（英語）",
+        "地名の形",
+        "セリフ別番号",
+        "No examples",
+        "リンク"
+      ],
+      "id_filled": 438,
+      "id_unique": 438,
+      "id_duplicate_count": 0,
+      "id_missing": 6,
+      "missing_id_examples": [
+        {
+          "NID": "5764",
+          "題名": "071-0000001"
+        },
+        {
+          "NID": "5765",
+          "題名": "121-0000051"
+        },
+        {
+          "NID": "5766",
+          "題名": "121-0000052"
+        },
+        {
+          "NID": "5767",
+          "題名": "133-0000047"
+        },
+        {
+          "NID": "5768",
+          "題名": "139-0000032"
+        },
+        {
+          "NID": "5769",
+          "題名": "201-0000018"
+        }
+      ]
+    },
+    {
+      "sheet_name": "Images (絵図等)",
+      "row_count": 129,
+      "field_count": 7,
+      "fields": [
+        "NID",
+        "ID",
+        "順番",
+        "題名",
+        "IIIFマニフェスト",
+        "リンク",
+        "コマ"
+      ],
+      "id_filled": 129,
+      "id_unique": 129,
+      "id_duplicate_count": 0,
+      "id_missing": 0,
+      "missing_id_examples": []
+    }
+  ],
+  "cross_sheet_checks": {
+    "poem_count": 1951,
+    "poem_topographic_forms_filled": 1889,
+    "poem_topographic_forms_unique": 273,
+    "poem_catalogue_label_filled": 1951,
+    "poem_catalogue_label_unique": 1874,
+    "poem_source_link_filled": 1876,
+    "poems_explicit_place_id_column_exists": false,
+    "poems_document_uuid_key_exists": false,
+    "translation_title_exact_match_to_poem_id": 0,
+    "sanbun_title_exact_match_to_document_id": 0,
+    "poem_ids_unique": true,
+    "poem_ids_hex24": 1175,
+    "poem_ids_uuid": 120,
+    "poem_ids_other": 656
+  },
+  "warnings": [
+    "DLM XLSX was remotely parsed into Markdown. The original binary was not stored, and no SHA-256 was computed.",
+    "The Poems sheet has no explicit place/spot foreign-key column; '地名の形' alone cannot guarantee record linkage.",
+    "'資料番号' contains a displayed catalogue label and is not a Document UUID column.",
+    "Six Yōkyoku rows have no ID (not duplicate IDs); preserve NID and source row references for audit.",
+    "Substring matching 松島 also matches 玉津島 (たまつしま), an unrelated literary place.",
+    "The DLM old-province label for 名取川 is 陸前国; do not present this as its province in 1689. Use separate dated province engine.",
+    "A subset of poem IDs resemble spot number prefixes, but this is not a universal relational key.",
+    "Third-party translations and images require separate reuse checks even though official workbook is labelled CC BY 4.0.",
+    "The official page live shows 2026-09-17; some cached versions show 2026-03-23, requiring binary version/hash check."
+  ],
+  "sample_candidate_exact_form_counts": {
+    "matsushima": 11,
+    "shirakawa_seki": 12,
+    "sue_no_matsuyama": 21,
+    "kisagata": 2,
+    "sumidagawa": 2
+  }
+}
