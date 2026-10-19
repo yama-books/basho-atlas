@@ -35,3 +35,10 @@
 
 ## 衝突回避
 今回は `app.js`、`index.html`、`styles.css`、`data/prototype-locations.json`、既存の `docs/OLD_PROVINCES.md` と `docs/ROADMAP.md` を触らない。源平側に書込みなし。Claude Codeは将来の地図UI、Codexは機械判定可能なCore/テスト、ChatGPTは設計/監査と引継ぎ。資源による担当交替は許容し、同じファイルの同時変更は避ける。
+
+## 2026-10-19 追補：旧国名エンジン別試作の統合
+- **最新HANDOFF**: [2026-10-19 CODH旧国ID統合](HISTORICAL_GIS_HANDOFF_KYUKOKU_20261019.md)。[統合監査・採否表](HISTORICAL_GIS_KYUKOKU_INTEGRATION_AUDIT_20261019.md)。これらを前に読む。
+- 追加: `src/historical-gis/codh-province-ids.mjs`、Bashoアダプターの任意注記、schema任意属性、CODH ID回帰12件。既存Coreは置換なし。
+- GitHub Actions run [39195215371](https://github.com/yama-books/basho-atlas/actions/runs/39195215371) で **61件全件成功**。旧49件をすべて維持。
+- 別セッションの独立ZIP実体と15件テスト本文は**このセッションで取得できず**。機能概要の照合と公式CODH IDの確認は完了、ファイル単位の比較は未完了。
+- CI成功は学術的監査やライセンス承認とは別。幕末CC BY-NC国境ポリゴンを無断再配布しない。1689年の`P002`は幕末分割後の`P115`と区別し、1868年は年内の変化時点が不明なら保留。
