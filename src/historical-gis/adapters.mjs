@@ -1,3 +1,5 @@
+import { lookupCodhProvinceId } from './codh-province-ids.mjs';
+
 /** Lossless external-ID bridging into draft Historical GIS records; no source writes. */
 const unknownTime = () => ({ start_year:null, end_year:null, precision:'unknown' });
 const timeAt = year => ({ start_year:year, end_year:year, precision:'year_approximate' });
@@ -86,6 +88,11 @@ export function adaptBashoPrototype(registry) {
         warning:'This is an unreviewed province-label assertion, not a boundary-based classification.'});
       claim.properties.administrative_type='province';
       claim.properties.province_name=province.name;
+      const crosswalk = lookupCodhProvinceId({name:province.name,year:province.basis_year});
+      claim.properties.codh_province_id = crosswalk.province_id;
+      claim.properties.codh_id_match_status = crosswalk.status;
+      claim.properties.codh_id_source_url = crosswalk.source_url;
+      // Identifier crosswalk does not alter human-review status or establish geometry.
       claim.properties.province_reading=province.reading??null;
       features.push(claim);
     }
