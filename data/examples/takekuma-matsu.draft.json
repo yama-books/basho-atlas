@@ -76,12 +76,15 @@
       "notes": "古歌本文・歌番号・異同は原資料で未照合。文学史上の初出として岩沼市資料に説明あり。",
       "source_ids": [
         "src-iwanuma-okuno-guide",
-        "src-kotobank-takekuma"
+        "src-kotobank-takekuma",
+        "src-gosen-wikisource17"
       ],
       "evidence_status": "source_checked",
       "review_status": "pending_human",
       "proposed_by": "ai",
-      "public_use": "draft_only"
+      "public_use": "draft_only",
+      "poem_number": 1241,
+      "poem_number_status": "online_transcription_checked_not_human_approved"
     },
     {
       "id": "work-tachibana-suemichi-takekuma",
@@ -94,12 +97,15 @@
       "notes": "二木と「みき」の掛詞が後代に与えた影響を市が解説。本文の表記と歌番号は未監査。",
       "source_ids": [
         "src-iwanuma-okuno-guide",
-        "src-kotobank-takekuma"
+        "src-kotobank-takekuma",
+        "src-goshuui-online18"
       ],
       "evidence_status": "source_checked",
       "review_status": "pending_human",
       "proposed_by": "ai",
-      "public_use": "draft_only"
+      "public_use": "draft_only",
+      "poem_number": 1041,
+      "poem_number_status": "online_transcription_checked_not_human_approved"
     },
     {
       "id": "work-noin-takekuma",
@@ -112,12 +118,15 @@
       "notes": "消失した松を詠む歌。採録歌集・本文・異同は要確認。",
       "source_ids": [
         "src-iwanuma-okuno-guide",
-        "src-itsuo-scroll"
+        "src-itsuo-scroll",
+        "src-goshuui-online18"
       ],
       "evidence_status": "source_checked",
       "review_status": "pending_human",
       "proposed_by": "ai",
-      "public_use": "draft_only"
+      "public_use": "draft_only",
+      "poem_number": 1042,
+      "poem_number_status": "online_transcription_checked_not_human_approved"
     },
     {
       "id": "work-basho-takekuma-haiku",
@@ -378,6 +387,27 @@
       "accessed_on": "2026-10-17",
       "license_status": "quotation_only_until_review",
       "usage_note": "能因への言及・旅程の補助確認。"
+    },
+    {
+      "id": "src-gosen-wikisource17",
+      "title": "後撰和歌集 巻第十七 1241",
+      "publisher": "Wikisource（オンライン翻刻）",
+      "source_kind": "online_transcription",
+      "url": "https://ja.wikisource.org/wiki/後撰和歌集/巻第十七",
+      "accessed_on": "2026-10-19",
+      "license_status": "text_transcription_reuse_conditions_pending",
+      "usage_note": "歌番号と詞書・歌のオンライン表示確認。底本原画像は未照合。"
+    },
+    {
+      "id": "src-goshuui-online18",
+      "title": "後拾遺和歌集 巻十八 雑四 1041・1042",
+      "publisher": "古典籍オンライン翻刻サイト",
+      "source_kind": "online_transcription",
+      "url": "https://miko.org/~uraki/kuon/furu/text/waka/gosyuui/gosyuui18.htm",
+      "accessed_on": "2026-10-19",
+      "license_status": "text_transcription_reuse_conditions_pending",
+      "usage_note": "歌番号と作者・本文をオンライン翻刻で確認。底本原画像は未照合。"
     }
-  ]
+  ],
+  "review_notes_2026_10_19": "歌番号のみオンライン翻刻で補足。原典異同・本文の直接翻刻は未実施。文学比較カード用の本番データとしては引き続き未承認。詳細 docs/LITERARY_TEXT_AUDIT_2026-10-19.md"
 }
