@@ -49,6 +49,14 @@ npm run check
 
 DLMの文学名所5件を既存地点へ対応付ける調査台帳と、文化庁の国指定名勝構成地名26件の調査台帳を追加。**どちらも本番の地図ピンや既存文学カードを上書きしていません。**
 
+## 2026-10-19：白河の関の文学比較カード試作
+
+[独立プレビュー（HTMLソース）](prototypes/shirakawa/index.html) ／ [データ（監査待ち）](prototypes/shirakawa/shirakawa.draft.json) ／ [設計・QA・引継ぎ](docs/SHIRAKAWA_UI_PROTOTYPE_2026-10-19.md)。
+
+古歌（能因・頼政）／芭蕉／現代の三層表示、キーワード強調、出典リンク、DLM参照点の地図を実装。**既存アプリの地図表示・3地点データ・GitHub Pages設定には変更なし**。
+
+ローカル確認：`python -m http.server 8000` をリポジトリルートで実行し、`http://localhost:8000/prototypes/shirakawa/` を開く。人の学術監査前の教材ドラフトです。
+
 ## 次にやること
 
 1. ブラウザ実機での地図、画面幅、キーボード、POI CORS応答と表示の確認
