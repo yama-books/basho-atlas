@@ -37,7 +37,7 @@ h1{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(2.5rem,5
 .poem-text{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.06rem;line-height:2.07;margin:0 0 10px;letter-spacing:.055em;white-space:pre-line;overflow-wrap:anywhere}
 .reference{font-size:.71rem;color:#66796c;margin:0}
 .poem-note,.text-note,.modern-note{font-size:.82rem;color:#536458;margin:11px 0 0;line-height:1.8}
-.passsage{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.3rem;line-height:2.05;letter-spacing:.04em}
+.passage{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.3rem;line-height:2.05;letter-spacing:.04em}
 mark{background:#ffe9bc;color:#473a25;border-radius:3px;padding:0 2px}
 .quote-label{font-size:.71rem;color:#607564;margin:0 0 8px}
 .sora-card{border-top:1px dashed #d3ddcf;margin-top:26px;padding-top:18px}
