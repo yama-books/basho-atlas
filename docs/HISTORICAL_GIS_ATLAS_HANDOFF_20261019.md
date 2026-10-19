@@ -42,3 +42,10 @@
 - UIをさらに補強: 検索結果のlistitemとボタンのアクセシビリティ上の役割を分離。ポップアップ内の出典リンクはHTTPSのURLだけを許可。地図への移動はユーザー操作時のみ、スクロールの標準behaviorを利用。
 - 追加のアクセシビリティ・危険リンク回帰2件を追加し、**最新版CI [run 39197570843](https://github.com/yama-books/basho-atlas/actions/runs/39197570843) が合計93件PASS・0件FAIL**。
 - 旧61件 + 初回UI・データ30件 + 最後の安全検査2件 = 93件。以前の91件結果も履歴に残すが、最新受入は93件。
+
+
+## 2026-10-19 新方針への最終ポインタ（前の優先度を更新）
+**利用者の最新指示により、個別データの完全性の網羅より統合完成と全体的実用性を優先する。**
+今後の再開点は[INTEGRATION_FIRST_HANDOFF](HISTORICAL_GIS_INTEGRATION_FIRST_HANDOFF_20261019.md)、計画正本は[MASTERPLAN](HISTORICAL_GIS_KYUKOKU_MASTERPLAN_20261019.md)。
+中古・中世の非デジタル地図／研究図の調査は[PREMODERN_SOURCE_TRACK](HISTORICAL_GIS_PREMODERN_SOURCE_TRACK_20261019.md)に分離。本体のv0.3完了をブロックしない。
+旧HANDOFFの「全件監査やZIP入手を公開必須ゲートとする」記述があれば、この追補を優先する。ただし誤った年代・未許諾の画像・境界データを確定公開しないという安全条件は維持。
