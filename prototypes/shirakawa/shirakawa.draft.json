@@ -1,0 +1,171 @@
+{
+  "schema_version": "0.1.0",
+  "record_status": "research_preview_only",
+  "human_review": "pending_human",
+  "public_use": "draft_only",
+  "place": {
+    "internal_id": "place-shirakawa-seki",
+    "title": "白河の関",
+    "reading": "しらかわのせき",
+    "province_at_1689": "陸奥国",
+    "province_status": "period_label_pending_kyukoku_engine_integration",
+    "modern_municipality": "福島県白河市",
+    "dlm_literary_place_id": "567554d2f61afaaed2aaef22",
+    "dlm_reference_point": {
+      "coordinates": [
+        140.228417,
+        37.047115
+      ],
+      "kind": "literary_reference_point_not_archaeological_boundary",
+      "source_id": "dlm-spot"
+    },
+    "modern_designated_site": {
+      "name": "白河関跡",
+      "designation": "国指定史跡",
+      "designated_on": "1966-09-12",
+      "address_area": "福島県白河市旗宿関ノ森ほか",
+      "site_position": null,
+      "point_status": "not_geocoded",
+      "historical_note": "松平定信が寛政12年（1800）に現在地を白河関跡と考証した。指定域は丘陵地であり、DLMの一点や芭蕉の正確な立ち位置と同一視しない。",
+      "source_ids": [
+        "city-history",
+        "cultural-heritage"
+      ]
+    }
+  },
+  "before": [
+    {
+      "id": "waka-noin-shirakawa",
+      "poet": "能因法師",
+      "work": "後拾遺和歌集",
+      "catalogue_number": 518,
+      "dlm_id": "5bfc17e8a7372ae5b22442e3",
+      "text_segments": [
+        "宮こをは",
+        "霞とともに",
+        "立しかと",
+        "秋風そふく",
+        "しら川の関"
+      ],
+      "focus_word": "秋風",
+      "note": "都を出た季節と関で感じる秋風の隔たりを詠む。旅と季節が重なって記憶される歌。",
+      "relation_to_basho": "『おくのほそ道』の「秋風を耳に残し」との関係が校注で説明される。",
+      "evidence_status": "remote_xlsx_catalogue_checked_editorial_allusion_checked",
+      "source_ids": [
+        "dlm-xlsx",
+        "basho-note"
+      ],
+      "human_review": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "waka-yorimasa-shirakawa",
+      "poet": "源頼政",
+      "work": "千載和歌集",
+      "catalogue_number": 365,
+      "dlm_id": "5bfc17e8a7372ae5b22442e7",
+      "text_segments": [
+        "都には",
+        "また青葉にて",
+        "見しかとも",
+        "紅葉ちりしく",
+        "白川の関"
+      ],
+      "focus_word": "紅葉",
+      "note": "都の青葉と関の紅葉を対照する。目の前の季節だけではなく、先行文学の景色が働く。",
+      "relation_to_basho": "『おくのほそ道』の「紅葉を俤にして」との関係が校注で説明される。",
+      "evidence_status": "remote_xlsx_catalogue_checked_editorial_allusion_checked",
+      "source_ids": [
+        "dlm-xlsx",
+        "basho-note"
+      ],
+      "human_review": "pending_human",
+      "public_use": "draft_only"
+    }
+  ],
+  "basho": {
+    "work": "おくのほそ道・白河の関の段",
+    "passage": "秋風を耳に残し、紅葉を俤にして、青葉の梢猶あはれ也。",
+    "passage_note": "芭蕉は実際の青葉と、先行和歌が呼び起こす秋風・紅葉を同じ段に置いている。どの歌を踏まえるかは校注の解釈として示す。",
+    "poet_included": {
+      "name": "曾良",
+      "verse": "卯の花をかざしに関の晴着かな",
+      "attribution_kind": "printed_attribution_in_travelogue",
+      "note": "この句は本文で曾良の句として掲げられる。芭蕉作として扱わない。"
+    },
+    "travel_source_status": "edited_transcription_not_primary_diary_collated",
+    "source_ids": [
+      "basho-note",
+      "basho-edition"
+    ],
+    "human_review": "pending_human",
+    "public_use": "draft_only"
+  },
+  "today": {
+    "title": "現在の白河関跡",
+    "summary": "国指定史跡。丘陵地全体が指定の対象で、1800年に松平定信が考証した関跡の位置に、後世の調査によって遺構が確認されている。",
+    "caution": "現在の史跡は「1689年の芭蕉の正確な立ち位置」を示すものではない。文学名所の代表座標と史跡指定区域の形を混同しない。",
+    "source_ids": [
+      "city-history",
+      "cultural-heritage"
+    ],
+    "human_review": "pending_human",
+    "public_use": "draft_only"
+  },
+  "learning": {
+    "prompt": "芭蕉が見ているのは青葉なのに、なぜ本文には「秋風」「紅葉」が出てくるのでしょう。",
+    "evidence_prompts": [
+      "古歌の季節の語と、芭蕉本文の季節の語をそれぞれ見つける",
+      "二つの和歌がなければ、芭蕉の表現から読み取れることはどう変わるか"
+    ],
+    "answer_status": "question_only",
+    "human_review": "pending_human",
+    "public_use": "draft_only"
+  },
+  "source_attribution": "Digital Literary Map of Japan (DLM), CC BY 4.0. 古歌の表記はDLM公式XLSXのPoemsシート由来（2026-10-19 リモート変換で確認）。編集箇所と出典間の異同は人手監査待ち。",
+  "sources": [
+    {
+      "id": "dlm-xlsx",
+      "name": "日本のデジタル文学地図：公式データセット",
+      "url": "https://literarymaps.nijl.ac.jp/dataset/",
+      "kind": "licensed_structured_data",
+      "license": "CC BY 4.0"
+    },
+    {
+      "id": "dlm-spot",
+      "name": "日本のデジタル文学地図：白河の関",
+      "url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef22/",
+      "kind": "reference_literary_map"
+    },
+    {
+      "id": "basho-note",
+      "name": "『奥の細道』白河の関：本文・注釈",
+      "url": "https://www2.yamanashi-ken.ac.jp/~itoyo/basho/okunohosomichi/okuno08.htm",
+      "kind": "editorial_transcription_with_commentary"
+    },
+    {
+      "id": "basho-edition",
+      "name": "『おくのほそ道』杉浦正一郎校註（青空文庫）",
+      "url": "https://www.aozora.gr.jp/cards/002240/files/61619_78128.html",
+      "kind": "edited_edition"
+    },
+    {
+      "id": "city-history",
+      "name": "白河市：白河関跡",
+      "url": "https://www.city.shirakawa.fukushima.jp/page/page001386.html",
+      "kind": "municipal_historical_information"
+    },
+    {
+      "id": "cultural-heritage",
+      "name": "文化遺産オンライン：白河関跡",
+      "url": "https://online.bunka.go.jp/heritages/detail/162191",
+      "kind": "official_heritage_registry"
+    }
+  ],
+  "safeguards": [
+    "Do not present this card as a verified teaching answer.",
+    "Do not show DLM literary point as Matsudaira Sadanobu's excavated boundary.",
+    "Do not identify Sora's poem as Basho's.",
+    "Do not auto-generate kyukoku historical boundaries from 19th-century polygons."
+  ]
+}
