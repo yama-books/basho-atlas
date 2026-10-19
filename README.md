@@ -38,9 +38,16 @@ npm run check
 - [旧国名と時代の扱い](docs/OLD_PROVINCES.md)
 - [地点・作品・旅程データ契約](docs/DATA_MODEL.md)
 - [出典・利用条件](docs/DATA_SOURCES.md)
+- [先行アプリ・既存データの比較監査（2026-10-19）](docs/PRIOR_ART_AUDIT_2026-10-19.md)
+- [DLM文学名所対応表・監査前](data/research/dlm-place-crosswalk.draft.json)
+- [文化庁名勝構成地名26件・監査前](data/research/official-scenic-places.draft.json)
 - [検証記録・引継ぎ](docs/RESEARCH_LOG.md)
 - [3地点・現代座標＋旧国名の試作データ](data/prototype-locations.json)
 - [武隈の松 文学データ（人の学術監査待ち）](data/examples/takekuma-matsu.draft.json)
+
+## 2026-10-19の資料調査
+
+DLMの文学名所5件を既存地点へ対応付ける調査台帳と、文化庁の国指定名勝構成地名26件の調査台帳を追加。**どちらも本番の地図ピンや既存文学カードを上書きしていません。**
 
 ## 次にやること
 
