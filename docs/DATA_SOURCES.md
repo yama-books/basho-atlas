@@ -90,3 +90,16 @@
 | [逸翁美術館 デジ絵巻](https://archives.hankyu-bunka.or.jp/digi-emaki/index.html) | 蕪村1779年『奥の細道画巻』の原画像／翻字／ストーリーという分離 | 表示設計・芭蕉以後の受容の参考。画像・翻字・現代解説のコピーなし |
 
 DLM更新日の表示について過去のキャッシュ差を確認しているため、日付は原XLSXのバージョンを入手するまで暫定扱いとする。詳細：[先行アプリ監査](PRIOR_ART_AUDIT_2026-10-19.md)。
+
+## 8. 2026-10-19：古歌・本文の校訂資料と歌番号
+
+| 資料 | 確認した内容 | 監査上の扱い |
+| --- | --- | --- |
+| [後撰和歌集 巻17（Wikisource）](https://ja.wikisource.org/wiki/後撰和歌集/巻第十七) | 藤原元善『武隈の松』**1241番**の詞書・歌 | オンライン翻刻の確認。原写本照合・底本確定は未完了 |
+| [後拾遺和歌集 巻18](https://miko.org/~uraki/kuon/furu/text/waka/gosyuui/gosyuui18.htm) | 橘季通**1041番**、能因**1042番** | オンライン翻刻の確認。作者・歌番号と本文異同を分けて管理 |
+| [杉浦正一郎校註『おくのほそ道』（青空文庫）](https://www.aozora.gr.jp/cards/002240/files/61619_78128.html) | 武隈、白河、松島の本文と曾良の句・校注 | 校訂翻刻。原本そのものではなく、現代の校注転載にも制約あり |
+| [岩沼市](https://www.city.iwanuma.miyagi.jp/kanko/rekishi/nyumon/okunohosomichi.html) | 武隈と笠島の旅程順序差 | 自治体解説。曾良日記の該当原典は要照合 |
+| [白河の関の注釈](https://www2.yamanashi-ken.ac.jp/~itoyo/basho/okunohosomichi/okuno08.htm) | 能因「秋風」、頼政「紅葉」の関連 | 注釈に帰属を明記。古歌の所収・歌番号と直接の依拠は追跡中 |
+| [ほんのひととき：松島詠](https://note.com/honno_hitotoki/n/n71642b9da993) | 『おくのほそ道』には載らない松島の芭蕉句の紹介 | 二次資料。句の成立・本文異同・作者帰属の最終確定はしない |
+
+DLM XLSXのダウンロード先は`https://literarymaps.nijl.ac.jp/downloads/dlm-dataset.xlsx`まで特定したが、実ファイル取得に失敗。**内部シート名・列名・結合キーは未検査**である。更新日が検索結果とキャッシュで異なるためXLSXの実ファイル版確定まで保留する。
