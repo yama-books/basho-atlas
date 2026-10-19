@@ -28,11 +28,12 @@ function renderList(){
   if(!rows.length){list.append(el('p','該当なし。別表記やP IDをお試しください。','list-hint'));return;}
   for(const p of rows){
     const btn=el('button',null,'province-choice');btn.type='button';btn.dataset.provinceId=p.id;
-    btn.setAttribute('role','listitem');btn.setAttribute('aria-current',String(state.selectedId===p.id));
+    btn.setAttribute('aria-current',String(state.selectedId===p.id));
     const left=el('span');left.append(el('span',p.name,'choice-name'));
     left.append(el('span',p.registry_group==='meiji_split'?'明治期分割後のID':'江戸期からの国・地域ID','choice-desc'));
     btn.append(left,el('span',p.id,'choice-id'));
-    btn.addEventListener('click',()=>selectProvince(p.id));list.append(btn);
+    btn.addEventListener('click',()=>selectProvince(p.id));
+    const listItem=el('div');listItem.setAttribute('role','listitem');listItem.append(btn);list.append(listItem);
   }
 }
 function selectProvince(id){
@@ -93,10 +94,14 @@ function initMap(){
     $('map-fallback').textContent='地図の初期化に失敗しました。地名索引は継続できます。';
   }
 }
+function safeSourceLink(raw){
+  try{const u=new URL(raw);return u.protocol==='https:'?u.href:null;}catch(_e){return null;}
+}
 function popupFor(point){
   const n=el('div');n.append(el('strong',point.name));
   n.append(el('p','現代の参照地点。歴史的な事件や旧国境の位置を示しません。'));
-  const a=el('a','参照元 ↗');a.href=point.source;a.target='_blank';a.rel='noopener noreferrer';n.append(a);
+  const url=safeSourceLink(point.source);
+  if(url){const a=el('a','参照元 ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';n.append(a);}
   return n;
 }
 function renderMapPoints(){
@@ -157,7 +162,7 @@ async function boot(){
     if(!matching.length)return;
     if(matching.length===1)state.map.setView([matching[0].lat,matching[0].lng],11);
     else state.map.fitBounds(window.L.latLngBounds(matching.map(p=>[p.lat,p.lng])).pad(.25),{maxZoom:10});
-    $('map').scrollIntoView({behavior:'instant',block:'nearest'});
+    $('map').scrollIntoView({behavior:'auto',block:'nearest'});
   });
   initMap();
   try{
