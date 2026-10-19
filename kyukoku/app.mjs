@@ -66,6 +66,7 @@ function renderDetails(){
   for(const c of r.children)addRelation(related,c,'分割後：');
   if(!r.parent&&!r.children.length)related.append(el('span','CODHの一覧に直接の分割関係はありません。'));
   const box=$('selected-reference');box.replaceChildren();box.hidden=false;
+  $('focus-reference').hidden=!state.map || state.year!==1689 || !state.references.some(x=>x.provinceId===p.id);
   const pts=state.references.filter(x=>state.year===1689&&x.provinceId===p.id);
   if(pts.length){
     box.append(el('strong','関連する現代参照地点（当時の所属は未監査）'));
@@ -149,6 +150,15 @@ async function boot(){
     if(e.target.checked){state.group=e.target.value;renderList();}
   }));
   $('toggle-modern').addEventListener('change',e=>{state.pointsVisible=e.target.checked;renderMapPoints();});
+  $('reset-map').addEventListener('click',()=>{if(state.map)state.map.setView([36.5,137.6],5);});
+  $('focus-reference').addEventListener('click',()=>{
+    if(!state.map)return;
+    const matching=state.references.filter(p=>state.year===1689&&p.provinceId===state.selectedId);
+    if(!matching.length)return;
+    if(matching.length===1)state.map.setView([matching[0].lat,matching[0].lng],11);
+    else state.map.fitBounds(window.L.latLngBounds(matching.map(p=>[p.lat,p.lng])).pad(.25),{maxZoom:10});
+    $('map').scrollIntoView({behavior:'instant',block:'nearest'});
+  });
   initMap();
   try{
     state.catalog=await getJson('../data/historical-gis/codh-province-index.json');
