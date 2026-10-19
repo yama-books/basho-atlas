@@ -1,7 +1,7 @@
 # 旧国名エンジン：統合完成優先マスタープラン v1.0
 更新: 2026-10-19 JST
 状態: **設計・実行計画**（新機能の実装・本番公開完了を意味しない）
-正本: \`yama-books/basho-atlas\` / \`feat/shared-hgis-core-20261018\` / [Draft PR #1](https://github.com/yama-books/basho-atlas/pull/1)
+正本: `yama-books/basho-atlas` / `feat/shared-hgis-core-20261018` / [Draft PR #1](https://github.com/yama-books/basho-atlas/pull/1)
 関連: [単体UIと出典監査](HISTORICAL_GIS_PROVINCE_ATLAS_20261019.md) / [現状HANDOFF](HISTORICAL_GIS_ATLAS_HANDOFF_20261019.md) / [中古・中世史料調査分担](HISTORICAL_GIS_PREMODERN_SOURCE_TRACK_20261019.md)
 
 ## 0. 今回の上位判断（新方針・過去計画より優先）
@@ -16,13 +16,13 @@
 ## 1. 2026-10-19 ベースライン（GitHub実ファイル確認）
 | 区分 | 確認した実装 | 限界・次の判断 |
 |---|---|---|
-| UI | \`kyukoku/index.html\`, \`app.mjs\`, \`styles.css\`：国名検索、P ID検索、分割前後の切替、1185/1689/1868年、Leaflet、モバイルCSS、出典リンク | 実機ブラウザQA未完了。旧国名を選んでも確定した全国国境を描けない |
-| 索引 | \`data/historical-gis/codh-province-index.json\`：P001–P070＋P100–P117＝88識別子 | 88/88件を**収録**。公式原表からの自動照合、全読み仮名・別名・全年代の存続確証は別作業 |
-| 判定 | \`core.mjs\`, \`province-index.mjs\`, \`codh-province-ids.mjs\` | 1689の武蔵P010・旧陸奥P002だけがID相互参照例。1868年陸奥の変更年内時点を保留 |
+| UI | `kyukoku/index.html`, `app.mjs`, `styles.css`：国名検索、P ID検索、分割前後の切替、1185/1689/1868年、Leaflet、モバイルCSS、出典リンク | 実機ブラウザQA未完了。旧国名を選んでも確定した全国国境を描けない |
+| 索引 | `data/historical-gis/codh-province-index.json`：P001–P070＋P100–P117＝88識別子 | 88/88件を**収録**。公式原表からの自動照合、全読み仮名・別名・全年代の存続確証は別作業 |
+| 判定 | `core.mjs`, `province-index.mjs`, `codh-province-ids.mjs` | 1689の武蔵P010・旧陸奥P002だけがID相互参照例。1868年陸奥の変更年内時点を保留 |
 | 例示地点 | Basho現代3件、屋島の現代広域代表点1件（既存データから読み取り） | 全て現代参照座標。史実地点、過去の国境または歴史的な国の代表点ではない |
 | 地図境界 | 歴史的国境GeoJSON 0件、古地図ラスタ0件 | Geoshape国境は幕末期、CC BY-NC。未許可データ本体を配布しない |
 | 品質 | [GitHub Actions run 39197655756](https://github.com/yama-books/basho-atlas/actions/runs/39197655756)：93 PASS/0 FAIL（2026-10-19） | Node22契約・回帰・静的検査。iPhone実機、ブラウザ動作、史料の完全検証ではない |
-| 統合 | \`basho-atlas\` Draft PR #1 未マージ。既存ルートapp.js/index.html等と\`genpei-sandbox\`は変更なし | 旧試作v0.1.0-devのZIP原本・15件の独立試験は未入手。取得可能になったときに非重複の成果だけ吸収 |
+| 統合 | `basho-atlas` Draft PR #1 未マージ。既存ルートapp.js/index.html等と`genpei-sandbox`は変更なし | 旧試作v0.1.0-devのZIP原本・15件の独立試験は未入手。取得可能になったときに非重複の成果だけ吸収 |
 
 注: **88/88件登録＝88/88件の学術的保証ではない**。93/93件テスト成功＝完成度93%でもない。
 
@@ -46,11 +46,11 @@ E. エンジンが他アプリから独立して提供できるAPI・契約・�
 | W0 | 0 | 計画・現在地・安全規則を固定 | このMASTER・HANDOFF・史料分担票をGitHubに残す | ChatGPT | 初手 |
 | W1 | 1 | UI操作E2E／実機スモーク | PC/iPhone Safariで検索・年切替・分割前後選択・出典・地図ON/OFF。操作不可0件、再現手順を保存 | Claude Code/実機担当 | **v0.3の必須** |
 | W2 | 1 | UI失敗状態・一貫性 | 無効年で旧判定が残らない、タイル通信エラーとJSON欠落を区別、選択候補の読み上げ、狭幅で機能が見つかる | Claude Code | **v0.3の必須** |
-| W3 | 1 | Coreの薄い統一Facade | \`searchProvince\`, \`explainProvinceYear\`, \`getAvailableLayers\`等の呼び出しを１経路に集約。既存関数を重複実装せず、契約テストで実証 | Codex | **v0.3の必須** |
+| W3 | 1 | Coreの薄い統一Facade | `searchProvince`, `explainProvinceYear`, `getAvailableLayers`等の呼び出しを１経路に集約。既存関数を重複実装せず、契約テストで実証 | Codex | **v0.3の必須** |
 | W4 | 1–2 | 代表シナリオ受入 | 1689 武蔵/陸奥、1868陸奥、1185讃岐、無効年、未収録国、オフラインの6シナリオをUIで完走 | 統合/QA | **v0.3の必須** |
 | W5 | 2 | 原表とのID差分一回検査 | CODH P 88件と原表のID/名称/親子関係を独立照合。欠落・誤転記を修正。全古典史料個別照合はしない | Codex+ChatGPT | v1.0必須、v0.3並行可 |
-| W6 | 2 | データ・権利の現場ラベル | \`source_kind\`/作製時期/対象時期/利用許諾/承認状態を表示。欠損を未知として扱う | Codex+Claude | v0.5必須 |
-| W7 | 3 | 地図レイヤー抽象化 | 現代参照、参考古地図、学術復元を別の選択肢・凡例にし、\`geometry=null\`時は無描画で説明 | Codex+Claude | v0.5必須 |
+| W6 | 2 | データ・権利の現場ラベル | `source_kind`/作製時期/対象時期/利用許諾/承認状態を表示。欠損を未知として扱う | Codex+Claude | v0.5必須 |
+| W7 | 3 | 地図レイヤー抽象化 | 現代参照、参考古地図、学術復元を別の選択肢・凡例にし、`geometry=null`時は無描画で説明 | Codex+Claude | v0.5必須 |
 | W8 | 3 | 権利をクリアした限定史料デモ | 合法的に使える1つの資料または明示的な“境界なし”参照例で、資料年代と対象年代の違いを体感できる | 史料担当+UI | **境界を出す場合のみ必須**。欠如でv0.3停止しない |
 | W9 | 4 | QAと配布手順 | オフライン/地図/CDNエラー、キーボード、スマホ、主要ブラウザ。スモーク自動化とREADME | Claude Code/Codex | v1.0必須 |
 | W10 | 5 | v1.0公開判断 | 出典/利用条件/表示誤認/主要導線の人手確認、公開先・Draft解除とマージ承認 | 人間+監理 | 必須 |
@@ -79,19 +79,19 @@ E. エンジンが他アプリから独立して提供できるAPI・契約・�
 - **調査待ちで本体UIを止めない。** 有望資料が出てから目的に対応する地域・年代の小さな検証ケースへ採用する。
 
 ## 6. 体制・衝突回避
-- Codex：\`src/historical-gis/\`・\`data/historical-gis/\`・Core/スキーマテスト。APIファサードと原表比較。
-- Claude Code：\`kyukoku/\`・ブラウザE2E・スマホUI。コードがCoreに依存する場合はAPI合意後に実装。
-- 別史料セッション：\`docs/HISTORICAL_GIS_PREMODERN_*\`候補表のみ。採用候補は人手レビューでCoreへ引き継ぐ。
+- Codex：`src/historical-gis/`・`data/historical-gis/`・Core/スキーマテスト。APIファサードと原表比較。
+- Claude Code：`kyukoku/`・ブラウザE2E・スマホUI。コードがCoreに依存する場合はAPI合意後に実装。
+- 別史料セッション：`docs/HISTORICAL_GIS_PREMODERN_*`候補表のみ。採用候補は人手レビューでCoreへ引き継ぐ。
 - ChatGPT監理：PRレビュー、統合計画、ライセンス/史料性の齟齬、HANDOFF更新。資源枯渇時は担当交替可能だが、チェックポイントと直前commitを確認し衝突を避ける。
 - 本体公開/PRマージ、権利承認、地理の史実認定は明示的な判断点とする。GitHubのBranch/PRを単一正本とし、並行セッションに別の“正本”を作らせない。
 
 ## 7. 進捗管理と停止条件
 **全体完成率は現段階で確定しない。** 93件テストPASS、88件登録は作業量や歴史的真実性の比率を示さない。
-- 縦軸：W0–W10の各受入条件を\`未着手 / 作業中 / 機械検証済 / 実機・人手確認済 / 完了\`で管理。
-- 横軸：\`アプリ操作 / 年代ロジック / 地理データと権利 / 品質と配布\`を別に可視化。
+- 縦軸：W0–W10の各受入条件を`未着手 / 作業中 / 機械検証済 / 実機・人手確認済 / 完了`で管理。
+- 横軸：`アプリ操作 / 年代ロジック / 地理データと権利 / 品質と配布`を別に可視化。
 - 完成率が必要なら、各Wごとに**受入基準を通った件数／事前固定した受入基準件数**で算出。少数のレビュー済み地域は「限定スコープ完了」と表示し、全国完了とは表現しない。
 - 高影響の停止条件：誤年代の確定判定、出典ライセンス違反、歴史座標の無断捏造、既存Basho/Genpei破壊、主要操作不能。軽微な異体字や全国未収録の境界は公開しない注記でバックログに回せる。
-- 受入報告には\`branch / head SHA / 変更ファイル / GitHub Actions / ブラウザ検証機種 / 残件\`を必須記録。
+- 受入報告には`branch / head SHA / 変更ファイル / GitHub Actions / ブラウザ検証機種 / 残件`を必須記録。
 
 ## 8. 外部参照（本計画の一次的な確認入口）
 1. [CODH 国・地域ID](https://codh.rois.ac.jp/province/)：P系列、分割前後の関連。
