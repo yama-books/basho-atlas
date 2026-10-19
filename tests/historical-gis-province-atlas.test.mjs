@@ -143,3 +143,15 @@ test('map tiles use official OSM URL and attribution, with no offline prefetch',
   assert(app.includes('OpenStreetMap'));
   assert(!/prefetch\s*\(/.test(app));
 });
+
+
+test('screen readers retain native button roles inside list items',()=>{
+  assert(app.includes("listItem.setAttribute('role','listitem')"));
+  assert(app.includes('listItem.append(btn)'));
+  assert(!app.includes("btn.setAttribute('role','listitem')"));
+});
+test('data-derived popup source links are HTTPS-only',()=>{
+  assert(app.includes("u.protocol==='https:'"));
+  assert(app.includes('if(url)'));
+  assert(!app.includes('a.href=point.source'));
+});
