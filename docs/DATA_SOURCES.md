@@ -78,3 +78,15 @@
 | [Leafletの安定版](https://leafletjs.com/download) | 地図UIライブラリ1.9.4 |
 
 詳しくは [OLD_PROVINCES.md](OLD_PROVINCES.md) と [UI_SPEC.md](UI_SPEC.md) を参照。
+
+## 7. 2026-10-19 追加監査：関連アプリと文学データ
+
+| ソース | 確認したこと | 援用範囲・制限 |
+| --- | --- | --- |
+| [日本のデジタル文学地図](https://literarymaps.nijl.ac.jp/dataset/) | 101地点、8シートのXLSX、CC BY 4.0 | 5件の名所名・ID・座標を調査用JSONへ。**XLSX実体はこの環境では取得できず、全列・キーは未解析** |
+| [文化庁の名勝「おくのほそ道の風景地」](https://kunishitei.bunka.go.jp/heritage/detail/401/00003842) | 表示される構成地名26件、初回2014-03-18、追加年月日2021-10-11 | 地名の照合台帳のみ。個別指定日や境界・写真は未取得 |
+| [文化庁「奥の細道曽良随行日記」](https://kunishitei.bunka.go.jp/heritage/detail/201/8842) | 自筆本が重文であること、所蔵先と史料的重要性 | 史料への参照、原典照合の優先度付け。翻刻・画像そのものは別途許諾 |
+| [hosomapの出典・参考文献](https://kiritter.github.io/hosomap/html/source_summary.html) | 長谷川櫂・潁原退蔵/尾形仂等を典拠とした設計 | 参考文献として列挙し、作品別に独立監査。GeoJSONや補足文章は未転載 |
+| [逸翁美術館 デジ絵巻](https://archives.hankyu-bunka.or.jp/digi-emaki/index.html) | 蕪村1779年『奥の細道画巻』の原画像／翻字／ストーリーという分離 | 表示設計・芭蕉以後の受容の参考。画像・翻字・現代解説のコピーなし |
+
+DLM更新日の表示について過去のキャッシュ差を確認しているため、日付は原XLSXのバージョンを入手するまで暫定扱いとする。詳細：[先行アプリ監査](PRIOR_ART_AUDIT_2026-10-19.md)。
