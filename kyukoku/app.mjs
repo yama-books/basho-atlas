@@ -1,29 +1,26 @@
 import {lookupCodhProvinceId} from '../src/historical-gis/codh-province-ids.mjs';
-import {searchProvinceIndex,validateProvinceIndex,explainProvinceYear,provinceRelations} from '../src/historical-gis/province-index.mjs';
+import {createProvinceAtlasService,parseTargetYear} from '../src/historical-gis/atlas-service.mjs';
 
 const $=id=>document.getElementById(id);
-const state={catalog:null,selectedId:'P010',year:1689,group:'all',query:'',map:null,leafletLayer:null,references:[],pointsVisible:true};
+const state={service:null,selectedId:'P010',year:1689,group:'all',query:'',map:null,tileLayer:null,leafletLayer:null,references:[],pointsVisible:true};
 function el(tag,value=null,className=''){
   const n=document.createElement(tag);if(className)n.className=className;
   if(value!==null)n.textContent=String(value);return n;
 }
-function parseYear(v){
-  const s=String(v).trim();if(!/^[0-9]{1,4}$/.test(s))return null;
-  const n=Number(s);return Number.isInteger(n)&&n>=1&&n<=9999?n:null;
-}
 function setYear(v){
-  const y=parseYear(v);$('year-error').hidden=y!==null;
+  const y=parseTargetYear(v);
+  $('year-error').hidden=y!==null;
   $('target-year').setAttribute('aria-invalid',String(y===null));
-  if(y===null)return;
-  state.year=y;$('target-year').value=y;
-  document.querySelectorAll('[data-year]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.year)===y)));
+  state.year=y; // invalid input must invalidate the previous result, not retain it
+  if(y!==null)$('target-year').value=y;
+  document.querySelectorAll('[data-year]').forEach(b=>b.setAttribute('aria-pressed',String(y!==null&&Number(b.dataset.year)===y)));
   renderDetails();renderMapPoints();
 }
 function renderList(){
-  if(!state.catalog)return;
+  if(!state.service)return;
   const list=$('province-results');list.replaceChildren();
-  const rows=searchProvinceIndex(state.catalog,{query:state.query,group:state.group});
-  $('catalog-count').textContent=rows.length+' / 88';
+  const rows=state.service.search({text:state.query,group:state.group});
+  $('catalog-count').textContent=rows.length+' / '+state.service.total;
   $('result-status').textContent=rows.length?rows.length+'件。国名を選択してください。':'一致する国名がありません。';
   if(!rows.length){list.append(el('p','該当なし。別表記やP IDをお試しください。','list-hint'));return;}
   for(const p of rows){
@@ -37,7 +34,12 @@ function renderList(){
   }
 }
 function selectProvince(id){
-  state.selectedId=id;renderList();renderDetails();renderMapPoints();
+  state.selectedId=id;
+  // Keep existing search buttons in the DOM to retain keyboard focus.
+  document.querySelectorAll('[data-province-id]').forEach(button=>{
+    button.setAttribute('aria-current',String(button.dataset.provinceId===id));
+  });
+  renderDetails();renderMapPoints();
 }
 function addRelation(container,record,prefix){
   if(!record)return;
@@ -45,21 +47,23 @@ function addRelation(container,record,prefix){
   b.addEventListener('click',()=>{
     state.query='';state.group='all';$('search').value='';
     document.querySelector('input[name="index-group"][value="all"]').checked=true;
-    selectProvince(record.id);
+    renderList();selectProvince(record.id);
   });
   container.append(b);
 }
 function renderDetails(){
-  if(!state.catalog)return;
-  const r=provinceRelations(state.catalog,state.selectedId);if(!r)return;
-  const p=r.record;
+  if(!state.service)return;
+  const details=state.service.getProvince({id:state.selectedId,year:state.year});
+  if(details.status!=='found')return;
+  const r=details.relations;
+  const p=details.record;
   $('detail-heading').textContent=p.name+(['regional_designation','historical_polity_label'].includes(p.category)?'':'国');
   $('detail-id').textContent=p.id+' ・ '+(p.registry_group==='meiji_split'?'明治期分割後の索引':'江戸期からの索引');
-  const verdict=explainProvinceYear(p,state.year);
+  const verdict=details.yearResult;
   $('detail-state').textContent={
     index_correspondence_only:'ID対応のみ',transition_undetermined:'境界年・保留',
     historical_validity_unreviewed:'史料未監査',not_applicable_to_pre_reorganization:'時代対象外',
-    time_not_attested:'年月日未監査'
+    time_not_attested:'年月日未監査',invalid_year:'年入力エラー'
   }[verdict.status]||'未確認';
   $('year-verdict').textContent=verdict.message;
   const related=$('related-ids');related.replaceChildren();
@@ -67,7 +71,7 @@ function renderDetails(){
   for(const c of r.children)addRelation(related,c,'分割後：');
   if(!r.parent&&!r.children.length)related.append(el('span','CODHの一覧に直接の分割関係はありません。'));
   const box=$('selected-reference');box.replaceChildren();box.hidden=false;
-  $('focus-reference').hidden=!state.map || state.year!==1689 || !state.references.some(x=>x.provinceId===p.id);
+  $('focus-reference').hidden=!state.map || !state.pointsVisible || state.year!==1689 || !state.references.some(x=>x.provinceId===p.id);
   const pts=state.references.filter(x=>state.year===1689&&x.provinceId===p.id);
   if(pts.length){
     box.append(el('strong','関連する現代参照地点（当時の所属は未監査）'));
@@ -85,9 +89,14 @@ function initMap(){
   }
   try{
     state.map=window.L.map('map',{zoomControl:true,scrollWheelZoom:false,worldCopyJump:false,minZoom:4,maxZoom:14}).setView([36.5,137.6],5);
-    window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    state.tileLayer=window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
       attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',maxZoom:19
-    }).addTo(state.map);
+    });
+    state.tileLayer.on('tileerror',()=>{
+      $('tile-status').hidden=false;
+      $('retry-tiles').hidden=false;
+    });
+    state.tileLayer.addTo(state.map);
     state.leafletLayer=window.L.layerGroup().addTo(state.map);
   }catch(_e){
     $('map-fallback').hidden=false;
@@ -115,7 +124,7 @@ function renderMapPoints(){
       fillColor:selected?'#3c8061':'#a0b4a2',fillOpacity:.87
     }).bindPopup(popupFor(p),{maxWidth:260}).addTo(state.leafletLayer);
   }
-  $('reference-status').textContent=state.references.length+'件：現代の参照点のみ';
+  $('reference-status').textContent=state.year===null?'年入力エラー：国との対応強調は停止':state.references.length+'件：現代の参照点のみ';
 }
 async function getJson(path){
   const r=await fetch(new URL(path,import.meta.url),{cache:'default'});
@@ -149,12 +158,17 @@ async function loadReferences(){
 }
 async function boot(){
   document.querySelectorAll('[data-year]').forEach(b=>b.addEventListener('click',()=>setYear(b.dataset.year)));
-  $('target-year').addEventListener('change',e=>setYear(e.target.value));
+  $('target-year').addEventListener('input',e=>setYear(e.target.value));
   $('search').addEventListener('input',e=>{state.query=e.target.value;renderList();});
   document.querySelectorAll('input[name="index-group"]').forEach(b=>b.addEventListener('change',e=>{
     if(e.target.checked){state.group=e.target.value;renderList();}
   }));
-  $('toggle-modern').addEventListener('change',e=>{state.pointsVisible=e.target.checked;renderMapPoints();});
+  $('toggle-modern').addEventListener('change',e=>{state.pointsVisible=e.target.checked;renderMapPoints();renderDetails();});
+  $('retry-tiles').addEventListener('click',()=>{
+    if(!state.tileLayer)return;
+    $('tile-status').hidden=true;$('retry-tiles').hidden=true;
+    state.tileLayer.redraw();
+  });
   $('reset-map').addEventListener('click',()=>{if(state.map)state.map.setView([36.5,137.6],5);});
   $('focus-reference').addEventListener('click',()=>{
     if(!state.map)return;
@@ -166,8 +180,7 @@ async function boot(){
   });
   initMap();
   try{
-    state.catalog=await getJson('../data/historical-gis/codh-province-index.json');
-    validateProvinceIndex(state.catalog);
+    state.service=createProvinceAtlasService(await getJson('../data/historical-gis/codh-province-index.json'));
     renderList();renderDetails();
   }catch(_error){
     $('result-status').textContent='索引の読み込みに失敗しました。HTTPサーバー経由で開いてください。';
