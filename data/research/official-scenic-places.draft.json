@@ -1,0 +1,287 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "official_scenic_designation_component_list",
+  "created_on": "2026-10-19",
+  "research_only": true,
+  "review_status": "pending_human",
+  "origin": {
+    "institution": "文化庁・国指定文化財等データベース",
+    "designation": "おくのほそ道の風景地",
+    "category": "名勝",
+    "official_record_url": "https://kunishitei.bunka.go.jp/heritage/detail/401/00003842",
+    "initial_designation_date": "2014-03-18",
+    "latest_addition_date_recorded_on_page": "2021-10-11",
+    "record_text_note": "公式解説の「今回は13箇所」は初回指定当時の記述。ページの構成地名一覧は26項目。各地点の追加指定日を一律2014年としない。",
+    "source_rights": "事実上の地名一覧を調査用に転記。写真・解説本文のコピーは行っていない。"
+  },
+  "count": 26,
+  "components": [
+    {
+      "local_research_id": "scenic-01",
+      "official_name": "草加松原",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-02",
+      "official_name": "ガンマンガ淵（慈雲寺境内）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-03",
+      "official_name": "八幡宮（那須神社境内）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-04",
+      "official_name": "殺生石",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-05",
+      "official_name": "遊行柳（清水流るゝの柳）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-06",
+      "official_name": "黒塚の岩屋",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-07",
+      "official_name": "武隈の松",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-08",
+      "official_name": "つゝじが岡及び天神の御社",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-09",
+      "official_name": "木の下及び薬師堂",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-10",
+      "official_name": "壺碑（つぼの石ぶみ）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-11",
+      "official_name": "興井",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-12",
+      "official_name": "末の松山",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-13",
+      "official_name": "籬が島",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-14",
+      "official_name": "金鶏山",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-15",
+      "official_name": "高館",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-16",
+      "official_name": "さくら山",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-17",
+      "official_name": "本合海",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-18",
+      "official_name": "三崎（大師崎）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-19",
+      "official_name": "象潟及び汐越",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-20",
+      "official_name": "親しらず",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-21",
+      "official_name": "有磯海",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-22",
+      "official_name": "那谷寺境内（奇石）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-23",
+      "official_name": "道明が淵（山中の温泉）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-24",
+      "official_name": "湯尾峠",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-25",
+      "official_name": "けいの明神（氣比神宮境内）",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    },
+    {
+      "local_research_id": "scenic-26",
+      "official_name": "大垣船町川湊",
+      "protected_site_geometry": null,
+      "site_coordinates": null,
+      "individual_designation_date": null,
+      "atlas_place_id": null,
+      "matched_to_literary_place": false,
+      "review_status": "pending_human"
+    }
+  ],
+  "integration_rules": [
+    "構成名勝は文学上の歌枕と必ずしも一対一で対応しない。",
+    "名前の類似だけで地理座標や文学作品を結合しない。",
+    "初回の13箇所と現在ページに並ぶ26項目を同じリストとして扱わない。追加日の個別調査を後で行う。",
+    "行政上の指定範囲（面）と観光客向けの参照ピン（点）を別に保持する。",
+    "写真・解説・境界ポリゴンの複製権を当該ページだけから推定しない。"
+  ]
+}
