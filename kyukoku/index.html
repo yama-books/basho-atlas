@@ -59,7 +59,11 @@
         </div>
         <div class="map-holder">
           <div id="map" aria-label="現代の参照点を確認する地図"></div>
-          <div id="map-fallback" class="map-fallback" hidden>地図の読み込みに失敗しました。左側の国名索引と典拠は引き続き利用できます。</div>
+          <div id="map-fallback" class="map-fallback" hidden>地図の読み込みに失敗しました。国名索引と典拠は引き続き利用できます。</div>
+        </div>
+        <div class="tile-warning" id="tile-status" role="status" aria-live="polite" hidden>
+          背景地図の一部を取得できません。国名・年代・参照点の情報は引き続き利用できます。
+          <button type="button" id="retry-tiles" hidden>背景地図を再読込</button>
         </div>
         <div class="legend">
           <span><i class="legend-dot" aria-hidden="true"></i>現代の参照地点（史実位置ではありません）</span>
