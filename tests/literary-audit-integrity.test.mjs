@@ -59,3 +59,17 @@ test("DLM XLSX and evidence gates remain explicitly unverified", () => {
     w.author.startsWith("曾良")));
   assert(audit.works.every(w => w.transcription_status !== "human_collated"));
 });
+
+test("Shirakawa waka numbers match remote DLM records without human approval",()=>{
+ const noin=byWork.get("w-noin-shirakawa");
+ const yorimasa=byWork.get("w-yorimasa-shirakawa");
+ assert.equal(noin.number,518);
+ assert.equal(noin.anthology,"後拾遺和歌集");
+ assert.equal(noin.external_dlm_poem_id,"5bfc17e8a7372ae5b22442e3");
+ assert.equal(yorimasa.number,365);
+ assert.equal(yorimasa.anthology,"千載和歌集");
+ assert.equal(yorimasa.external_dlm_poem_id,"5bfc17e8a7372ae5b22442e7");
+ assert.equal(noin.review_status,"pending_human");
+ assert.equal(yorimasa.review_status,"pending_human");
+ assert(audit.claims.find(c=>c.id==="c-shirakawa-allusion").related_work_ids.includes("w-yorimasa-shirakawa"));
+});
