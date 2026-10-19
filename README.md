@@ -66,3 +66,16 @@ DLMの文学名所5件を既存地点へ対応付ける調査台帳と、文化�
 - [文学監査の整合性テスト](tests/literary-audit-integrity.test.mjs)
 
 武隈の松に関連する『後撰和歌集』1241番・『後拾遺和歌集』1041・1042番をオンライン翻刻で照合。白河の関の能因・頼政の古歌、松島の曾良名の句と芭蕉の本文外の句を区別して記録しました。**人手による底本監査は未完了で、本番文学データは変更していません。** DLMの原XLSXは取得できず、内部8シートは未監査です。
+
+### 2026-10-19：DLM公式XLSXの8シート実データ解析
+
+**解消**：XLSXをリモート解析サービス経由で読み取り、公式に記載された8シート全件の列名・行数を確認しました。**原ファイル自体のSHA-256は未取得**です。
+
+- [DLM XLSX構造監査](docs/DLM_XLSX_AUDIT_2026-10-19.md)
+- [各シートの行数・列・欠損IDの機械可読監査](data/research/dlm-xlsx-schema-audit.json)
+- [5地点・和歌48件の表記一致候補（未監査）](data/research/dlm-poem-form-candidates.draft.json)
+- [ローカルへの限定引継ぎ](docs/LOCAL_DLM_BINARY_HANDOFF.md)
+- [原本検査スクリプト](scripts/audit_dlm_binary.py)
+- [追加データ整合性テスト](tests/dlm-staging-integrity.test.mjs)
+
+注記：謡曲444件中6件はID欄空欄、和歌1,951件中62件は地名形欄が空欄。歌枕の文字列一致だけで一首を確定採用しません。原典資料のレビュー状態はすべて未承認です。
