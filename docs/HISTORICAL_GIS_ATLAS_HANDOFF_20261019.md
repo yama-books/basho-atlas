@@ -37,3 +37,8 @@
 5. **P2 公開**: ZIP実体からの非重複テスト監査、アプリ実機QA、権利/出典表示、公開範囲の最終承認が揃うまで Draft PR と研究用の区別を維持。
 
 既存 \`basho-atlas/app.js\`、\`index.html\`、\`styles.css\`、\`data/prototype-locations.json\` と \`genpei-sandbox\`は変更なし。
+
+## 同日最終受入補足
+- UIをさらに補強: 検索結果のlistitemとボタンのアクセシビリティ上の役割を分離。ポップアップ内の出典リンクはHTTPSのURLだけを許可。地図への移動はユーザー操作時のみ、スクロールの標準behaviorを利用。
+- 追加のアクセシビリティ・危険リンク回帰2件を追加し、**最新版CI [run 39197570843](https://github.com/yama-books/basho-atlas/actions/runs/39197570843) が合計93件PASS・0件FAIL**。
+- 旧61件 + 初回UI・データ30件 + 最後の安全検査2件 = 93件。以前の91件結果も履歴に残すが、最新受入は93件。
