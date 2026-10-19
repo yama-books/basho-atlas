@@ -1,0 +1,566 @@
+{
+  "schema_version": "0.1.0",
+  "created_on": "2026-10-19",
+  "source_dataset_url": "https://literarymaps.nijl.ac.jp/downloads/dlm-dataset.xlsx",
+  "derived_from": "remote_xlsx_markdown_extraction",
+  "relation_status": "unverified_candidates_from_exact_form_matching",
+  "public_use": "research_only",
+  "review_status": "pending_human",
+  "attribution": "Digital Literary Map of Japan, CC BY 4.0, https://literarymaps.nijl.ac.jp/dataset/; Basho Atlas independently selected candidate forms and added review flags.",
+  "warnings": [
+    "Do not equate form-string equality to verified literary-place relationships.",
+    "For 松島, matching substring would incorrectly add 玉津島; only exact curated form strings are used.",
+    "Reported counts on DLM spots page do not necessarily equal selected exact-form rows; gaps are unresolved, not errors to fill with invented records.",
+    "Old province names are dataset labels, not date-aware 1689 mapping; use kyukoku-engine.",
+    "No full poem text or third-party English translations are mirrored here."
+  ],
+  "candidates": [
+    {
+      "place_key": "matsushima",
+      "external_place_id": "567554d2f61afaaed2aaef70",
+      "external_place_name": "松島",
+      "accepted_form_candidates": [
+        "まつしま"
+      ],
+      "official_spot_count": 11,
+      "extracted_candidate_count": 11,
+      "unreconciled_difference": 0,
+      "poems": [
+        {
+          "external_poem_id": "615052c97263b06b8a8b78bc",
+          "legacy_nid": "1716",
+          "catalogue_label": "後拾遺（827）",
+          "attributed_author": "源重之",
+          "place_form": "まつしま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007096/viewer/158",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "615052c97263b06b8a8b78bd",
+          "legacy_nid": "1717",
+          "catalogue_label": "詞花（167）",
+          "attributed_author": "清原元輔",
+          "place_form": "まつしま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007098/viewer/29",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "615052c97263b06b8a8b78be",
+          "legacy_nid": "1718",
+          "catalogue_label": "新古今（401）",
+          "attributed_author": "鴨長明",
+          "place_form": "まつしま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007100/viewer/66",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "615052c97263b06b8a8b78bf",
+          "legacy_nid": "1719",
+          "catalogue_label": "新古今（933）",
+          "attributed_author": "藤原俊成",
+          "place_form": "まつしま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007100/viewer/141",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "70-9-1",
+          "legacy_nid": "5575",
+          "catalogue_label": "新勅撰（848）",
+          "attributed_author": "源通光",
+          "place_form": "まつしま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007101/118?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "70-10-2",
+          "legacy_nid": "5576",
+          "catalogue_label": "続後撰（401）",
+          "attributed_author": "権律師公猷",
+          "place_form": "まつしま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/55?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "70-10-3",
+          "legacy_nid": "5577",
+          "catalogue_label": "続後撰（521）",
+          "attributed_author": "藤原光俊",
+          "place_form": "まつしま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/70?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "70-10-4",
+          "legacy_nid": "5578",
+          "catalogue_label": "続後撰（753）",
+          "attributed_author": "洞院実雄",
+          "place_form": "まつしま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/104?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "70-11-5",
+          "legacy_nid": "5579",
+          "catalogue_label": "続古今（464）",
+          "attributed_author": "源通親",
+          "place_form": "まつしま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007103/71?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "70-11-6",
+          "legacy_nid": "5580",
+          "catalogue_label": "続古今（1106）",
+          "attributed_author": "柿本人麿",
+          "place_form": "まつしま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007103/160?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "70-11-7",
+          "legacy_nid": "5581",
+          "catalogue_label": "続古今（1293）",
+          "attributed_author": "読み人知らず",
+          "place_form": "まつしま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007103/182?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        }
+      ]
+    },
+    {
+      "place_key": "shirakawa-seki",
+      "external_place_id": "567554d2f61afaaed2aaef22",
+      "external_place_name": "白河の関",
+      "accepted_form_candidates": [
+        "しらかわのせき",
+        "しらかはのせき"
+      ],
+      "official_spot_count": 13,
+      "extracted_candidate_count": 12,
+      "unreconciled_difference": 1,
+      "poems": [
+        {
+          "external_poem_id": "5bfc17e7a7372ae5b22442df",
+          "legacy_nid": "1133",
+          "catalogue_label": "拾遺（339）",
+          "attributed_author": "平兼盛",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007095/viewer/50",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e0",
+          "legacy_nid": "1134",
+          "catalogue_label": "後拾遺(146)",
+          "attributed_author": "源師房",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007096/viewer/34",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e1",
+          "legacy_nid": "1135",
+          "catalogue_label": "後拾遺(93)",
+          "attributed_author": "藤原長家",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007096/viewer/24",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e2",
+          "legacy_nid": "1136",
+          "catalogue_label": "後拾遺(477)",
+          "attributed_author": "藤原定頼",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007096/viewer/90",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e3",
+          "legacy_nid": "1137",
+          "catalogue_label": "後拾遺(518)",
+          "attributed_author": "能因法師",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007096/viewer/98",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e5",
+          "legacy_nid": "1139",
+          "catalogue_label": "千載(142)",
+          "attributed_author": "藤原季通",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007099/viewer/30",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e6",
+          "legacy_nid": "1140",
+          "catalogue_label": "千載(364)",
+          "attributed_author": "平親宗",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007099/viewer/60",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e7",
+          "legacy_nid": "1141",
+          "catalogue_label": "千載(365)",
+          "attributed_author": "源頼政",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007099/viewer/60",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e8a7372ae5b22442e8",
+          "legacy_nid": "1142",
+          "catalogue_label": "千載(543)",
+          "attributed_author": "印性",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007099/viewer/85",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "22-11-1",
+          "legacy_nid": "5311",
+          "catalogue_label": "続古今（869）",
+          "attributed_author": "寂連法師",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007103/130?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "22-11-2",
+          "legacy_nid": "5312",
+          "catalogue_label": "続古今（903）",
+          "attributed_author": "藤原秀茂",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007103/135?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "22-11-3",
+          "legacy_nid": "5313",
+          "catalogue_label": "続古今（910）",
+          "attributed_author": "世尊寺行能",
+          "place_form": "しらかわのせき",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007103/136?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        }
+      ]
+    },
+    {
+      "place_key": "sue-no-matsuyama",
+      "external_place_id": "567554d2f61afaaed2aaef12",
+      "external_place_name": "末の松山",
+      "accepted_form_candidates": [
+        "すえのまつやま",
+        "すゑのまつやま"
+      ],
+      "official_spot_count": 24,
+      "extracted_candidate_count": 21,
+      "unreconciled_difference": 3,
+      "poems": [
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441e3",
+          "legacy_nid": "893",
+          "catalogue_label": "古今(326)",
+          "attributed_author": "藤原興風",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007093/viewer/59",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441e4",
+          "legacy_nid": "894",
+          "catalogue_label": "古今(1093)",
+          "attributed_author": "読み人知らず",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007093/viewer/158",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441e5",
+          "legacy_nid": "895",
+          "catalogue_label": "古今集仮名序",
+          "attributed_author": null,
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007093/viewer/8",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441e6",
+          "legacy_nid": "896",
+          "catalogue_label": "後撰（683）",
+          "attributed_author": "土左",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007094/viewer/91",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441e7",
+          "legacy_nid": "897",
+          "catalogue_label": "拾遺(239)",
+          "attributed_author": "柿本人麻呂",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007095/viewer/34",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441eb",
+          "legacy_nid": "901",
+          "catalogue_label": "後拾遺(770)",
+          "attributed_author": "清原元輔",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007096/viewer/151",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441ec",
+          "legacy_nid": "902",
+          "catalogue_label": "金葉(284)",
+          "attributed_author": "大江匡房",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007097/viewer/48",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441ed",
+          "legacy_nid": "903",
+          "catalogue_label": "金葉(313)",
+          "attributed_author": "永成法師",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007097/viewer/52",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441ee",
+          "legacy_nid": "904",
+          "catalogue_label": "千載(220)",
+          "attributed_author": "藤原親盛",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007099/viewer/40",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441ef",
+          "legacy_nid": "905",
+          "catalogue_label": "新古今（37）",
+          "attributed_author": "藤原家隆",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007100/viewer/16",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441f0",
+          "legacy_nid": "906",
+          "catalogue_label": "新古今（705）",
+          "attributed_author": "寂蓮法師",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007100/viewer/103",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441f1",
+          "legacy_nid": "907",
+          "catalogue_label": "新古今（970）",
+          "attributed_author": "藤原家隆",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007100/viewer/146",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "5bfc17e0a7372ae5b22441f2",
+          "legacy_nid": "908",
+          "catalogue_label": "新古今（1474）",
+          "attributed_author": "加賀左衛門",
+          "place_form": "すえのまつやま",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007100/viewer/215",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-9-1",
+          "legacy_nid": "5177",
+          "catalogue_label": "新勅撰（747）",
+          "attributed_author": "源家長",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007101/106?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-9-2",
+          "legacy_nid": "5178",
+          "catalogue_label": "新勅撰（1315）",
+          "attributed_author": "藤原清輔",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007101/177?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-10-3",
+          "legacy_nid": "5179",
+          "catalogue_label": "続後撰（945）",
+          "attributed_author": "源信明",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/127?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-10-4",
+          "legacy_nid": "5180",
+          "catalogue_label": "続後撰（946）",
+          "attributed_author": "中務",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/127?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-10-5",
+          "legacy_nid": "5181",
+          "catalogue_label": "続後撰（947）",
+          "attributed_author": "藤原俊成",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/127?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-10-6",
+          "legacy_nid": "5182",
+          "catalogue_label": "続後撰（948）",
+          "attributed_author": "紀伊",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/127?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-10-7",
+          "legacy_nid": "5183",
+          "catalogue_label": "続後撰（1163）",
+          "attributed_author": "藤原朝光",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/155?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "12-10-8",
+          "legacy_nid": "5184",
+          "catalogue_label": "続後撰（1164）",
+          "attributed_author": "藤原済時",
+          "place_form": "すゑのまつやま",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007102/155?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        }
+      ]
+    },
+    {
+      "place_key": "kisagata",
+      "external_place_id": "567554d2f61afaaed2aaef58",
+      "external_place_name": "象潟",
+      "accepted_form_candidates": [
+        "きさかた"
+      ],
+      "official_spot_count": 2,
+      "extracted_candidate_count": 2,
+      "unreconciled_difference": 0,
+      "poems": [
+        {
+          "external_poem_id": "6150528fb518fb8bf3eac43b",
+          "legacy_nid": "1649",
+          "catalogue_label": "後拾遺（519）",
+          "attributed_author": "能因法師",
+          "place_form": "きさかた",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007096/viewer/98",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "6150528fb518fb8bf3eac43c",
+          "legacy_nid": "1650",
+          "catalogue_label": "新古今（972）",
+          "attributed_author": "藤原顕仲",
+          "place_form": "きさかた",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007100/viewer/146",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        }
+      ]
+    },
+    {
+      "place_key": "sumidagawa",
+      "external_place_id": "567554d2f61afaaed2aaef63",
+      "external_place_name": "隅田川",
+      "accepted_form_candidates": [
+        "すみだがわ"
+      ],
+      "official_spot_count": 2,
+      "extracted_candidate_count": 2,
+      "unreconciled_difference": 0,
+      "poems": [
+        {
+          "external_poem_id": "615052b3211abd623860dd2e",
+          "legacy_nid": "1660",
+          "catalogue_label": "古今(411)",
+          "attributed_author": "在原業平",
+          "place_form": "すみだがわ",
+          "source_link": "https://kotenseki.nijl.ac.jp/biblio/200007093/viewer/75",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        },
+        {
+          "external_poem_id": "63-11-1",
+          "legacy_nid": "5546",
+          "catalogue_label": "続古今（936）",
+          "attributed_author": "宗尊親王",
+          "place_form": "すみだがわ",
+          "source_link": "https://kokusho.nijl.ac.jp/biblio/200007103/139?ln=ja",
+          "review_status": "pending_human",
+          "relation_status": "unverified_exact_form_candidate"
+        }
+      ]
+    }
+  ]
+}
