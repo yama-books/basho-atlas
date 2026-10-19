@@ -102,7 +102,7 @@ function renderBasho(){
   const target=id("basho-content");
   target.replaceChildren();
   add(target,"p",state.data.basho.work,"quote-label");
-  const passage=add(target,"blockquote",null,"passsage");
+  const passage=add(target,"blockquote",null,"passage");
   markWords(passage,state.data.basho.passage,state.word);
   add(target,"p",state.data.basho.passage_note,"text-note");
   const sora=add(target,"section",null,"sora-card");
