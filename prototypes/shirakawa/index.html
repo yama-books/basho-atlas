@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="白河の関を、先行和歌・芭蕉の旅・現代の史跡の三層で読むBasho Atlasの監査用試作。">
+  <meta name="robots" content="noindex,nofollow">
+  <title>白河の関 | 文学比較カード・試作</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="../../index.html" aria-label="Basho Atlasトップ（試作）">BASHO <span>ATLAS</span></a>
+      <a class="top-link" href="../../docs/LITERARY_TEXT_AUDIT_2026-10-19.md" target="_blank" rel="noopener noreferrer">文学監査記録 <span aria-hidden="true">↗</span></a>
+    </header>
+    <div class="notice" role="note"><strong>資料監査用プロトタイプ</strong><span>本文・語釈・対応関係は人手監査前です。確定教材ではありません。</span></div>
+    <main>
+      <header class="intro">
+        <p class="eyebrow">LITERARY PLACE <span aria-hidden="true">/</span> FIELD NOTE 02</p>
+        <div class="intro-heading">
+          <div><h1 id="place-title">白河の関</h1><p class="subtitle">同じ関で、いくつもの季節が出会う。</p></div>
+          <div class="place-tags"><span class="province" id="province">陸奥国</span><span class="municipality" id="municipality">福島県白河市</span></div>
+        </div>
+        <p class="introduction">先行する和歌の秋風と紅葉を思い浮かべながら、芭蕉は目の前の青葉を見つめます。言葉の重なりを確かめる、3つの時代の小さな文学地図です。</p>
+      </header>
+
+      <section class="view-toolbar" aria-label="比較方法">
+        <div><p class="eyebrow">READING MODE</p><h2>どう読む？</h2></div>
+        <div class="view-buttons" role="group" aria-label="表示する時代">
+          <button type="button" data-view="compare" aria-pressed="true">三層比較</button>
+          <button type="button" data-view="before" aria-pressed="false">古歌</button>
+          <button type="button" data-view="basho" aria-pressed="false">芭蕉</button>
+          <button type="button" data-view="today" aria-pressed="false">現在</button>
+        </div>
+      </section>
+
+      <section class="layer-grid" id="layer-grid" aria-label="三つの時代の比較">
+        <article class="layer" id="layer-before" data-layer="before" aria-labelledby="before-title">
+          <div class="layer-heading"><span class="layer-no">01</span><div><p class="eyebrow">BEFORE BASHŌ</p><h2 id="before-title">和歌の中の関</h2></div></div>
+          <div id="before-content" class="layer-inner"><p>古歌を読み込みます…</p></div>
+        </article>
+        <article class="layer" id="layer-basho" data-layer="basho" aria-labelledby="basho-title">
+          <div class="layer-heading"><span class="layer-no">02</span><div><p class="eyebrow">1689 / THE JOURNEY</p><h2 id="basho-title">芭蕉の見た関</h2></div></div>
+          <div id="basho-content" class="layer-inner"><p>『おくのほそ道』を読み込みます…</p></div>
+        </article>
+        <article class="layer" id="layer-today" data-layer="today" aria-labelledby="today-title">
+          <div class="layer-heading"><span class="layer-no">03</span><div><p class="eyebrow">THE PLACE TODAY</p><h2 id="today-title">現代の関跡</h2></div></div>
+          <div id="today-content" class="layer-inner"><p>現代の史跡を読み込みます…</p></div>
+          <div class="map-surround">
+            <div id="map" aria-label="DLM文学名所の参照点の地図"></div>
+            <p id="map-fallback" class="map-fallback" hidden>地図の読み込みができません。資料リンクをご利用ください。</p>
+            <p class="map-caption"><span class="pin-symbol" aria-hidden="true"></span><strong>DLM文学名所の参照点</strong>　このピンは国指定史跡の区域や芭蕉の正確な足跡を表しません。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="insight-panel" aria-labelledby="insight-title">
+        <p class="eyebrow">WORDS ACROSS TIME</p>
+        <h2 id="insight-title">季節の言葉をたどる</h2>
+        <p class="insight-guide">言葉を選ぶと、古歌と芭蕉のつながりを確かめられます。</p>
+        <div class="word-buttons" role="group" aria-label="注目する言葉">
+          <button type="button" data-word="秋風" aria-pressed="true">秋風</button>
+          <button type="button" data-word="紅葉" aria-pressed="false">紅葉</button>
+          <button type="button" data-word="青葉" aria-pressed="false">青葉</button>
+        </div>
+        <p id="word-explanation" class="word-explanation" role="status" aria-live="polite"></p>
+      </section>
+      <section class="question-panel" aria-labelledby="question-heading">
+        <p class="eyebrow">A QUESTION TO TAKE HOME</p>
+        <h2 id="question-heading">考えてみよう</h2>
+        <p id="learning-question">問いを読み込みます…</p>
+        <div id="learning-prompts" class="learning-prompts"></div>
+      </section>
+      <section class="sources-panel" aria-labelledby="sources-heading">
+        <p class="eyebrow">SOURCES & NOTES</p>
+        <h2 id="sources-heading">出典と、この試作の限界</h2>
+        <div id="sources-list" class="sources-list"></div>
+        <p id="credit" class="credit"></p>
+        <p class="source-warning">※ DLMの歌枕データ、芭蕉本文、現代の文化財指定は根拠が異なります。出典間の異同や底本の確定は別途、人が監査します。</p>
+      </section>
+    </main>
+    <footer><span>BASHO ATLAS · SHIRAKAWA DRAFT</span><a href="https://github.com/yama-books/basho-atlas" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+  </div>
+</body>
+</html>
