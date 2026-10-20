@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0.0",
+  "id": "matsushima",
+  "title": "松島",
+  "subtitle": "景色と言葉と、句の作者表示。",
+  "location": {
+    "municipality": "宮城県宮城郡松島町",
+    "old_province": {
+      "name": "陸奥国",
+      "basis_year": 1689,
+      "status": "pending_kyukoku_engine"
+    }
+  },
+  "reference_point": {
+    "kind": "modern_reference_site",
+    "label": "現代の五大堂",
+    "coordinates": [
+      141.064207,
+      38.369718
+    ],
+    "caution": "松島という広い文学的景観を示す点ではなく、現代の五大堂という代表施設の参照座標です。",
+    "source_ids": [
+      "s-modern-godaido"
+    ]
+  },
+  "layers": [
+    {
+      "id": "before",
+      "title": "芭蕉以前の松島",
+      "items": [
+        {
+          "id": "ms-prior",
+          "kind": "explanation",
+          "title": "文学に詠まれた松島",
+          "text": null,
+          "note": "DLMには文学名所「松島」と、これに関係する先行和歌の候補が登録されている。関連作品の選定・底本照合は次の史料監査で行う。",
+          "evidence": "dlm_metadata",
+          "source_ids": [
+            "s-dlm-matsushima"
+          ],
+          "attributed_to": null,
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "basho",
+      "title": "芭蕉の旅と曾良の句",
+      "items": [
+        {
+          "id": "ms-sora",
+          "kind": "haiku",
+          "title": "曾良と記された句",
+          "text": "松嶋や鶴に身をかれほとゝぎす",
+          "note": "『おくのほそ道』松島段では曾良名で載る。作者論に異説がある場合は書物上の署名と区別する。",
+          "evidence": "edited_text",
+          "source_ids": [
+            "s-aozora-basho"
+          ],
+          "attributed_to": "曾良（作品内の署名）",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        },
+        {
+          "id": "ms-basho-prose",
+          "kind": "explanation",
+          "title": "芭蕉は松島を散文でも描く",
+          "text": null,
+          "note": "松島段は島々・海・月光などを散文で描写する。本文外の松島詠と混同しない。",
+          "evidence": "edited_text",
+          "source_ids": [
+            "s-aozora-basho"
+          ],
+          "attributed_to": null,
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "today",
+      "title": "現在の五大堂付近",
+      "items": [
+        {
+          "id": "ms-godaido",
+          "kind": "site",
+          "title": "現代の参照地点・五大堂",
+          "text": null,
+          "note": "現在の五大堂を地図に示す。DLMの文学上の「松島」代表座標と、五大堂の施設座標は別々に管理する。",
+          "evidence": "official_site",
+          "source_ids": [
+            "s-modern-godaido",
+            "s-dlm-matsushima"
+          ],
+          "attributed_to": null,
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    }
+  ],
+  "keywords": [
+    {
+      "term": "曾良",
+      "explanation": "本文に掲載された句の署名が曾良であることと、実作者についての後世の議論を分ける。",
+      "related_item_ids": [
+        "ms-sora"
+      ]
+    },
+    {
+      "term": "ほとゝぎす",
+      "explanation": "句の語を読み取り、松島の描写とどのように結びつくか考える。",
+      "related_item_ids": [
+        "ms-sora"
+      ]
+    }
+  ],
+  "learning": {
+    "question": "松島の段で、芭蕉は散文を記し、句には曾良の名が付されています。本文の作者表示と、旅人が実際に見た景色をどのように区別して読めるでしょうか。",
+    "answer_status": "question_only",
+    "source_ids": [
+      "s-aozora-basho"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s-dlm-matsushima",
+      "title": "DLM 松島",
+      "url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef70/"
+    },
+    {
+      "id": "s-aozora-basho",
+      "title": "杉浦正一郎校註『おくのほそ道』（素龍清書本などに基づく校訂翻刻）",
+      "url": "https://www.aozora.gr.jp/cards/002240/files/61619_78128.html"
+    },
+    {
+      "id": "s-modern-godaido",
+      "title": "Geoshape・五大堂（現代の参照座標）",
+      "url": "https://geoshape.ex.nii.ac.jp/nrct-poi/resource/04/040000072200.html"
+    }
+  ],
+  "attribution": "DLMの文学名所データはCC BY 4.0。五大堂の現代座標は別データ。文学作品の校合は未完了。",
+  "review_status": "pending_human",
+  "public_use": "draft_only"
+}
