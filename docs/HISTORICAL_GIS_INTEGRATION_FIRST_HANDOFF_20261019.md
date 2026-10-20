@@ -61,3 +61,11 @@ PR: https://github.com/yama-books/basho-atlas/pull/1 （Draft/未マージを維
 - `tests/historical-gis-atlas-service.test.mjs`に13件の回帰テスト。`kyukoku/QA.md`に現地/スマホ実機スモーク12場面を固定。
 - [Actions run #39239772740](https://github.com/yama-books/basho-atlas/actions/runs/39239772740)：Nodeの検査 **117 PASS、0 FAIL**。これはテストの結果であって、実機ブラウザの操作保証ではない。
 - 続きは **W1ブラウザでの実機スモーク確認 → 発見されたユーザー影響の大きい問題のみ修正 → 必要十分なQAでv0.3を判定**。古地図収集や全88 IDの深掘りを割り込ませない。
+
+## 2026-10-20 最新再開点：ローカル二担当の正式委任（実装未着手）
+新正本：[OLDMAP_LOCAL_WORK_MASTER_20261020.md](OLDMAP_LOCAL_WORK_MASTER_20261020.md)。
+- 共通root：`D:\dev\oldmap`、管理clone：`repo`、Codex：`core`、Claude Code：`ui`。二つのGit worktreeは現在の親Draft PRのbranchを基点に分岐する。`main`ではない。
+- [CodexのCore分担](OLDMAP_CODEX_WP_20261020.md) と [Claude CodeのUI/E2E分担](OLDMAP_CLAUDE_WP_20261020.md)を具体化。編集ファイル/禁止領域/回帰・実ブラウザ検証/成果文書を分離した。
+- [このChatGPTで行う監査ゲート](OLDMAP_REVIEW_PROTOCOL_20261020.md)により、Core/UI子Draft PRを個別査読。**マージ・Pages公開は未承認**。
+- 紙媒体古地図研究はPAUSED、全件学術完全性はv0.3のブロック要件ではない。
+- 次のユーザー操作は、上記Masterに記載のPowerShellで初期化した各worktreeから、ローカルCodex/Claude Codeにそれぞれの指示を実行させること。このGitHub記録だけではユーザーのWindowsファイルを操作していない。
