@@ -19,9 +19,9 @@
       <div class="mast-copy">
         <p class="eyebrow">HISTORICAL PROVINCE ATLAS / RESEARCH PREVIEW</p>
         <h1>旧国名アトラス</h1>
-        <p class="subtitle">名前を調べる。年代を照らす。地図は慎重に。</p>
+        <p class="subtitle">① 国名を選ぶ → ② 年を変えて判定を読む → ③ 現代地図で参照点を見る</p>
       </div>
-      <a class="source-top" href="../docs/HISTORICAL_GIS_PROVINCE_ATLAS_20261019.md" target="_blank" rel="noopener">設計と典拠 <span aria-hidden="true">↗</span></a>
+      <a class="source-top" href="../docs/HISTORICAL_GIS_PROVINCE_ATLAS_20261019.md" target="_blank" rel="noopener noreferrer">設計と典拠 <span aria-hidden="true">↗</span></a>
     </header>
 
     <aside class="alert" role="note">
@@ -32,82 +32,100 @@
     <main class="workspace">
       <section class="explore-panel" id="catalogue" aria-labelledby="explore-heading">
         <div class="panel-heading">
-          <div><p class="eyebrow">01 / NAMES</p><h2 id="explore-heading">国・地域を探す</h2></div>
+          <div><p class="eyebrow">01 / NAMES</p><h2 id="explore-heading">国名を選ぶ</h2></div>
           <span id="catalog-count" class="count">読込中</span>
         </div>
-        <label for="search" class="field-label">旧国名またはCODH ID</label>
+        <label for="search" class="field-label">旧国名・読み・CODH ID で検索</label>
         <div class="search-wrap">
           <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="search" type="search" autocomplete="off" placeholder="例：武蔵・陸奥・P010" aria-controls="province-results">
+          <input id="search" type="search" autocomplete="off" enterkeyhint="search" placeholder="例：武蔵・陸奥・さぬき・P010" aria-controls="province-results" aria-describedby="search-help">
         </div>
-        <fieldset class="group-switch" aria-label="国・地域の区分">
+        <p id="search-help" class="sr-only">Enter または下矢印キーで検索結果へ移動します。</p>
+        <fieldset class="group-switch">
           <legend class="sr-only">索引の区分</legend>
           <label><input type="radio" name="index-group" value="all" checked><span>すべて</span></label>
           <label><input type="radio" name="index-group" value="edo_inherited"><span>江戸期から</span></label>
           <label><input type="radio" name="index-group" value="meiji_split"><span>明治の分割後</span></label>
         </fieldset>
         <p class="list-hint" id="result-status" role="status" aria-live="polite">索引を読み込んでいます。</p>
+        <button type="button" id="retry-index" class="retry" hidden>索引を再読込</button>
         <div class="results" id="province-results" role="list" aria-label="国・地域IDの検索結果"></div>
         <div class="result-foot">全件に位置があるわけではありません。旧国名から国境を自動生成しない方針です。</div>
       </section>
 
+      <section class="detail-panel" id="detail" aria-labelledby="detail-heading" tabindex="-1">
+        <div class="detail-identity">
+          <div>
+            <p class="eyebrow">02 / YEAR &amp; NOTES</p>
+            <h2 id="detail-heading">国名を選んでください</h2>
+            <p id="detail-id" class="sub-info">検索結果から国・地域を選ぶと、ここに年代判定が出ます。</p>
+          </div>
+          <span id="detail-state" class="status" data-tone="idle">未選択</span>
+        </div>
+        <div class="year-strip">
+          <label for="target-year">照合する年（西暦・1～9999の整数）</label>
+          <div class="year-row">
+            <input id="target-year" type="number" min="1" max="9999" step="1" value="1689" inputmode="numeric" aria-describedby="year-error">
+            <div class="years" role="group" aria-label="年の例">
+              <button type="button" data-year="1185">1185</button>
+              <button type="button" data-year="1689" aria-pressed="true">1689</button>
+              <button type="button" data-year="1868">1868</button>
+            </div>
+          </div>
+          <p id="year-error" class="error" role="alert" hidden>1～9999の整数年を入力してください。年代判定と地図の関連付けを停止しています。</p>
+        </div>
+        <div class="verdict">
+          <p class="field-label">年代判定</p>
+          <p id="year-verdict">国名を選ぶと、その年への適用可能性と未確認事項を示します。</p>
+          <a class="to-sources" href="#sources">典拠を確認 <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="reference-card" id="selected-reference">
+          <strong>地図に描けること</strong>
+          <p>国名を選ぶと、現代地図で確認できる参照点の有無を示します。</p>
+        </div>
+        <button id="focus-reference" class="focus-reference" type="button" hidden>関連する現代参照点を地図で見る</button>
+        <div class="relationship">
+          <p class="field-label">関連ID（CODHの分割関係）</p>
+          <div id="related-ids" class="related">国名を選択してください。</div>
+        </div>
+        <div class="sources" id="sources" tabindex="-1">
+          <p class="field-label">典拠・出典</p>
+          <ul>
+            <li><a id="catalog-source" href="https://codh.rois.ac.jp/province/" target="_blank" rel="noopener noreferrer">CODH 国・地域ID一覧 ↗</a> <span id="catalog-checked" class="source-meta"></span></li>
+            <li><a href="https://geoshape.ex.nii.ac.jp/kg/" target="_blank" rel="noopener noreferrer">Geoshape 幕末期の国境（外部・CC BY-NC。本アプリでは描画しません） ↗</a></li>
+          </ul>
+        </div>
+        <p class="legal-note">CODHのP IDと境界・村領域のK IDは別体系。ここでは境界データを配布・描画しません。史料とライセンスの確認が済むまで、全体を研究用として扱います。</p>
+        <button type="button" id="back-to-search" class="back-to-search">↑ 国名の検索に戻る</button>
+      </section>
+
       <section class="map-panel" aria-labelledby="map-heading">
         <div class="panel-heading map-title">
-          <div><p class="eyebrow">02 / MODERN MAP</p><h2 id="map-heading">地図で参照点を確認</h2></div>
-          <button id="reset-map" type="button" class="map-reset">全国へ戻る</button>
-          <label class="layer-toggle"><input id="toggle-modern" type="checkbox" checked><span>現代参照点</span></label>
+          <div><p class="eyebrow">03 / MODERN MAP</p><h2 id="map-heading">現代の地図（参考）</h2></div>
+          <div class="map-actions">
+            <button id="reset-map" type="button" class="map-reset">全国へ戻る</button>
+            <label class="layer-toggle"><input id="toggle-modern" type="checkbox" checked><span>現代参照点</span></label>
+          </div>
         </div>
         <div class="map-holder">
-          <div id="map" aria-label="現代の参照点を確認する地図"></div>
-          <div id="map-fallback" class="map-fallback" hidden>地図の読み込みに失敗しました。国名索引と典拠は引き続き利用できます。</div>
+          <div id="map" role="region" aria-label="現代の参照点を確認する地図（歴史的な国境は描きません）"></div>
+          <div id="map-fallback" class="map-fallback" hidden>
+            <p id="map-fallback-text">地図の読み込みに失敗しました。国名索引と典拠は引き続き利用できます。</p>
+            <button type="button" id="retry-map" class="retry">地図を再読込</button>
+          </div>
         </div>
         <div class="tile-warning" id="tile-status" role="status" aria-live="polite" hidden>
-          背景地図の一部を取得できません。国名・年代・参照点の情報は引き続き利用できます。
+          <span>通信エラー：背景地図（OpenStreetMap）の一部を取得できません。国名・年代判定・参照点は引き続き利用できます。</span>
           <button type="button" id="retry-tiles" hidden>背景地図を再読込</button>
         </div>
         <div class="legend">
           <span><i class="legend-dot" aria-hidden="true"></i>現代の参照地点（史実位置ではありません）</span>
+          <span><i class="legend-dot selected" aria-hidden="true"></i>選んだ国名に索引上関連する現代参照点（1689年のみ・大きい点）</span>
           <span class="legend-note" id="reference-status">参照点を読込中</span>
         </div>
-        <article class="detail" aria-labelledby="detail-heading">
-          <div class="detail-identity">
-            <div>
-              <p class="eyebrow">03 / RESEARCH NOTES</p>
-              <h2 id="detail-heading">国を選択してください</h2>
-              <p id="detail-id" class="sub-info">国・地域ID</p>
-            </div>
-            <span id="detail-state" class="status">判定前</span>
-          </div>
-          <div class="year-strip">
-            <label for="target-year">照合する年（西暦）</label>
-            <div class="year-row">
-              <input id="target-year" type="number" min="1" max="9999" step="1" value="1689" inputmode="numeric" aria-describedby="year-error">
-              <div class="years" role="group" aria-label="年の例">
-                <button type="button" data-year="1185">1185</button>
-                <button type="button" data-year="1689" aria-pressed="true">1689</button>
-                <button type="button" data-year="1868">1868</button>
-              </div>
-            </div>
-            <p id="year-error" class="error" role="alert" hidden>1～9999の整数年を入力してください。</p>
-          </div>
-          <div class="verdict">
-            <p class="field-label">年代判定</p>
-            <p id="year-verdict">国名を選ぶと、適用可能性と未確認事項を示します。</p>
-          </div>
-          <div class="relationship">
-            <p class="field-label">関連ID</p>
-            <div id="related-ids" class="related">名称を選択してください。</div>
-          </div>
-          <div class="reference-card" id="selected-reference" hidden></div>
-          <button id="focus-reference" class="focus-reference" type="button" hidden>関連する現代参照点を見る</button>
-          <div class="sources">
-            <a href="https://codh.rois.ac.jp/province/" target="_blank" rel="noopener noreferrer">CODH 国・地域ID一覧 ↗</a>
-            <a href="https://geoshape.ex.nii.ac.jp/kg/" target="_blank" rel="noopener noreferrer">Geoshape 幕末期の国境（外部・CC BY-NC） ↗</a>
-          </div>
-          <p class="legal-note">CODHのP IDと境界・村領域のK IDは別体系。ここでは境界データを配布・描画しません。史料とライセンスの確認が済むまで、全体を研究用として扱います。</p>
-        </article>
       </section>
     </main>
+    <p id="announce" class="sr-only" aria-live="polite"></p>
     <footer class="site-footer">
       <span>名称のIDと、ある年の国境。その間には史料が必要です。</span>
       <span>地図：© OpenStreetMap contributors ／ 国名索引：CODH</span>

@@ -1,12 +1,12 @@
 # 旧国名アトラス：実機スモークテスト（v0.3）
-更新: 2026-10-19 / W1 実機確認用チェックリスト。**実施記録ではない**。
+更新: 2026-10-20 / W1 実機確認用チェックリスト。**実施記録ではない**（実施記録は `docs/OLDMAP_CLAUDE_RESULT_20261020.md`）。
 
 ## 起動
-このリポジトリのルート（`kyukoku/`の一つ上）でHTTPサーバーを起動：
+このリポジトリのルート（`kyukoku/`の一つ上）でHTTPサーバーを起動（127.0.0.1のみにbind、追加依存なし）：
 ```sh
-python -m http.server 8000
+npm run serve:kyukoku
 ```
-同じPCで `http://localhost:8000/kyukoku/` にアクセス。WindowsのPython起動名が`py`の場合は`py -m http.server 8000`。ファイルを直接ダブルクリックする`file://`起動では、`fetch`によるJSON取得が失敗する可能性がある。
+`http://127.0.0.1:4173/kyukoku/` にアクセス。Pythonを使う場合は `python -m http.server 8000 --bind 127.0.0.1` → `http://127.0.0.1:8000/kyukoku/`。WindowsのPython起動名が`py`の場合は`py -m http.server 8000`。ファイルを直接ダブルクリックする`file://`起動では、`fetch`によるJSON取得が失敗する可能性がある。
 
 iPhoneでの確認は、PCと同じLAN上からPCの**LAN内IP**と適切に許可したポートを用いる。外部公開や認証不要のポート開放を求めない。画面幅390px等のブラウザ模擬検査は実機確認の代わりにならない。
 
@@ -25,6 +25,17 @@ iPhoneでの確認は、PCと同じLAN上からPCの**LAN内IP**と適切に許�
 | 10 | 地図タイルの取得を開発ツールでブロックして再読込 | 背景地図取得失敗を表示、国名検索・年代・参照点は利用可。「背景地図を再読込」が動く |
 | 11 | Leaflet JSを遮断して再読込 | 地図フォールバックを表示。国名検索・出典は利用可能 |
 | 12 | JSON索引ファイルを遮断して再読込 | 検索できない理由を明示。空の結果を実在データ0件と偽らない |
+
+## ブラウザ自動E2E（Playwright）
+```sh
+npm ci
+npx playwright install chromium webkit   # 初回のみ。取得済みなら不要
+npm run test:e2e
+```
+- `tests/e2e/atlas-flows.spec.mjs`：上表 No 1～8・10～12 を実ブラウザのクリック/入力で検証（6a 索引JSON失敗、6b Leaflet失敗、6c タイル失敗、6d 参照点データ失敗）。
+- `tests/e2e/atlas-a11y-layout.spec.mjs`：No 9（キーボード）、スマホでの選択→判定→戻る、幅320/375/390/768/1280の横スクロール・はみ出し・タップ領域40px以上、主要文字のコントラスト4.5:1、`aria-live`の読み上げ回数。
+- unpkgのLeafletはローカルnpmパッケージ（SRI一致が必要）、OSMタイルは1×1 PNGに差し替える。**外部へのリクエストは発生しない**。
+- WebKitプロジェクトはiPhone相当の画面幅の模擬。**iPhone実機Safariの確認には代えない**。
 
 ## 必須の環境別チェック
 - **PC Chrome/Edge**：No 1～12、キーボードとズーム。
