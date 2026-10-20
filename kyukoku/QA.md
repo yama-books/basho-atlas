@@ -8,7 +8,21 @@ npm run serve:kyukoku
 ```
 `http://127.0.0.1:4173/kyukoku/` にアクセス。Pythonを使う場合は `python -m http.server 8000 --bind 127.0.0.1` → `http://127.0.0.1:8000/kyukoku/`。WindowsのPython起動名が`py`の場合は`py -m http.server 8000`。ファイルを直接ダブルクリックする`file://`起動では、`fetch`によるJSON取得が失敗する可能性がある。
 
-iPhoneでの確認は、PCと同じLAN上からPCの**LAN内IP**と適切に許可したポートを用いる。外部公開や認証不要のポート開放を求めない。画面幅390px等のブラウザ模擬検査は実機確認の代わりにならない。
+### iPhone Safari 実機確認（PCからLAN内限定で一時配信）
+**注意：** 上記の `npm run serve:kyukoku` は安全のため `127.0.0.1` にだけ待ち受ける。**そのままではiPhoneから接続できない**。実機試験時だけ、信頼できる同一LAN内に限定したHTTPサーバーを別途起動する。
+
+1. PCの`ipconfig`で、**iPhoneと同じWi-Fi/LAN側のIPv4アドレス**を確認する（例：`192.168.1.13`）。公衆Wi-Fi、ゲストネットワーク、VPNを経由した公開はしない。
+2. `D:\dev\oldmap\repo` が`feat/shared-hgis-core-20261018` の**最新コミットを保持し、未コミット変更がない**ことを `git status --short --branch` で確認する。更新が必要なら `git fetch origin` と `git pull --ff-only origin feat/shared-hgis-core-20261018` を使い、競合や差分がある場合は中止して担当に相談。
+3. リポジトリのルートから、次を**一時的に**実行する。LAN IPv4を実際の値に変更（`0.0.0.0`は指定しない）。
+   ```powershell
+   cd D:\dev\oldmap\repo
+   py -m http.server 8000 --bind 192.168.1.13
+   ```
+   Pythonが`py`では起動しない場合は `python -m http.server 8000 --bind 192.168.1.13`。Windows Defender Firewallで許可が必要なら**プライベートネットワークに限った一時許可**を検討し、パブリック全体/ルーターのポート転送/インターネットへの公開はしない。
+4. iPhone Safariから `http://192.168.1.13:8000/kyukoku/` を開く（実際のPC IPv4に置き換える）。検索→判定への自動スクロール、キーボード表示中のタップ、入力時ズーム、縦向き/横向き、参照点ON/OFF、国名検索に戻るを確認する。
+5. 試験後はPCで **Ctrl+C** でサーバーを停止し、作成した一時Firewall規則があれば元に戻す。撮影画像にLANの個人情報を含めない。
+
+`375px`のWebKit模擬検査は**iPhone実機Safariの代わりではない**。端末/OS/Safari版、テスト番号、実際の結果を末尾の記録テンプレートへ残す。
 
 ## 優先度P0：最短の正常系・異常系
 | No | 操作 | 期待値 |
