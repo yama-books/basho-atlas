@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>歌枕の三層比較｜Basho Atlas 試作</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="./styles.css">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+ <a href="../../index.html" class="brand">BASHO <span>ATLAS</span></a>
+ <a href="../../docs/LITERARY_CARD_CORE_2026-10-20.md" target="_blank" rel="noopener noreferrer">仕様・典拠の扱い ↗</a>
+</header>
+<div class="notice" role="note"><strong>研究用の試作</strong><span>古典本文・文学的影響の解釈は未監査です。確定した教材としての表示ではありません。</span></div>
+<main>
+  <div class="intro">
+    <p class="eyebrow">PLACE × LITERATURE × TIME</p>
+    <h1>歌枕を、時代で読む。</h1>
+    <p>古歌の記憶、芭蕉の旅、いま見える風景。重ねたり、一つずつ読んだり。</p>
+  </div>
+  <section aria-labelledby="picker-title" class="picker">
+    <div class="picker-title"><p class="eyebrow">CHOOSE A PLACE</p><h2 id="picker-title">場所を選ぶ</h2></div>
+    <div role="group" aria-label="比較する地点" class="places">
+      <button type="button" data-place="takekuma" aria-pressed="false">武隈の松</button>
+      <button type="button" data-place="shirakawa" aria-pressed="false">白河の関</button>
+      <button type="button" data-place="matsushima" aria-pressed="false">松島</button>
+    </div>
+  </section>
+  <section class="place-info" aria-labelledby="place-title">
+    <div>
+      <p class="eyebrow" id="locality">読み込み中</p>
+      <h2 id="place-title">歌枕</h2>
+      <p class="subtitle" id="place-subtitle"></p>
+    </div>
+    <span class="province" id="old-province"></span>
+  </section>
+  <section class="reader-tools" aria-label="表示する時代">
+    <div class="reader-label"><p class="eyebrow">READING MODE</p><h2>時代を重ねる</h2></div>
+    <div class="modes" role="group" aria-label="比較方法">
+      <button type="button" data-mode="all" aria-pressed="true">三層比較</button>
+      <button type="button" data-mode="before" aria-pressed="false">古歌</button>
+      <button type="button" data-mode="basho" aria-pressed="false">芭蕉</button>
+      <button type="button" data-mode="today" aria-pressed="false">現在</button>
+    </div>
+  </section>
+  <div id="status" role="status" aria-live="polite" class="status"></div>
+  <section id="layers" class="layers" aria-label="文学の三時代"></section>
+  <section class="insight" aria-labelledby="insight-title">
+    <p class="eyebrow">WORDS THROUGH TIME</p>
+    <h2 id="insight-title">ことばをたどる</h2>
+    <div class="keywords" id="keywords" role="group" aria-label="注目する語句"></div>
+    <p class="keyword-note" id="keyword-note" aria-live="polite"></p>
+  </section>
+  <section class="question" aria-labelledby="question-title">
+    <p class="eyebrow">THINK ABOUT IT</p>
+    <h2 id="question-title">考えてみよう</h2>
+    <p id="question-text"></p>
+  </section>
+  <section class="map-panel" aria-labelledby="map-title">
+    <div><p class="eyebrow">GEOGRAPHICAL REFERENCE</p><h2 id="map-title">現代地図と地点の区別</h2></div>
+    <p id="point-caution" class="caution"></p>
+    <div id="map" class="map" aria-label="典拠付きの参考地点を示す地図"></div>
+    <p id="map-fallback" class="map-fallback" hidden>地図タイルを表示できませんが、文学情報と出典は確認できます。</p>
+    <p id="point-label" class="point-label"></p>
+  </section>
+  <section class="references" aria-labelledby="references-title">
+    <p class="eyebrow">SOURCES / RIGHTS</p>
+    <h2 id="references-title">典拠と監査状態</h2>
+    <p id="attribution" class="attribution"></p>
+    <div id="sources" class="source-list"></div>
+    <p>古典本文は校訂・出典・異同の確認を経てから公開教材に採用します。旧国名は1689年を参照した仮表示で、専用旧国名エンジンの確定結果ではありません。</p>
+  </section>
+</main>
+<footer><span>文学上の場所 ≠ 現代の代表施設 ≠ 芭蕉の歩行位置</span><a href="https://github.com/yama-books/basho-atlas" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+</div>
+</body>
+</html>
