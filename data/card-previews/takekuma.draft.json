@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0.0",
+  "id": "takekuma",
+  "title": "武隈の松",
+  "subtitle": "二木の松を、和歌の時代からたどる。",
+  "location": {
+    "municipality": "宮城県岩沼市",
+    "old_province": {
+      "name": "陸奥国",
+      "basis_year": 1689,
+      "status": "pending_kyukoku_engine"
+    }
+  },
+  "reference_point": {
+    "kind": "modern_reference_site",
+    "label": "現代の武隈の松の参照地点",
+    "coordinates": [
+      140.862483,
+      38.106731
+    ],
+    "caution": "現代の名勝の参照座標。古い松の正確な位置や芭蕉の歩行点ではありません。",
+    "source_ids": [
+      "s-iwanuma",
+      "s-miyagi-kanko"
+    ]
+  },
+  "layers": [
+    {
+      "id": "before",
+      "title": "芭蕉以前の和歌",
+      "items": [
+        {
+          "id": "tk-motoyoshi",
+          "kind": "waka",
+          "title": "藤原元善｜後撰和歌集1241",
+          "text": "栽ゑし時契りやしけんたけくまの松をふたたひあひみつるかな",
+          "note": "オンライン翻刻で歌集番号を確認。底本異同は人手監査待ち。",
+          "evidence": "online_transcription",
+          "source_ids": [
+            "s-gosen-17",
+            "s-kotobank-takekuma"
+          ],
+          "attributed_to": "藤原元善",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        },
+        {
+          "id": "tk-tachibana",
+          "kind": "waka",
+          "title": "橘季通｜後拾遺和歌集1041",
+          "text": "武隈の松は二木を都人いかがと問はば三木と答へむ",
+          "note": "「二木」「三木」の表記と語戯は、歌集の底本を確定してから解説を承認する。",
+          "evidence": "online_transcription",
+          "source_ids": [
+            "s-goshuui-18",
+            "s-iwanuma"
+          ],
+          "attributed_to": "橘季通",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        },
+        {
+          "id": "tk-noin",
+          "kind": "waka",
+          "title": "能因法師｜後拾遺和歌集1042",
+          "text": "武隈の松は此度跡も無し千歲を經てや我は來つらむ",
+          "note": "松の不在を詠む。文字遣いや歌集の異同は未確定。",
+          "evidence": "online_transcription",
+          "source_ids": [
+            "s-goshuui-18",
+            "s-aozora-basho"
+          ],
+          "attributed_to": "能因法師",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "basho",
+      "title": "芭蕉の旅",
+      "items": [
+        {
+          "id": "tk-basho",
+          "kind": "haiku",
+          "title": "芭蕉｜おくのほそ道",
+          "text": "桜より松は二木を三月越し",
+          "note": "『おくのほそ道』武隈の松段の句。能因の名を挙げる本文との関係を確かめる。",
+          "evidence": "edited_text",
+          "source_ids": [
+            "s-aozora-basho",
+            "s-iwanuma"
+          ],
+          "attributed_to": "松尾芭蕉",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        },
+        {
+          "id": "tk-route",
+          "kind": "explanation",
+          "title": "旅の順序と、文学の順序",
+          "text": null,
+          "note": "岩沼市の解説では、曾良の移動記録は武隈→笠島方面、作品の叙述は笠島→武隈の順。日記の原文は未校合。",
+          "evidence": "secondary_commentary",
+          "source_ids": [
+            "s-iwanuma"
+          ],
+          "attributed_to": null,
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "today",
+      "title": "現代の武隈の松",
+      "items": [
+        {
+          "id": "tk-modern",
+          "kind": "site",
+          "title": "現在の名勝",
+          "text": null,
+          "note": "宮城県岩沼市二木に位置する現代の史跡。現在の松は古歌に詠まれた樹木がそのまま残ったものではない。",
+          "evidence": "official_site",
+          "source_ids": [
+            "s-iwanuma",
+            "s-miyagi-kanko"
+          ],
+          "attributed_to": null,
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    }
+  ],
+  "keywords": [
+    {
+      "term": "二木",
+      "explanation": "橘季通の歌と芭蕉の句を比較する語。掛詞・語戯の解釈は人手監査待ち。",
+      "related_item_ids": [
+        "tk-tachibana",
+        "tk-basho"
+      ]
+    },
+    {
+      "term": "能因",
+      "explanation": "能因の「跡も無し」という古歌と、芭蕉が見た松を別の時代のものとして考える。",
+      "related_item_ids": [
+        "tk-noin",
+        "tk-basho"
+      ]
+    },
+    {
+      "term": "三月",
+      "explanation": "芭蕉の旅の時間と松が文学的に受け継がれる時間を対比する学習の手掛かり。",
+      "related_item_ids": [
+        "tk-basho"
+      ]
+    }
+  ],
+  "learning": {
+    "question": "古歌では松が消えたり植え継がれたりします。芭蕉の「二木」という表現にはどんな文学的な記憶が重なっているでしょう。",
+    "answer_status": "question_only",
+    "source_ids": [
+      "s-goshuui-18",
+      "s-aozora-basho"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s-gosen-17",
+      "title": "『後撰和歌集』巻第十七（オンライン翻刻）",
+      "url": "https://ja.wikisource.org/wiki/後撰和歌集/巻第十七"
+    },
+    {
+      "id": "s-goshuui-18",
+      "title": "『後拾遺和歌集』巻十八 雑四（オンライン翻刻）",
+      "url": "https://miko.org/~uraki/kuon/furu/text/waka/gosyuui/gosyuui18.htm"
+    },
+    {
+      "id": "s-kotobank-takekuma",
+      "title": "「武隈の松」精選版日本国語大辞典",
+      "url": "https://kotobank.jp/word/武隈の松-319610"
+    },
+    {
+      "id": "s-iwanuma",
+      "title": "岩沼市『おくのほそ道』と岩沼",
+      "url": "https://www.city.iwanuma.miyagi.jp/kanko/rekishi/nyumon/okunohosomichi.html"
+    },
+    {
+      "id": "s-aozora-basho",
+      "title": "杉浦正一郎校註『おくのほそ道』（素龍清書本などに基づく校訂翻刻）",
+      "url": "https://www.aozora.gr.jp/cards/002240/files/61619_78128.html"
+    },
+    {
+      "id": "s-miyagi-kanko",
+      "title": "岩沼市・武隈の松の名勝解説",
+      "url": "https://www.city.iwanuma.miyagi.jp/kanko/bunkazai/takekumanomatsu.html"
+    }
+  ],
+  "attribution": "古歌のテキストはオンライン翻刻を参考にした監査用ドラフト。現代の記念物と文学上の松を区別する。",
+  "review_status": "pending_human",
+  "public_use": "draft_only"
+}
