@@ -1,4 +1,4 @@
-import {lookupCodhProvinceId} from '../src/historical-gis/codh-province-ids.mjs';
+import {normalizeAtlasReferencePoints} from '../src/historical-gis/atlas-reference-points.mjs';
 import {createProvinceAtlasService,parseTargetYear} from '../src/historical-gis/atlas-service.mjs';
 
 const $=id=>document.getElementById(id);
@@ -196,30 +196,24 @@ async function getJson(path){
   return r.json();
 }
 async function loadReferences(){
+  // Both datasets are optional: one failing must not hide valid references in the other.
   const [basho,yashima]=await Promise.allSettled([
     getJson('../data/prototype-locations.json'),
     getJson('../data/historical-gis/yashima-basho.sample.geojson')
   ]);
-  if(basho.status==='fulfilled'){
-    for(const p of basho.value.places||[]){
-      const [lng,lat]=p.coordinates||[];if(!Number.isFinite(lng)||!Number.isFinite(lat))continue;
-      const codh=lookupCodhProvinceId({name:p.old_province?.name,year:p.old_province?.basis_year??1689});
-      state.references.push({name:p.name,lng,lat,
-        provinceId:codh.status==='id_match_only'?codh.province_id:null,
-        source:p.source_url});
-    }
-  }
-  if(yashima.status==='fulfilled'){
-    const f=yashima.value.features?.find(x=>x.id==='hgis:genpei:ys001-modern');
-    const [lng,lat]=f?.geometry?.coordinates||[];
-    if(Number.isFinite(lng)&&Number.isFinite(lat)){
-      state.references.push({name:f.properties.name,lng,lat,provinceId:null,
-        source:'https://heritagemap.nabunken.go.jp/statistic/36339-%E5%B1%8B%E5%B3%B6.html'});
-    }
-  }
+  const {points,decisions}=normalizeAtlasReferencePoints({
+    basho:basho.status==='fulfilled'?basho.value:undefined,
+    yashima:yashima.status==='fulfilled'?yashima.value:undefined
+  });
+  // Core guarantees that these are present-day points with unverified historical membership.
+  state.references=points;
   state.referencesLoaded=true;
-  const failed=[basho,yashima].filter(x=>x.status==='rejected').length;
-  state.referenceError=failed===2?'参照点データを取得できませんでした（国名・年代判定には影響しません）':failed?'一部の参照点データを取得できませんでした':'';
+  const failures=[basho,yashima].filter(x=>x.status==='rejected').length;
+  const invalid=decisions.some(d=>d.reason==='dataset_unavailable_or_invalid' ||
+    ['missing_id_or_name','duplicate_id','invalid_coordinates'].includes(d.reason));
+  state.referenceError=failures===2
+    ?'参照点データを取得できませんでした（国名・年代判定には影響しません）'
+    : failures||invalid?'一部の参照点データを取得・表示できませんでした':'';
   renderMapPoints();renderDetails();
 }
 async function loadIndex(){
