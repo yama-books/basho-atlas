@@ -1,0 +1,36 @@
+name: Oldmap UI browser E2E
+
+# Lightweight and opt-in: runs only when the atlas UI or its E2E files change, or by hand.
+# Chromium only in CI (WebKit is exercised locally). CDN and OSM tiles are mocked by the tests.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'kyukoku/**'
+      - 'tests/e2e/**'
+      - 'tests/tools/**'
+      - 'playwright.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/oldmap-ui-e2e.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oldmap-ui-e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --project desktop-chromium --project mobile-chromium-390

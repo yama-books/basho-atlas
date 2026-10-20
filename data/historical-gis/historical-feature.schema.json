@@ -143,7 +143,10 @@
           ]
         },
         "accessed_on": {
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
@@ -342,6 +345,27 @@
             },
             "claim_id": {
               "type": "string"
+            },
+            "codh_province_id": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^P[0-9]{3}$",
+              "description": "External CODH province ID crosswalk for audited year; never a geographic containment proof."
+            },
+            "codh_id_match_status": {
+              "enum": [
+                "id_match_only",
+                "not_audited_for_year",
+                "transition_undetermined",
+                "no_verified_crosswalk"
+              ],
+              "description": "ID annotation confidence is separate from the historical membership review."
+            },
+            "codh_id_source_url": {
+              "type": "string",
+              "description": "Official CODH dataset URL for this annotation."
             }
           }
         }

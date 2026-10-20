@@ -1,0 +1,15 @@
+# Local dependency and browser-test outputs
+node_modules/
+test-results/
+playwright-report/
+playwright/.cache/
+*.log
+
+# Local configuration, not publication assets
+.env
+.env.*
+!.env.example
+
+# OS/editor-generated files
+.DS_Store
+Thumbs.db

@@ -63,7 +63,8 @@ test("JavaScript passes syntax compilation and keeps untrusted POI strings as te
   assert.doesNotThrow(() => new vm.Script(app, { filename:"app.js" }));
   assert(app.includes("textContent"));
   assert(!app.includes("innerHTML"));
-  assert(app.includes("controller.abort()"));
+  assert(app.includes("state.poiAbort.abort()"));
+  assert(app.includes("const controller = new AbortController()"));
   assert(app.includes("OPENPOI_RADIUS_METERS"));
 });
 

@@ -1,0 +1,32 @@
+name: Shared Historical GIS contracts
+
+on:
+  pull_request:
+    paths:
+      - 'src/historical-gis/**'
+      - 'kyukoku/**'
+      - 'tests/**'
+      - 'data/historical-gis/**'
+      - 'data/prototype-locations.json'
+      - 'data/examples/**'
+      - 'app.js'
+      - 'index.html'
+      - 'package.json'
+      - 'docs/HISTORICAL_GIS_*.md'
+      - '.github/workflows/historical-gis-contracts.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  node-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Check syntax and test the whole repository
+        run: node --check kyukoku/app.mjs && node --check src/historical-gis/province-index.mjs && npm run check
