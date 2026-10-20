@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0.0",
+  "id": "shirakawa",
+  "title": "白河の関",
+  "subtitle": "目の前の青葉、耳に残る秋風。",
+  "location": {
+    "municipality": "福島県白河市",
+    "old_province": {
+      "name": "陸奥国",
+      "basis_year": 1689,
+      "status": "pending_kyukoku_engine"
+    }
+  },
+  "reference_point": {
+    "kind": "literary_reference_point",
+    "label": "DLM文学名所の代表点",
+    "coordinates": [
+      140.228417,
+      37.047115
+    ],
+    "caution": "DLMの文学名所の代表座標。国指定史跡の面や芭蕉の通過点ではありません。",
+    "source_ids": [
+      "s-dlm-shirakawa"
+    ]
+  },
+  "layers": [
+    {
+      "id": "before",
+      "title": "歌枕に残る秋の景色",
+      "items": [
+        {
+          "id": "sk-waka-1",
+          "kind": "waka",
+          "title": "能因法師｜後拾遺和歌集518",
+          "text": "宮こをは霞とともに立しかと秋風そふくしら川の関",
+          "note": "『おくのほそ道』の「秋風を耳に残し」との関係が校注で説明される。",
+          "evidence": "online_transcription",
+          "source_ids": [
+            "s-dlm-xlsx-20261019",
+            "s-shirakawa-notes"
+          ],
+          "attributed_to": "能因法師",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        },
+        {
+          "id": "sk-waka-2",
+          "kind": "waka",
+          "title": "源頼政｜千載和歌集365",
+          "text": "都にはまた青葉にて見しかとも紅葉ちりしく白川の関",
+          "note": "『おくのほそ道』の「紅葉を俤にして」との関係が校注で説明される。",
+          "evidence": "online_transcription",
+          "source_ids": [
+            "s-dlm-xlsx-20261019",
+            "s-shirakawa-notes"
+          ],
+          "attributed_to": "源頼政",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "basho",
+      "title": "おくのほそ道・白河の関",
+      "items": [
+        {
+          "id": "sk-basho",
+          "kind": "travelogue",
+          "title": "芭蕉｜白河の関の段",
+          "text": "秋風を耳に残し、紅葉を俤にして、青葉の梢猶あはれ也。",
+          "note": "校註では能因の秋風と源頼政の紅葉を背景とする。原版本との照合は未実施。",
+          "evidence": "edited_text",
+          "source_ids": [
+            "s-aozora-basho",
+            "s-shirakawa-notes"
+          ],
+          "attributed_to": "松尾芭蕉",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        },
+        {
+          "id": "sk-sora",
+          "kind": "haiku",
+          "title": "曾良｜卯の花をかざしに",
+          "text": "卯の花をかざしに関の晴着かな",
+          "note": "書物上の署名は曾良。芭蕉作として扱わない。",
+          "evidence": "edited_text",
+          "source_ids": [
+            "s-aozora-basho"
+          ],
+          "attributed_to": "曾良",
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    },
+    {
+      "id": "today",
+      "title": "現在の白河関跡",
+      "items": [
+        {
+          "id": "sk-modern",
+          "kind": "site",
+          "title": "現在の国指定史跡",
+          "text": null,
+          "note": "松平定信による1800年の比定と、1966年の史跡指定を分けて考える。現在の史跡が1689年の芭蕉の立ち位置を示すわけではない。",
+          "evidence": "official_site",
+          "source_ids": [
+            "s-shirakawa-city"
+          ],
+          "attributed_to": null,
+          "review_status": "pending_human",
+          "public_use": "draft_only"
+        }
+      ],
+      "review_status": "pending_human",
+      "public_use": "draft_only"
+    }
+  ],
+  "keywords": [
+    {
+      "term": "秋風",
+      "explanation": "能因の秋風と、芭蕉が「耳に残し」と述べる秋風を対照する。",
+      "related_item_ids": [
+        "sk-waka-1",
+        "sk-basho"
+      ]
+    },
+    {
+      "term": "紅葉",
+      "explanation": "頼政が詠む関の紅葉と、芭蕉の「俤」の表現を結びつけて読む。",
+      "related_item_ids": [
+        "sk-waka-2",
+        "sk-basho"
+      ]
+    },
+    {
+      "term": "青葉",
+      "explanation": "実際の季節は青葉。古歌の秋風や紅葉とのずれが、歌枕の文学的効果を生むという読解候補。",
+      "related_item_ids": [
+        "sk-waka-2",
+        "sk-basho"
+      ]
+    }
+  ],
+  "learning": {
+    "question": "芭蕉が見ているのは青葉なのに、なぜ本文には「秋風」「紅葉」が出てくるのでしょう。",
+    "answer_status": "question_only",
+    "source_ids": [
+      "s-aozora-basho",
+      "s-shirakawa-notes"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s-dlm-shirakawa",
+      "title": "DLM 白河の関",
+      "url": "https://literarymaps.nijl.ac.jp/spots/567554d2f61afaaed2aaef22/"
+    },
+    {
+      "id": "s-dlm-xlsx-20261019",
+      "title": "DLM公式XLSX・Poemsシート（2026-10-19リモート構造解析）",
+      "url": "https://literarymaps.nijl.ac.jp/downloads/dlm-dataset.xlsx"
+    },
+    {
+      "id": "s-shirakawa-notes",
+      "title": "『おくのほそ道』白河の関 注釈ページ",
+      "url": "https://www2.yamanashi-ken.ac.jp/~itoyo/basho/okunohosomichi/okuno08.htm"
+    },
+    {
+      "id": "s-aozora-basho",
+      "title": "杉浦正一郎校註『おくのほそ道』（素龍清書本などに基づく校訂翻刻）",
+      "url": "https://www.aozora.gr.jp/cards/002240/files/61619_78128.html"
+    },
+    {
+      "id": "s-shirakawa-city",
+      "title": "白河市・白河関跡",
+      "url": "https://www.city.shirakawa.fukushima.jp/page/page001386.html"
+    }
+  ],
+  "attribution": "日本のデジタル文学地図（DLM）CC BY 4.0。和歌の底本異同は未監査。",
+  "review_status": "pending_human",
+  "public_use": "draft_only"
+}
