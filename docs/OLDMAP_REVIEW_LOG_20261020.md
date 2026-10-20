@@ -52,3 +52,12 @@ UIのWindows上ローカルPlaywright WebKit 38 pass/19 skip×3・実CDN/実OSM�
 
 ## 6. 次の一操作
 **ユーザーの統合承認を待つ。** 承認後、Core→UIの順で親branchへ統合、旧UI直接参照点処理をCoreの新正規化関数へ一本化する。
+
+## 2026-10-20 夜：承認後の統合実施（この追補が最新状態）
+ユーザーの「OK、進めてください」により、上の「統合未実施／承認待ち」時点は**履歴**になりました。最新実装・検証の正本は[OLDMAP_INTEGRATION_HANDOFF_20261020.md](OLDMAP_INTEGRATION_HANDOFF_20261020.md)。
+- Core PR #2：`feat/shared-hgis-core-20261018`へマージ済み（`10c6626a84c9e63f3aea00b070006c262b9ae07f`）。
+- UI PR #3：同branchへマージ済み（`7563e21b79d9a05e5a48169b38987a3ee5cf485f`）。子PRのDraft→Readyへの変更はGitHubがDraftマージを拒否したための必須操作。**親PR #1は引き続きDraft・main未マージ**。
+- UIの現代参照点をCore正規化APIへ接続し、E2Eのデータ不正・片側読込失敗2ケース追加、旧実装の文字列に依存したテストを実際のデータ不変条件の検査へ変更。ルート`.gitignore`、一時LAN用iPhone QA手順を追加。
+- [契約・Node CI #39414536500](https://github.com/yama-books/basho-atlas/actions/runs/39414536500)：**130 pass / 0 fail / 1 skip**。
+- [Chromium E2E CI #39414536513](https://github.com/yama-books/basho-atlas/actions/runs/39414536513)：**32 pass / 0 fail / 10 skip**。
+- **次の必須工程：iPhone Safari実機QA**。Jev送信・権限変更、mainマージ、Pages公開、紙媒体古地図の再開は行っていない。
