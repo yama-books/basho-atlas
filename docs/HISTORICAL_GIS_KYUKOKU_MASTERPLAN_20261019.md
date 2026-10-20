@@ -116,3 +116,10 @@ E. エンジンが他アプリから独立して提供できるAPI・契約・�
 - [GitHub Actions #39239772740](https://github.com/yama-books/basho-atlas/actions/runs/39239772740) にて117テスト成功・0失敗を確認（この結果はQA文書追加前の実装コミットに対するもの）。
 
 **残るW1**：独立ページのブラウザ実機チェック、異常系の画面挙動、必要に応じた微修正。未確認の古地図は開発の停止条件ではない。
+
+## 2026-10-20 委任実行計画：D:\dev\oldmap
+**GitHub指示文の新正本は [OLDMAP_LOCAL_WORK_MASTER_20261020.md](OLDMAP_LOCAL_WORK_MASTER_20261020.md)。** 本計画のW1/W2/W3をCodexとClaude CodeへGit worktreeで分担。紙の古地図研究はPAUSEDのまま。
+- Codex: [Core実装指示](OLDMAP_CODEX_WP_20261020.md)（`D:\dev\oldmap\core` / `work/oldmap-core-20261020`）
+- Claude Code: [UI/E2E実装指示](OLDMAP_CLAUDE_WP_20261020.md)（`D:\dev\oldmap\ui` / `work/oldmap-ui-20261020`）
+- 本ChatGPT監査: [PRレビュー・統合ゲート](OLDMAP_REVIEW_PROTOCOL_20261020.md)。子PRは**base=`feat/shared-hgis-core-20261018`**。自動マージ禁止。
+- どちらもユーザー自身がローカルで起動する作業。2026-10-20のこの記録は**委任文書保存でありローカル実装を開始/完了した証跡ではない**。
