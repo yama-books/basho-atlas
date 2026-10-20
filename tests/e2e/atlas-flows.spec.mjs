@@ -210,3 +210,38 @@ test('6d. reference-point data failure is reported in the legend; search and ver
   await expect(page.locator('#detail-state')).toHaveText('ID対応のみ');
   await expect(page.locator('#focus-reference')).toBeHidden();
 });
+
+test('7. Core normalization excludes invalid coordinates and treats input names as plain text', async ({page}) => {
+  await mockNetwork(page);
+  await page.route('**/data/prototype-locations.json', async route => {
+    const original=await route.fetch();
+    const data=await original.json();
+    data.places[0].coordinates=['139.79',35.68]; // must not coerce string coordinates
+    data.places[1].name='<img src=x onerror=alert(1)>';
+    data.places[1].source_url='javascript:alert(1)';
+    data.places[1].coordinate_sources=['javascript:alert(1)'];
+    await route.fulfill({response:original,json:data});
+  });
+  await page.goto('/kyukoku/');
+  await expect(page.locator('#catalog-count')).toHaveText('88 / 88');
+  await expect(markers(page)).toHaveCount(3); // 2 remaining Basho + 1 modern Yashima
+  await expect(page.locator('#reference-status')).toContainText('一部の参照点データを取得・表示できませんでした');
+  await choose(page,'武蔵','P010');
+  await expect(page.locator('#focus-reference')).toBeHidden();
+  await choose(page,'陸奥','P002');
+  await expect(page.locator('#selected-reference')).toContainText('<img src=x onerror=alert(1)>');
+  await expect(page.locator('#selected-reference img')).toHaveCount(0);
+  await expect(page.locator('#detail-state')).toHaveText('ID対応のみ');
+});
+
+test('8. one missing reference dataset does not hide the other dataset', async ({page}) => {
+  await mockNetwork(page);
+  await page.route('**/data/prototype-locations.json',r=>r.abort('connectionfailed'));
+  await page.goto('/kyukoku/');
+  await expect(page.locator('#catalog-count')).toHaveText('88 / 88');
+  await expect(markers(page)).toHaveCount(1); // the independent modern Yashima point
+  await expect(page.locator('#reference-status')).toContainText('一部の参照点データを取得・表示できませんでした');
+  await choose(page,'讃岐','P044');
+  await expect(page.locator('#detail-state')).toHaveText('史料未監査');
+  await expect(page.locator('#focus-reference')).toBeHidden();
+});
