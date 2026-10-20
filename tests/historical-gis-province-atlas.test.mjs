@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {validateProvinceIndex,searchProvinceIndex,explainProvinceYear,provinceRelations} from '../src/historical-gis/province-index.mjs';
+import {normalizeAtlasReferencePoints} from '../src/historical-gis/atlas-reference-points.mjs';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const catalog=JSON.parse(read('data/historical-gis/codh-province-index.json'));
@@ -125,7 +126,14 @@ test('atlas never draws a guessed historical country border',()=>{
   assert(!/L\.geoJSON\s*\(/.test(app));
   assert(!/L\.polyline\s*\(/.test(app));
   assert(app.includes("year===1689"));
-  assert(app.includes("provinceId:null"));
+  assert(app.includes('normalizeAtlasReferencePoints('), 'UI must use shared safe point parser');
+  const {points}=normalizeAtlasReferencePoints({
+    basho:JSON.parse(read('data/prototype-locations.json')),
+    yashima:JSON.parse(read('data/historical-gis/yashima-basho.sample.geojson'))
+  });
+  assert.equal(points.length,4);
+  assert(points.every(p=>p.layer==='modern_reference'&&p.historicalMembership==='unverified'));
+  assert.equal(points.find(p=>p.id==='hgis:genpei:ys001-modern').provinceId,null);
 });
 test('atlas renders untrusted site names as text nodes, not innerHTML',()=>{
   assert(app.includes('textContent'));
